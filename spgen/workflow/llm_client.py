@@ -21,15 +21,26 @@ def search_tool(query: str) -> str:
 def llm_call(template: str, temperature: float = 0.7, tools: List = None, **kwargs) -> str:
     """Call LMStudio chat completion with the given template and kwargs."""
     prompt = template.format(**kwargs)
-    client = OpenAI(base_url=LMSTUDIO_ENDPOINT, api_key="not-needed")
-    
+
+    if (i := os.getenv("OPENAI_BASE_URL")) and (k := os.getenv("OPENAI_API_KEY")):
+        client = OpenAI(base_url=i, api_key=k)
+    else:
+        client = OpenAI(base_url=LMSTUDIO_ENDPOINT, api_key="not-needed")
+
     messages = [{"role": "user", "content": prompt}]
 
     # Note: LMStudio typically doesn't support function calling, so we ignore tools
     # In a production system, you would handle tool calling separately
     response = client.chat.completions.create(
-        model="llama3.1",
+        model=os.environ.get("OPENAI_MODEL", "gpt-oss-20b"),
         messages=messages,
         temperature=temperature,
     )
-    return response.choices[0].message.content.strip()
+
+    print(f"{response.usage=}")
+
+    # Handle cases where content might be None
+    content = response.choices[0].message.content
+    if content is None:
+        return ""
+    return content.strip()
