@@ -1,0 +1,170 @@
+2025-09-11 09:31:12 - 🔧 Episode generation workflow initialized
+2025-09-11 09:31:12 - 🚀 Starting episode generation for part 1 of 10...
+2025-09-11 09:31:12 - 📁 Working directory: logs/The_next_season_of_Big_Brother_happens_inside_of_southpark_and_is_comprised_of_south_park_characters/20250911_163112/part_01
+2025-09-11 09:31:12 - 📋 Workflow has 13 steps total
+2025-09-11 09:31:12 - ============================================================
+2025-09-11 09:31:12 - 
+⏳ Step 3/13: Brainstorm
+2025-09-11 09:31:12 - 📊 Progress: [███░░░░░░░░░░] 3/13
+2025-09-11 09:31:12 - 🧠 Starting initial brainstorming phase...
+2025-09-11 09:31:12 - 📝 3 personas will brainstorm ideas: Bill Hader, Trey Parker, Matt Stone
+2025-09-11 09:31:12 - 💡 Bill Hader is generating an initial idea...
+2025-09-11 09:31:46 - ✅ Bill Hader completed their idea (saved to ideas/Bill Hader.md)
+2025-09-11 09:31:46 - 💡 Trey Parker is generating an initial idea...
+2025-09-11 09:32:17 - ✅ Trey Parker completed their idea (saved to ideas/Trey Parker.md)
+2025-09-11 09:32:17 - 💡 Matt Stone is generating an initial idea...
+2025-09-11 09:32:50 - ✅ Matt Stone completed their idea (saved to ideas/Matt Stone.md)
+2025-09-11 09:32:50 - 🧠 Initial brainstorming complete! 3 ideas generated.
+2025-09-11 09:32:50 - ✅ Step 3/13 complete: Brainstorm
+2025-09-11 09:32:50 - 
+⏳ Step 4/13: Interactive Brainstorm Questions
+2025-09-11 09:32:50 - 📊 Progress: [████░░░░░░░░░] 4/13
+2025-09-11 09:32:50 - 🤝 Starting interactive Q&A session...
+2025-09-11 09:32:50 - 📊 Q&A session context:
+2025-09-11 09:32:50 -   - Available agents: 3
+2025-09-11 09:32:50 -     - Bill Hader: 4432 characters
+2025-09-11 09:32:50 -     - Trey Parker: 7022 characters
+2025-09-11 09:32:50 -     - Matt Stone: 6788 characters
+2025-09-11 09:32:50 - ❓ Bill Hader is asking questions to Trey Parker...
+2025-09-11 09:33:14 - 📊 Bill Hader's questions size: 2874 characters
+2025-09-11 09:33:14 - ✅ Bill Hader's questions saved to brainstorm_questions/Bill Hader.md
+2025-09-11 09:33:14 - ❓ Trey Parker is asking questions to Bill Hader...
+2025-09-11 09:33:29 - 📊 Trey Parker's questions size: 2218 characters
+2025-09-11 09:33:29 - ✅ Trey Parker's questions saved to brainstorm_questions/Trey Parker.md
+2025-09-11 09:33:29 - ❓ Matt Stone is asking questions to Bill Hader...
+2025-09-11 09:33:50 - 📊 Matt Stone's questions size: 3186 characters
+2025-09-11 09:33:50 - ✅ Matt Stone's questions saved to brainstorm_questions/Matt Stone.md
+2025-09-11 09:33:50 - 💬 Bill Hader is responding to questions...
+2025-09-11 09:34:27 - 📊 Bill Hader's response size: 7183 characters
+2025-09-11 09:34:27 - ✅ Bill Hader's response saved to brainstorm_responses/Bill Hader.md
+2025-09-11 09:34:27 - 💬 Trey Parker is responding to questions...
+2025-09-11 09:34:58 - 📊 Trey Parker's response size: 6256 characters
+2025-09-11 09:34:58 - ✅ Trey Parker's response saved to brainstorm_responses/Trey Parker.md
+2025-09-11 09:34:58 - 📊 After initial Q&A: 5 interactions, 21866 characters
+2025-09-11 09:34:58 - 🔄 Checking for follow-up questions...
+2025-09-11 09:34:58 - 🔍 Analyzing 2 responses for follow-up questions...
+2025-09-11 09:34:58 - 🔍 Found follow-up question marker in response 1
+2025-09-11 09:34:58 - 🔍 Processing follow-up question on line 88: **FOLLOW-UP QUESTION FOR TREY PARKER:**  
+2025-09-11 09:34:58 - ✅ Successfully parsed follow-up: Bill Hader -> TREY PARKER: You’re all for flipping Randy to be *visible* but ...
+2025-09-11 09:34:58 - 🔄 Found 1 follow-up question(s) for round 1...
+2025-09-11 09:34:58 -   - Bill Hader asks TREY PARKER: You’re all for flipping Randy to be *visible* but ...
+2025-09-11 09:34:58 - 📊 Round 1 complete: 0 responses, 0 characters
+2025-09-11 09:34:58 - 📊 Total interactions so far: 5 items, 21866 characters
+2025-09-11 09:34:58 - 🔍 Analyzing 0 responses for follow-up questions...
+2025-09-11 09:34:58 - ✅ No follow-up questions found, Q&A session complete
+2025-09-11 09:34:58 - 📊 Final Q&A session results:
+2025-09-11 09:34:58 -   - Total interactions: 5
+2025-09-11 09:34:58 -   - Total size: 21866 characters
+2025-09-11 09:34:58 -   - Questions generated: 3
+2025-09-11 09:34:58 -   - Responses generated: 2
+2025-09-11 09:34:58 - 🤝 Interactive Q&A session complete! 5 interactions saved.
+2025-09-11 09:34:58 - ✅ Step 4/13 complete: Interactive Brainstorm Questions
+2025-09-11 09:34:58 - 
+⏳ Step 5/13: Agent Feedback
+2025-09-11 09:34:58 - 📊 Progress: [█████░░░░░░░░] 5/13
+2025-09-11 09:34:58 - 💭 Starting agent feedback phase...
+2025-09-11 09:34:58 - 📊 Outlines context size: 18295 characters
+2025-09-11 09:34:58 - 📝 Processing 3 agent outlines
+2025-09-11 09:34:58 - 📚 Existing discussion history: 5 items
+2025-09-11 09:34:58 - 📊 Discussion history size: 21866 characters
+2025-09-11 09:34:58 - 💭 Bill Hader is providing feedback...
+2025-09-11 09:36:05 - ✅ Bill Hader's feedback saved to brainstorm_session/Bill Hader.md
+2025-09-11 09:36:05 - 📊 Bill Hader's feedback size: 10890 characters
+2025-09-11 09:36:05 - 💭 Trey Parker is providing feedback...
+2025-09-11 09:37:02 - ✅ Trey Parker's feedback saved to brainstorm_session/Trey Parker.md
+2025-09-11 09:37:02 - 📊 Trey Parker's feedback size: 9255 characters
+2025-09-11 09:37:02 - 💭 Matt Stone is providing feedback...
+2025-09-11 09:37:58 - ✅ Matt Stone's feedback saved to brainstorm_session/Matt Stone.md
+2025-09-11 09:37:58 - 📊 Matt Stone's feedback size: 9644 characters
+2025-09-11 09:37:58 - 📊 Updated discussion history: 8 total items, 51761 characters
+2025-09-11 09:37:58 - 💭 Agent feedback phase complete! 3 feedback items collected.
+2025-09-11 09:37:58 - 📊 Total context being passed forward: 51761 characters
+2025-09-11 09:37:58 - ✅ Step 5/13 complete: Agent Feedback
+2025-09-11 09:37:58 - 
+⏳ Step 6/13: Merge Outlines
+2025-09-11 09:37:58 - 📊 Progress: [██████░░░░░░░] 6/13
+2025-09-11 09:37:58 - 🔀 Merging outlines with Trey Parker...
+2025-09-11 09:37:58 - 📋 Using 3 outlines and 8 discussion items
+2025-09-11 09:37:58 - 📊 Outlines text size: 18295 characters
+2025-09-11 09:37:58 - 📊 Discussion history size: 51775 characters
+2025-09-11 09:37:58 - 📊 Total context size for merge: 70070 characters
+2025-09-11 09:37:58 - 🔍 Context being passed to Trey Parker for merging:
+2025-09-11 09:37:58 -   - Outlines: 18295 chars from 3 agents
+2025-09-11 09:37:58 -   - Discussion: 51775 chars from 8 entries
+2025-09-11 09:39:16 - 📊 Merged outline output size: 8507 characters
+2025-09-11 09:39:16 - ✅ Outline merging complete! Saved to final_merged_outline.md
+2025-09-11 09:39:16 - ✅ Step 6/13 complete: Merge Outlines
+2025-09-11 09:39:16 - 
+⏳ Step 7/13: Refine Outline
+2025-09-11 09:39:16 - 📊 Progress: [███████░░░░░░] 7/13
+2025-09-11 09:39:16 - 🔧 Starting outline refinement phase...
+2025-09-11 09:39:16 - 🔧 Bill Hader is refining the merged outline...
+2025-09-11 09:40:05 - ✅ Bill Hader completed refinement (saved to refine/Bill Hader.md)
+2025-09-11 09:40:05 - 🔧 Trey Parker is refining the merged outline...
+2025-09-11 09:40:46 - ✅ Trey Parker completed refinement (saved to refine/Trey Parker.md)
+2025-09-11 09:40:46 - 🔧 Matt Stone is refining the merged outline...
+2025-09-11 09:41:28 - ✅ Matt Stone completed refinement (saved to refine/Matt Stone.md)
+2025-09-11 09:41:28 - 🔧 Outline refinement complete! 3 refined outlines ready.
+2025-09-11 09:41:28 - ✅ Step 7/13 complete: Refine Outline
+2025-09-11 09:41:28 - 
+⏳ Step 8/13: Final Discussion
+2025-09-11 09:41:28 - 📊 Progress: [████████░░░░░] 8/13
+2025-09-11 09:41:28 - 🎯 Starting final discussion phase...
+2025-09-11 09:41:28 - 📊 Final discussion context sizes:
+2025-09-11 09:41:28 -   - Outlines: 23556 characters from 3 agents
+2025-09-11 09:41:28 -   - Existing discussion: 8 items, 51761 characters
+2025-09-11 09:41:28 - 🎯 Bill Hader is providing final feedback...
+2025-09-11 09:42:32 - ✅ Bill Hader's final feedback saved to final_discussion_feedback/Bill Hader.md
+2025-09-11 09:42:32 - 📊 Bill Hader's final feedback size: 9249 characters
+2025-09-11 09:42:32 - 🎯 Trey Parker is providing final feedback...
+2025-09-11 09:43:19 - ✅ Trey Parker's final feedback saved to final_discussion_feedback/Trey Parker.md
+2025-09-11 09:43:19 - 📊 Trey Parker's final feedback size: 7514 characters
+2025-09-11 09:43:19 - 🎯 Matt Stone is providing final feedback...
+2025-09-11 09:44:17 - ✅ Matt Stone's final feedback saved to final_discussion_feedback/Matt Stone.md
+2025-09-11 09:44:17 - 📊 Matt Stone's final feedback size: 6942 characters
+2025-09-11 09:44:17 - 📊 Final discussion history: 11 total items, 75566 characters
+2025-09-11 09:44:17 - 🔀 Trey Parker is creating final merged outline from discussion...
+2025-09-11 09:44:17 - 🔍 Final merge context:
+2025-09-11 09:44:17 -   - Outlines: 23556 characters
+2025-09-11 09:44:17 -   - Final discussion: 23809 characters
+2025-09-11 09:44:17 -   - Total merge context: 47365 characters
+2025-09-11 09:45:12 - 📊 Final merged outline size: 9567 characters
+2025-09-11 09:45:12 - 🎯 Final discussion complete! 3 final feedback items processed.
+2025-09-11 09:45:12 - 📊 Total accumulated context: 75566 characters
+2025-09-11 09:45:12 - ✅ Step 8/13 complete: Final Discussion
+2025-09-11 09:45:12 - 
+⏳ Step 9/13: Write Act One
+2025-09-11 09:45:12 - 📊 Progress: [█████████░░░░] 9/13
+2025-09-11 09:45:12 - 📝 Writing Act One script...
+2025-09-11 09:45:12 - 📋 Using 8 discussion items for context
+2025-09-11 09:46:22 - ✅ Act One script completed!
+2025-09-11 09:46:22 - ✅ Step 9/13 complete: Write Act One
+2025-09-11 09:46:22 - 
+⏳ Step 10/13: Write Act Two
+2025-09-11 09:46:22 - 📊 Progress: [██████████░░░] 10/13
+2025-09-11 09:46:22 - 📝 Writing Act Two script...
+2025-09-11 09:46:22 - 📋 Using 8 discussion items for context
+2025-09-11 09:47:55 - ✅ Act Two script completed!
+2025-09-11 09:47:55 - ✅ Step 10/13 complete: Write Act Two
+2025-09-11 09:47:55 - 
+⏳ Step 11/13: Write Act Three
+2025-09-11 09:47:55 - 📊 Progress: [███████████░░] 11/13
+2025-09-11 09:47:55 - 📝 Writing Act Three script...
+2025-09-11 09:47:55 - 📋 Using 8 discussion items for context
+2025-09-11 09:49:11 - ✅ Act Three script completed!
+2025-09-11 09:49:11 - ✅ Step 11/13 complete: Write Act Three
+2025-09-11 09:49:11 - 
+⏳ Step 12/13: Stitch Script
+2025-09-11 09:49:11 - 📊 Progress: [████████████░] 12/13
+2025-09-11 09:49:11 - 🎬 Stitching all acts together...
+2025-09-11 09:49:11 - ✅ Complete script saved to script.md
+2025-09-11 09:49:11 - ✅ Step 12/13 complete: Stitch Script
+2025-09-11 09:49:11 - 
+⏳ Step 13/13: Summarize Script
+2025-09-11 09:49:11 - 📊 Progress: [█████████████] 13/13
+2025-09-11 09:49:11 - 📄 Creating script summary...
+2025-09-11 09:49:26 - ✅ Script summary completed!
+2025-09-11 09:49:26 - ✅ Step 13/13 complete: Summarize Script
+2025-09-11 09:49:26 - ============================================================
+2025-09-11 09:49:26 - 🎉 Episode part 1 generation complete!
+2025-09-11 09:49:26 - 📁 Episode logs written to: logs/The_next_season_of_Big_Brother_happens_inside_of_southpark_and_is_comprised_of_south_park_characters/20250911_163112/part_01
