@@ -143,26 +143,26 @@ southpark-langgraph/
 
 ### Basic Episode Generation
 ```bash
-python cli.py "Episode idea here"
+uv run python spgen/cli.py "Episode idea here"
 ```
 
 ### Multi-Part Episodes
 ```bash
-python cli.py "Epic storyline" -n 3  # Generate 3-part episode
+uv run python spgen/cli.py "Epic storyline" -n 3  # Generate 3-part episode
 ```
 
 ### Persona Selection
 ```bash
 # Include specific writers only
-python cli.py "Episode idea" --include_personas "Trey Parker,Matt Stone,Bill Hader"
+uv run python spgen/cli.py "Episode idea" --include_personas "Trey Parker,Matt Stone,Bill Hader"
 
 # Exclude certain writers
-python cli.py "Episode idea" --exclude_personas "Chris Farley,Conan O'Brian"
+uv run python spgen/cli.py "Episode idea" --exclude_personas "Chris Farley,Conan O'Brian"
 ```
 
 ### Dynamic News Integration
 ```bash
-python cli.py "Episode idea" --dynamic_prompt  # Include current events
+uv run python spgen/cli.py "Episode idea" --dynamic_prompt  # Include current events
 ```
 
 ## 📊 Output Examples

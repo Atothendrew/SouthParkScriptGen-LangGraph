@@ -11,19 +11,19 @@
 
 ```bash
 # Generate a single episode
-python cli.py "The kids accidentally discover time travel"
+uv run python spgen/cli.py "The kids accidentally discover time travel"
 
 # Generate a 3-part episode series
-python cli.py "Randy becomes mayor and chaos ensues" -n 3
+uv run python spgen/cli.py "Randy becomes mayor and chaos ensues" -n 3
 
 # Use only specific writers
-python cli.py "Kyle starts a podcast" --include_personas "Trey Parker,Matt Stone,Bill Hader"
+uv run python spgen/cli.py "Kyle starts a podcast" --include_personas "Trey Parker,Matt Stone,Bill Hader"
 
 # Exclude certain writers  
-python cli.py "Cartman opens a restaurant" --exclude_personas "Chris Farley,Conan O'Brian"
+uv run python spgen/cli.py "Cartman opens a restaurant" --exclude_personas "Chris Farley,Conan O'Brian"
 
 # Include current events context
-python cli.py "The town deals with social media drama" --dynamic_prompt
+uv run python spgen/cli.py "The town deals with social media drama" --dynamic_prompt
 ```
 
 ## Output Structure
