@@ -1,0 +1,40 @@
+AGENT_CHANGELOG.txt - South Park Script Generator
+
+v0.0.1 - Workflow Diagram Generation (2025-09-11)
+==================================================
+
+ADDED:
+- Complete visual workflow diagram in WORKFLOW_DIAGRAM.md
+- Mermaid flowchart representation of the 13-step LangGraph process
+- Detailed documentation of workflow phases and components
+- Color-coded diagram sections for different workflow phases
+- Technical implementation details and architecture overview
+
+ENHANCED:
+- README.md updated to reference new workflow diagram
+- Step count corrected from 12 to 13 steps in documentation
+- Added visual workflow diagram link to architecture section
+
+CREATED:
+- AGENT_KNOWLEDGE.md with comprehensive project knowledge base
+- AGENT_CHANGELOG.txt for tracking project evolution
+- Documentation of LangGraph StateGraph architecture
+- Multi-agent collaboration patterns and state management
+- Complete workflow step enumeration and descriptions
+
+TECHNICAL DETAILS:
+- Conditional entry point visualization (Dynamic Prompt vs Direct Mode)
+- State flow documentation through EpisodeState TypedDict
+- Progress tracking and logging system architecture
+- Persona configuration and prompt engineering patterns
+- Error handling and reliability mechanisms
+
+SUCCESS CRITERIA:
+✓ Complete workflow visualization created
+✓ All 13 workflow steps documented and diagrammed
+✓ Conditional flow paths clearly illustrated
+✓ Technical architecture documented
+✓ Project knowledge base established
+✓ Documentation cross-references added
+
+This addition provides essential visual documentation for understanding the complex LangGraph workflow and multi-agent collaboration system.
