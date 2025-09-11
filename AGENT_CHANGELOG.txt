@@ -1,5 +1,45 @@
 AGENT_CHANGELOG.txt - South Park Script Generator
 
+v0.0.3 - Complete Season 1 Episode Summaries (2025-09-11)
+
+ADDED:
+- Complete Season 1 episode summaries (S01E01-S01E13)
+- All 13 episodes of Season 1 now have comprehensive YAML summaries
+- Each episode includes detailed plot, character, theme, and continuity information
+- Consistent schema structure across all episode summaries
+
+CREATED:
+- episode_summaries/s01e06_death.yaml - Death and Terrance & Phillip introduction
+- episode_summaries/s01e07_pinkeye.yaml - Halloween zombie outbreak episode
+- episode_summaries/s01e08_starvin_marvin.yaml - Thanksgiving charity satire
+- episode_summaries/s01e09_mr_hankey_the_christmas_poo.yaml - Christmas inclusion episode
+- episode_summaries/s01e10_damien.yaml - Good vs evil boxing match
+- episode_summaries/s01e11_toms_rhinoplasty.yaml - Beauty standards and romance
+- episode_summaries/s01e12_mecha_streisand.yaml - Kaiju celebrity parody
+- episode_summaries/s01e13_cartmans_mom_is_a_dirty_slut.yaml - Season finale cliffhanger
+
+ENHANCED:
+- Complete Season 1 continuity tracking with character introductions
+- Running gag documentation across all episodes
+- Cultural reference cataloging for 1997-1998 period
+- Holiday episode identification and thematic analysis
+
+TECHNICAL DETAILS:
+- All episodes follow established EpisodeSummary schema structure
+- Consistent character development tracking across season
+- Plot connection documentation for multi-episode arcs
+- Cultural impact and controversy documentation for each episode
+
+SUCCESS CRITERIA:
+✓ All 13 Season 1 episodes summarized
+✓ Consistent schema structure maintained
+✓ Character continuity tracked across season
+✓ Running gags and cultural references documented
+✓ Holiday episodes properly categorized
+✓ Season finale cliffhanger setup documented
+
+This completes the foundational episode database for Season 1, providing comprehensive continuity tracking for future script generation.
+
 v0.0.1 - Workflow Diagram Generation (2025-09-11)
 ==================================================
 
@@ -38,3 +78,52 @@ SUCCESS CRITERIA:
 ✓ Documentation cross-references added
 
 This addition provides essential visual documentation for understanding the complex LangGraph workflow and multi-agent collaboration system.
+
+v0.0.2 - Episode Summary Schema System (2025-09-11)
+
+ADDED:
+- Comprehensive EpisodeSummary dataclass schema for episode continuity tracking
+- YAML-based episode storage system in episode_summaries/ directory
+- EpisodeSummaryLoader class for YAML serialization/deserialization
+- EpisodeDatabase class for querying and managing episode collections
+- Complete S01E01 "Cartman Gets an Anal Probe" episode summary as reference
+
+CREATED:
+- spgen/schemas/episode_summary.py - Core dataclass definitions and enums
+- spgen/schemas/yaml_loader.py - YAML loading and database functionality
+- spgen/schemas/__init__.py - Package exports for schema classes
+- episode_summaries/s01e01_cartman_gets_an_anal_probe.yaml - First episode summary
+- episode_summaries/README.md - Documentation and usage examples
+- test_episode_yaml.py - Test script for YAML functionality validation
+
+ENHANCED:
+- AGENT_KNOWLEDGE.md updated with episode summary system documentation
+- Schema integration points for script generation workflow
+- Continuity tracking capabilities for character development and running gags
+
+TECHNICAL DETAILS:
+- Structured episode data with basic info, plot, characters, content elements
+- Cultural references and running gag tracking with evolution notes
+- Continuity elements: callbacks, setup, character development, world building
+- Production metadata: quotes, scenes, credits, historical context
+- Type-safe schema with enums for episode types and character roles
+- Database-like querying: search by content, character appearances, running gags
+
+SCHEMA STRUCTURE:
+- EpisodeSummary: Main dataclass with comprehensive episode information
+- CharacterAppearance: Character roles and development tracking
+- PlotThread: Individual storylines with resolution status
+- CulturalReference: Parodies and topical content cataloging
+- RunningGag: Recurring elements with frequency and evolution tracking
+- Location: Setting information with significance notes
+- ThematicElement: Themes, moral lessons, and social commentary
+
+SUCCESS CRITERIA:
+✓ Complete episode schema system implemented
+✓ YAML storage and loading functionality created
+✓ Database querying capabilities established
+✓ S01E01 comprehensive summary completed
+✓ Documentation and usage examples provided
+✓ Integration points with script generator identified
+
+This addition establishes a robust foundation for episode continuity tracking and provides structured data for maintaining consistency across generated South Park episodes.

@@ -1,0 +1,115 @@
+basic_info:
+  title: "Tom's Rhinoplasty"
+  season: 1
+  episode: 11
+  air_date: "1998-02-11"
+  episode_type: "REGULAR"
+  runtime_minutes: 22
+
+plot:
+  main_storyline: "Mr. Garrison gets a nose job and becomes incredibly attractive, leading to him being fired and replaced by the beautiful substitute teacher Ms. Ellen, whom all the boys fall in love with."
+  subplot: "Stan tries to win Ms. Ellen's affections while competing with the other boys, and Wendy becomes extremely jealous and plots to get rid of the substitute teacher."
+  resolution: "Wendy discovers that Ms. Ellen is actually a man (Ms. Choksondik's brother) and exposes this to the class. Mr. Garrison returns after his nose job fails, and things return to normal."
+  episode_arc: "Exploration of beauty standards, jealousy, and the boys' first major romantic competition."
+
+characters:
+  main_characters:
+    - name: "Stan Marsh"
+      role: "PROTAGONIST"
+      description: "Falls head-over-heels for Ms. Ellen and tries various ways to impress her"
+      character_development: "Shows his romantic side and competitiveness with other boys"
+    - name: "Kyle Broflovski"
+      role: "MAIN"
+      description: "Also infatuated with Ms. Ellen and competes with Stan for her attention"
+      character_development: "Displays typical boyhood crush behavior"
+    - name: "Eric Cartman"
+      role: "MAIN"
+      description: "Obsessed with Ms. Ellen and believes he has the best chance with her"
+      character_development: "Shows his delusional self-confidence in romantic matters"
+    - name: "Kenny McCormick"
+      role: "MAIN"
+      description: "Participates in the competition for Ms. Ellen's affections"
+      character_development: "Standard Kenny participation in group dynamics"
+
+  supporting_characters:
+    - name: "Mr. Garrison"
+      role: "SUPPORTING"
+      description: "Gets plastic surgery to become attractive but loses his job as a result"
+    - name: "Ms. Ellen"
+      role: "SUPPORTING"
+      description: "Beautiful substitute teacher who captures all the boys' hearts"
+    - name: "Wendy Testaburger"
+      role: "SUPPORTING"
+      description: "Stan's girlfriend who becomes intensely jealous of Ms. Ellen"
+    - name: "Chef"
+      role: "SUPPORTING"
+      description: "Provides advice about love and relationships to the boys"
+
+content_elements:
+  violence_level: "LOW"
+  language: "MILD"
+  adult_themes:
+    - "Plastic surgery and beauty standards"
+    - "Romantic jealousy and competition"
+    - "Gender identity and deception"
+    - "Workplace discrimination based on appearance"
+  cultural_references:
+    - reference: "Plastic surgery culture"
+      context: "1990s rise in cosmetic surgery popularity"
+    - reference: "Teacher-student crushes"
+      context: "Common childhood experience of crushing on teachers"
+    - reference: "Beauty and the Beast"
+      context: "Transformation themes and inner vs. outer beauty"
+    - reference: "Gender reveal/deception tropes"
+      context: "Classic comedy device of hidden identity"
+
+themes:
+  primary_themes:
+    - "Beauty standards and superficiality"
+    - "Romantic jealousy and competition"
+    - "The consequences of trying to change yourself"
+    - "First love and childhood crushes"
+  social_commentary:
+    - "Critique of beauty standards and plastic surgery"
+    - "Satire of romantic competition"
+    - "Commentary on workplace appearance discrimination"
+    - "Exploration of gender identity themes"
+
+continuity:
+  character_introductions:
+    - "Ms. Ellen (one-time character)"
+    - "Introduction of Mr. Garrison's insecurities about appearance"
+  running_gags:
+    - gag: "Kenny's death"
+      description: "Kenny dies when he's crushed by a falling light fixture"
+    - gag: "Stan and Wendy's relationship drama"
+      description: "First major test of Stan and Wendy's relationship"
+  plot_connections:
+    - "Establishes pattern of boys falling for substitute teachers"
+    - "Shows Wendy's jealous and vengeful side"
+    - "Introduces Mr. Garrison's vanity and insecurity themes"
+
+locations:
+  primary_locations:
+    - name: "South Park Elementary"
+      description: "Where the romantic drama unfolds in the classroom"
+    - name: "Plastic surgery clinic"
+      description: "Where Mr. Garrison gets his nose job"
+    - name: "Various South Park locations"
+      description: "Where the boys attempt to impress Ms. Ellen"
+    - name: "Wendy's house"
+      description: "Where Wendy plots against Ms. Ellen"
+
+production_notes:
+  writer: "Trey Parker"
+  director: "Trey Parker"
+  notable_aspects:
+    - "Early exploration of gender identity themes"
+    - "Focus on romantic relationships and jealousy"
+    - "Commentary on beauty standards"
+    - "Character development for Mr. Garrison"
+
+cultural_impact:
+  significance: "Explored themes of beauty standards and gender identity that would become recurring topics"
+  controversy: "Some criticism for handling of gender identity themes"
+  legacy: "Established template for episodes dealing with romantic competition among the boys"

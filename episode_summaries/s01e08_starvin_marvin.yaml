@@ -1,0 +1,116 @@
+basic_info:
+  title: "Starvin' Marvin"
+  season: 1
+  episode: 8
+  air_date: "1997-11-19"
+  runtime_minutes: 22
+  episode_type: "HOLIDAY"
+
+plot:
+  main_storyline: "The boys accidentally send money to a starving Ethiopian child named Marvin instead of sponsoring him, leading to Marvin being sent to South Park while Cartman is mistakenly sent to Ethiopia."
+  subplot: "Sally Struthers hoards food meant for starving children while using charity donations for her own benefit, and the government wants to use Marvin for military experiments."
+  resolution: "The boys help Marvin return to Ethiopia with a flock of turkeys to feed his village, while exposing Sally Struthers' corruption and reuniting with Cartman."
+  episode_arc: "Thanksgiving episode that satirizes celebrity charity campaigns and explores themes of global poverty and cultural misunderstanding."
+
+characters:
+  main_characters:
+    - name: "Stan Marsh"
+      role: "PROTAGONIST"
+      description: "Feels responsible for Marvin and works to help him return home safely"
+      character_development: "Shows compassion and moral responsibility"
+    - name: "Kyle Broflovski"
+      role: "MAIN"
+      description: "Supports helping Marvin and questions the charity system"
+      character_development: "Demonstrates his sense of justice and fairness"
+    - name: "Eric Cartman"
+      role: "MAIN"
+      description: "Gets sent to Ethiopia by mistake and experiences extreme poverty firsthand"
+      character_development: "Gains perspective on privilege, though temporarily"
+    - name: "Kenny McCormick"
+      role: "MAIN"
+      description: "Participates in helping Marvin and the turkey rescue mission"
+      character_development: "Shows solidarity with the group's charitable efforts"
+
+  supporting_characters:
+    - name: "Starvin' Marvin"
+      role: "SUPPORTING"
+      description: "Ethiopian child who comes to South Park and befriends the boys"
+    - name: "Sally Struthers"
+      role: "ANTAGONIST"
+      description: "Corrupt celebrity spokesperson who hoards charity food and money"
+    - name: "Dr. Gouache"
+      role: "SUPPORTING"
+      description: "Government scientist who wants to experiment on Marvin"
+    - name: "Ethiopian Village Elder"
+      role: "SUPPORTING"
+      description: "Leader of Marvin's village who welcomes the boys' help"
+
+content_elements:
+  violence_level: "MODERATE"
+  language: "MILD"
+  adult_themes:
+    - "Global poverty and starvation"
+    - "Charity corruption and exploitation"
+    - "Cultural imperialism"
+    - "Government experimentation"
+  cultural_references:
+    - reference: "Sally Struthers charity commercials"
+      context: "1980s-90s celebrity charity spokesperson campaigns"
+    - reference: "Ethiopian famine"
+      context: "1980s humanitarian crisis and Western response"
+    - reference: "Thanksgiving traditions"
+      context: "American holiday contrasted with global hunger"
+    - reference: "E.T. the Extra-Terrestrial"
+      context: "Government pursuit of unusual visitor"
+
+themes:
+  primary_themes:
+    - "Global inequality and privilege"
+    - "Charity corruption and celebrity exploitation"
+    - "Cultural understanding and friendship"
+    - "Thanksgiving gratitude and sharing"
+  social_commentary:
+    - "Critique of celebrity charity campaigns"
+    - "Satire of Western guilt and ineffective aid"
+    - "Commentary on government overreach"
+    - "Exploration of genuine vs. performative charity"
+
+continuity:
+  character_introductions:
+    - "Starvin' Marvin (recurring character)"
+    - "Sally Struthers (as antagonist)"
+    - "Dr. Gouache"
+  running_gags:
+    - gag: "Kenny's death"
+      description: "Kenny dies when Sally Struthers sits on him"
+    - gag: "Cartman's selfishness"
+      description: "Even in Ethiopia, Cartman complains about the food"
+  plot_connections:
+    - "Establishes Marvin as recurring character"
+    - "Sets up future episodes about international issues"
+    - "Introduces theme of boys helping those in need"
+
+locations:
+  primary_locations:
+    - name: "South Park"
+      description: "Where Marvin experiences American culture and abundance"
+    - name: "Ethiopian village"
+      description: "Marvin's home showing extreme poverty and hunger"
+    - name: "Sally Struthers' compound"
+      description: "Where charity food is hoarded instead of distributed"
+    - name: "Government facility"
+      description: "Where officials want to study Marvin"
+
+production_notes:
+  writer: "Trey Parker"
+  director: "Trey Parker"
+  notable_aspects:
+    - "First Thanksgiving episode"
+    - "Introduction of Starvin' Marvin character"
+    - "Heavy satire of celebrity charity campaigns"
+    - "Exploration of global poverty themes"
+
+cultural_impact:
+  significance: "Established South Park's approach to international issues and celebrity satire"
+  controversy: "Criticized for potentially insensitive portrayal of Ethiopian poverty"
+  legacy: "Led to sequel episode and ongoing international storylines"

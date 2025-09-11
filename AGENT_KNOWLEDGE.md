@@ -171,4 +171,39 @@ spgen generate --include "Trey Parker,Matt Stone" --exclude "Bill Hader"
 - Error tracking and debugging support
 - Workflow timing and performance metrics
 
+## Episode Summary System
+
+### YAML-Based Episode Database
+- **Schema**: Comprehensive `EpisodeSummary` dataclass with structured episode information
+- **Storage**: YAML files in `episode_summaries/` directory for human-readable episode data
+- **Loader**: `EpisodeSummaryLoader` class for YAML serialization/deserialization
+- **Database**: `EpisodeDatabase` class for querying and managing episode collections
+
+### Episode Schema Structure
+```python
+@dataclass
+class EpisodeSummary:
+    # Basic episode information (season, episode, title, air date, type)
+    # Plot details (logline, summary, plot threads)
+    # Character information (main, supporting, new characters with roles)
+    # Content elements (cultural references, running gags, locations)
+    # Themes and analysis (thematic elements, social commentary)
+    # Continuity tracking (callbacks, setup, character development)
+    # Production notes (quotes, scenes, animation, credits)
+    # Context (historical, controversy, reception notes)
+```
+
+### Continuity Integration
+- **Character Consistency**: Track character development across episodes
+- **Running Gags**: Monitor evolution of recurring jokes and elements
+- **Plot Continuity**: Connect storylines and unresolved plot threads
+- **World Building**: Maintain consistency of locations and established rules
+- **Cultural References**: Catalog parodies and topical content for context
+
+### Usage in Script Generation
+- **Pre-Generation Context**: Load relevant episode summaries for continuity
+- **Character Voice**: Reference established character patterns and development
+- **Callback Opportunities**: Identify potential references to previous episodes
+- **Consistency Checking**: Ensure new content aligns with established canon
+
 This knowledge base provides the essential context for understanding the South Park Script Generator's architecture, workflow, and capabilities for effective AI collaboration in creative writing tasks.

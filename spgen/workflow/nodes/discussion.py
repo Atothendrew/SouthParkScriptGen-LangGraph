@@ -4,9 +4,9 @@ import os
 from typing import Dict
 
 from spgen.workflow.state import EpisodeState
-from spgen.workflow.llm_client import llm_call, search_tool
+from spgen.workflow.llm_client import llm_call, llm_call_with_model, search_tool
 from spgen.workflow.logger import get_logger
-from spgen.workflow.utils import should_include_persona
+from spgen.workflow.utils import should_include_persona, sanitize_filename
 from spgen.agents import PERSONAS
 
 
@@ -14,21 +14,21 @@ def agent_feedback(state: EpisodeState) -> Dict:
     """Each agent provides feedback on the other agents' ideas in a brainstorm session."""
     logger = get_logger()
     logger.info("💭 Starting agent feedback phase...")
-    
+
     # Log context size and content for debugging
     outlines_text = "\n\n".join(
         f"**{item['name']}**:\n{item['outline']}" for item in state["agent_outputs"]
     )
     logger.info(f"📊 Outlines context size: {len(outlines_text)} characters")
     logger.info(f"📝 Processing {len(state['agent_outputs'])} agent outlines")
-    
+
     # Log existing discussion history for context analysis
     existing_history = state.get("discussion_history", [])
     logger.info(f"📚 Existing discussion history: {len(existing_history)} items")
     if existing_history:
         total_history_chars = sum(len(item) for item in existing_history)
         logger.info(f"📊 Discussion history size: {total_history_chars} characters")
-    
+
     feedback = []
     brainstorm_session_dir = os.path.join(state["log_dir"], "brainstorm_session")
     os.makedirs(brainstorm_session_dir, exist_ok=True)
@@ -39,17 +39,21 @@ def agent_feedback(state: EpisodeState) -> Dict:
 
         logger.info(f"💭 {name} is providing feedback...")
         feedback_prompt = persona["discussion_prompt"]
-        response = llm_call(
-            feedback_prompt, 
-            temperature=persona["temperature"]["discussion"], 
-            tools=[search_tool], 
-            outlines=outlines_text
+        response, model_name = llm_call_with_model(
+            feedback_prompt,
+            temperature=persona["temperature"]["discussion"],
+            tools=[search_tool],
+            outlines=outlines_text,
         )
         feedback.append(f"**{name}'s Brainstorm Ideas:**\n{response}")
-        with open(os.path.join(brainstorm_session_dir, f"{name}.md"), "w", encoding="utf-8") as f:
+        filename = f"{sanitize_filename(name)}.md"
+        filepath = os.path.join(brainstorm_session_dir, filename)
+        with open(filepath, "w", encoding="utf-8") as f:
             f.write(f"# {name} Brainstorm Session\n\n{response}")
-        logger.info(f"✅ {name}'s feedback saved to brainstorm_session/{name}.md")
-        logger.info(f"📊 {name}'s feedback size: {len(response)} characters")
+        logger.info(f"✅ {name}'s feedback saved to {os.path.abspath(filepath)}")
+        logger.info(
+            f"📊 {name}'s feedback size: {len(response)} characters ({model_name})"
+        )
 
     # Append to existing discussion history instead of overwriting
     new_discussion_history = existing_history + feedback
@@ -75,35 +79,39 @@ def merge_outlines(state: EpisodeState) -> Dict:
         f"**{item['name']}**:\n{item['outline']}" for item in state["agent_outputs"]
     )
     discussion_history = "\n\n".join(state["discussion_history"])
-    
+
     # Enhanced logging for debugging large context issues
     logger.info(f"📋 Using {len(state['agent_outputs'])} outlines and {len(state['discussion_history'])} discussion items")
     logger.info(f"📊 Outlines text size: {len(outlines_text)} characters")
     logger.info(f"📊 Discussion history size: {len(discussion_history)} characters")
     logger.info(f"📊 Total context size for merge: {len(outlines_text) + len(discussion_history)} characters")
-    
+
     # Log what context is actually being used
     logger.info(f"🔍 Context being passed to Trey Parker for merging:")
     logger.info(f"  - Outlines: {len(outlines_text)} chars from {len(state['agent_outputs'])} agents")
     logger.info(f"  - Discussion: {len(discussion_history)} chars from {len(state['discussion_history'])} entries")
-    
+
     # Use a neutral persona (Trey) to merge
     merge_prompt = PERSONAS["Trey Parker"]["discussion_prompt"]
     prompt = f"{merge_prompt}\n\nHere is the discussion history:\n{discussion_history}"
-    merged_outline = llm_call(
-        prompt, 
-        temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"], 
-        tools=[search_tool], 
-        outlines=outlines_text
+    merged_outline, model_name = llm_call_with_model(
+        prompt,
+        temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"],
+        tools=[search_tool],
+        outlines=outlines_text,
     )
-    
-    logger.info(f"📊 Merged outline output size: {len(merged_outline)} characters")
+
+    logger.info(
+        f"📊 Merged outline output size: {len(merged_outline)} characters ({model_name})"
+    )
     state["merged_outline"] = merged_outline
 
     with open(os.path.join(state["log_dir"], "final_merged_outline.md"), "w", encoding="utf-8") as f:
         f.write(f"# Final Merged Outline\n\n{merged_outline}")
 
-    logger.info("✅ Outline merging complete! Saved to final_merged_outline.md")
+    logger.info(
+        f"✅ Outline merging complete! Saved to {os.path.abspath(os.path.join(state['log_dir'], 'final_merged_outline.md'))}"
+    )
     return {"merged_outline": merged_outline}
 
 
@@ -111,7 +119,7 @@ def final_discussion(state: EpisodeState) -> Dict:
     """Agents have a final discussion and merge refined outlines."""
     logger = get_logger()
     logger.info("🎯 Starting final discussion phase...")
-    
+
     # Log context analysis for final discussion
     outlines_text = "\n\n".join(
         f"**{item['name']}**:\n{item['outline']}" for item in state["agent_outputs"]
@@ -120,7 +128,7 @@ def final_discussion(state: EpisodeState) -> Dict:
     logger.info(f"📊 Final discussion context sizes:")
     logger.info(f"  - Outlines: {len(outlines_text)} characters from {len(state['agent_outputs'])} agents")
     logger.info(f"  - Existing discussion: {len(existing_history)} items, {sum(len(item) for item in existing_history)} characters")
-    
+
     feedback = []
     final_discussion_feedback_dir = os.path.join(state["log_dir"], "final_discussion_feedback")
     os.makedirs(final_discussion_feedback_dir, exist_ok=True)
@@ -131,17 +139,21 @@ def final_discussion(state: EpisodeState) -> Dict:
 
         logger.info(f"🎯 {name} is providing final feedback...")
         feedback_prompt = persona["discussion_prompt"]
-        response = llm_call(
-            feedback_prompt, 
-            temperature=persona["temperature"]["discussion"], 
-            tools=[search_tool], 
-            outlines=outlines_text
+        response, model_name = llm_call_with_model(
+            feedback_prompt,
+            temperature=persona["temperature"]["discussion"],
+            tools=[search_tool],
+            outlines=outlines_text,
         )
         feedback.append(f"**{name}'s Final Feedback:**\n{response}")
-        with open(os.path.join(final_discussion_feedback_dir, f"{name}.md"), "w", encoding="utf-8") as f:
+        filename = f"{sanitize_filename(name)}.md"
+        filepath = os.path.join(final_discussion_feedback_dir, filename)
+        with open(filepath, "w", encoding="utf-8") as f:
             f.write(f"# {name} Final Feedback\n\n{response}")
-        logger.info(f"✅ {name}'s final feedback saved to final_discussion_feedback/{name}.md")
-        logger.info(f"📊 {name}'s final feedback size: {len(response)} characters")
+        logger.info(f"✅ {name}'s final feedback saved to {os.path.abspath(filepath)}")
+        logger.info(
+            f"📊 {name}'s final feedback size: {len(response)} characters ({model_name})"
+        )
 
     # Append to existing discussion history instead of overwriting
     new_final_history = existing_history + feedback
@@ -162,16 +174,18 @@ def final_discussion(state: EpisodeState) -> Dict:
     logger.info(f"  - Outlines: {len(outlines_text)} characters")
     logger.info(f"  - Final discussion: {len(final_discussion_text)} characters")
     logger.info(f"  - Total merge context: {len(outlines_text) + len(final_discussion_text)} characters")
-    
-    final_merged_outline = llm_call(
-        merge_prompt, 
-        temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"], 
-        tools=[search_tool], 
-        outlines=outlines_text, 
-        discussion=final_discussion_text
+
+    final_merged_outline, model_name = llm_call_with_model(
+        merge_prompt,
+        temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"],
+        tools=[search_tool],
+        outlines=outlines_text,
+        discussion=final_discussion_text,
     )
-    
-    logger.info(f"📊 Final merged outline size: {len(final_merged_outline)} characters")
+
+    logger.info(
+        f"📊 Final merged outline size: {len(final_merged_outline)} characters ({model_name})"
+    )
     state["merged_outline"] = final_merged_outline
 
     with open(os.path.join(state["log_dir"], "final_merged_outline.md"), "w", encoding="utf-8") as f:

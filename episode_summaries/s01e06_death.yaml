@@ -1,0 +1,110 @@
+basic_info:
+  title: "Death"
+  season: 1
+  episode: 6
+  air_date: "1997-09-17"
+  episode_type: "REGULAR"
+  runtime_minutes: 22
+
+plot:
+  main_storyline: "Stan's grandfather repeatedly asks Stan to kill him because he's tired of living, while the boys become obsessed with the violent TV show 'Terrance and Phillip' despite parental opposition."
+  subplot: "The parents of South Park, led by Sheila Broflovski, campaign against Terrance and Phillip for corrupting their children with crude humor and violence."
+  resolution: "Death arrives to take Grandpa Marsh but is distracted by Terrance and Phillip, finding the show hilarious. The parents' protest backfires when they realize they're being hypocritical."
+  episode_arc: "Introduction of Death as a character and exploration of generational conflicts over entertainment."
+
+characters:
+  main_characters:
+    - name: "Stan Marsh"
+      role: "PROTAGONIST"
+      description: "Struggles with his grandfather's repeated requests for assisted suicide while defending his right to watch Terrance and Phillip"
+      character_development: "Shows moral conflict about helping his grandfather die"
+    - name: "Kyle Broflovski"
+      role: "MAIN"
+      description: "Supports Stan and enjoys Terrance and Phillip despite his mother's opposition"
+      character_development: "Continues to be the voice of reason among the boys"
+    - name: "Eric Cartman"
+      role: "MAIN"
+      description: "Obsessed with Terrance and Phillip and dismissive of adult concerns"
+      character_development: "Shows his typical disregard for authority"
+    - name: "Kenny McCormick"
+      role: "MAIN"
+      description: "Enjoys the show with the other boys"
+      character_development: "Standard Kenny participation"
+
+  supporting_characters:
+    - name: "Grandpa Marsh"
+      role: "SUPPORTING"
+      description: "Stan's grandfather who desperately wants to die and repeatedly asks Stan to kill him"
+    - name: "Death"
+      role: "SUPPORTING"
+      description: "The Grim Reaper who comes for Grandpa but gets distracted by Terrance and Phillip"
+    - name: "Sheila Broflovski"
+      role: "SUPPORTING"
+      description: "Leads the parental crusade against Terrance and Phillip"
+    - name: "Terrance and Phillip"
+      role: "SUPPORTING"
+      description: "Canadian comedy duo whose crude show becomes the center of controversy"
+
+content_elements:
+  violence_level: "MODERATE"
+  language: "MILD"
+  adult_themes:
+    - "Assisted suicide/euthanasia"
+    - "Generational conflict"
+    - "Media censorship"
+    - "Parental hypocrisy"
+  cultural_references:
+    - reference: "Beavis and Butt-Head controversy"
+      context: "Parental concerns about violent TV shows corrupting children"
+    - reference: "Canadian stereotypes"
+      context: "Terrance and Phillip represent exaggerated Canadian comedy"
+    - reference: "Grim Reaper mythology"
+      context: "Death as a personified character"
+
+themes:
+  primary_themes:
+    - "Generational differences in entertainment"
+    - "The right to die with dignity"
+    - "Parental hypocrisy and censorship"
+    - "Media influence on children"
+  social_commentary:
+    - "Critique of moral panic over children's entertainment"
+    - "Exploration of end-of-life issues"
+    - "Satire of parental overreaction to media"
+
+continuity:
+  character_introductions:
+    - "Death (Grim Reaper)"
+    - "Grandpa Marsh (first major appearance)"
+    - "Terrance and Phillip (first appearance)"
+  running_gags:
+    - gag: "Kenny's death"
+      description: "Kenny dies when Death touches him accidentally"
+    - gag: "Terrance and Phillip farting"
+      description: "Establishes the crude humor that defines the Canadian duo"
+  plot_connections:
+    - "Introduces Terrance and Phillip as recurring characters"
+    - "Establishes Death as a character who can return"
+    - "Sets up ongoing parental concerns about the boys' entertainment"
+
+locations:
+  primary_locations:
+    - name: "Marsh residence"
+      description: "Where Grandpa Marsh lives and repeatedly asks Stan to kill him"
+    - name: "South Park Elementary"
+      description: "Where the boys discuss Terrance and Phillip"
+    - name: "Community Center"
+      description: "Where parents hold their anti-Terrance and Phillip meeting"
+
+production_notes:
+  writer: "Trey Parker and Matt Stone"
+  director: "Trey Parker"
+  notable_aspects:
+    - "First appearance of Terrance and Phillip"
+    - "Introduction of Death as a recurring character"
+    - "Early exploration of censorship themes"
+
+cultural_impact:
+  significance: "Introduced Terrance and Phillip, who became central to South Park mythology and the show's commentary on Canadian culture"
+  controversy: "Addressed real concerns about violent media and children"
+  legacy: "Established template for episodes dealing with parental moral panic"

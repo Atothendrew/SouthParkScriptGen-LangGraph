@@ -31,9 +31,18 @@ import random
 from typing import Dict, List
 
 from spgen.workflow.state import EpisodeState
-from spgen.workflow.llm_client import llm_call, search_tool
+from spgen.workflow.llm_client import llm_call, llm_call_with_model, search_tool
 from spgen.workflow.logger import get_logger
-from spgen.workflow.utils import should_include_persona
+from spgen.workflow.utils import (
+    should_include_persona,
+    sanitize_filename,
+    write_file_with_logging,
+    append_file_with_logging,
+    log_response_size,
+    create_persona_filename,
+    create_conversation_filename,
+    create_review_filename,
+)
 from spgen.agents import PERSONAS
 
 
@@ -177,10 +186,10 @@ def brainstorm(state: EpisodeState) -> Dict:
             **prompt_kwargs
         )
         outputs.append({"name": name, "outline": outline})
-        with open(os.path.join(ideas_dir, f"{name}.md"), "w", encoding="utf-8") as f:
-            f.write(f"# {name}\n\n{outline}")
-        logger.info(
-            f"✅ {name} completed their idea (saved to episode_ideas/{name}.md)"
+        filename = create_persona_filename(name)
+        filepath = os.path.join(ideas_dir, filename)
+        write_file_with_logging(
+            filepath, f"# {name}\n\n{outline}", logger, "idea", name
         )
 
     state["agent_outputs"] = outputs
@@ -257,27 +266,27 @@ As {asker_name}, ask {target_agent} 2-3 specific, constructive questions about t
 Address {target_agent} directly and keep your questions in character for {asker_name}'s voice and comedy style.
 """
 
-        questions = llm_call(
+        questions, model_name = llm_call_with_model(
             question_prompt,
             temperature=asker_persona["temperature"]["discussion"],
-            tools=[search_tool]
+            tools=[search_tool],
         )
 
-        logger.info(f"📊 {asker_name}'s questions size: {len(questions)} characters")
+        log_response_size(logger, asker_name, questions, model_name, "questions")
         questions_and_responses.append(f"**{asker_name} asks {target_agent}:**\n{questions}")
 
-        # Save individual conversation with clear naming
-        conversation_file = os.path.join(
-            conversations_dir, f"{asker_name}_asks_{target_agent}.md"
-        )
-        with open(conversation_file, "w", encoding="utf-8") as f:
-            f.write(f"# {asker_name} asks {target_agent}\n\n")
-            f.write(f"## Questions from {asker_name}:\n\n{questions}\n\n")
-            f.write(
-                f"## Response from {target_agent}:\n\n*[Response will be added below]*\n\n"
-            )
-        logger.info(
-            f"✅ {asker_name}'s questions saved to qa_session/conversations/{asker_name}_asks_{target_agent}.md"
+        # Save individual conversation with clear naming that shows who's reviewing whose idea
+        conversation_filename = create_review_filename(target_agent, asker_name)
+        conversation_file = os.path.join(conversations_dir, conversation_filename)
+        write_file_with_logging(
+            conversation_file,
+            f"# {target_agent}'s idea reviewed by {asker_name}\n\n"
+            f"## {target_agent}'s original idea:\n\n{target_outline}\n\n"
+            f"## {asker_name}'s review questions:\n\n{questions}\n\n"
+            f"## {target_agent}'s responses:\n\n*[Responses will be added below]*\n\n",
+            logger,
+            "review questions",
+            asker_name,
         )
 
     # Now each agent responds only to questions specifically directed at them
@@ -354,14 +363,18 @@ This will trigger another round of back-and-forth discussion.
 Stay true to {responder_name}'s voice and comedy perspective. Make sure to directly address {asker_name} and respond specifically to their questions.
 """
 
-            individual_response = llm_call(
+            individual_response, model_name = llm_call_with_model(
                 response_prompt,
                 temperature=responder_persona["temperature"]["discussion"],
                 tools=[search_tool],
             )
 
-            logger.info(
-                f"📊 {responder_name}'s response to {asker_name}: {len(individual_response)} characters"
+            log_response_size(
+                logger,
+                responder_name,
+                individual_response,
+                model_name,
+                f"response to {asker_name}",
             )
             responses.append(
                 f"**{responder_name} responds to {asker_name}:**\n{individual_response}"
@@ -370,9 +383,10 @@ Stay true to {responder_name}'s voice and comedy perspective. Make sure to direc
                 f"## Response to {asker_name}\n\n{individual_response}"
             )
 
-            # Update the specific conversation file
+            # Update the specific conversation file using the new review naming convention
             conversation_file = os.path.join(
-                conversations_dir, f"{asker_name}_asks_{responder_name}.md"
+                conversations_dir,
+                create_review_filename(responder_name, asker_name),
             )
             if os.path.exists(conversation_file):
                 with open(conversation_file, "r", encoding="utf-8") as f:
@@ -380,27 +394,27 @@ Stay true to {responder_name}'s voice and comedy perspective. Make sure to direc
 
                 # Replace the placeholder with the actual response
                 updated_content = content.replace(
-                    "*[Response will be added below]*", individual_response
+                    "*[Responses will be added below]*", individual_response
                 )
 
                 with open(conversation_file, "w", encoding="utf-8") as f:
                     f.write(updated_content)
 
                 logger.info(
-                    f"✅ {responder_name}'s response to {asker_name} added to qa_session/conversations/{asker_name}_asks_{responder_name}.md"
+                    f"✅ {responder_name}'s response to {asker_name} added to {os.path.abspath(conversation_file)}"
                 )
 
         # Save a summary of all responses from this person
         if all_responses_from_this_persona:
             response_summary_file = os.path.join(
-                summary_dir, f"{responder_name}_all_responses.md"
+                summary_dir, f"{sanitize_filename(responder_name)}_all_responses.md"
             )
             with open(response_summary_file, "w", encoding="utf-8") as f:
                 f.write(f"# All Responses from {responder_name}\n\n")
                 for response_section in all_responses_from_this_persona:
                     f.write(f"{response_section}\n\n---\n\n")
             logger.info(
-                f"✅ {responder_name}'s response summary saved to qa_session/summaries/{responder_name}_all_responses.md"
+                f"✅ {responder_name}'s response summary saved to {os.path.abspath(response_summary_file)}"
             )
 
     # Check for follow-up questions in responses and handle iterative conversation
@@ -534,18 +548,21 @@ Respond to this follow-up question. You can also ask your own follow-up question
 Stay true to {target_name}'s voice and comedy perspective.
 """
 
-            follow_up_response = llm_call(
+            follow_up_response, model_name = llm_call_with_model(
                 follow_up_prompt,
                 temperature=target_persona["temperature"]["discussion"],
-                tools=[search_tool]
+                tools=[search_tool],
             )
 
-            logger.info(f"📊 {target_name}'s follow-up response size: {len(follow_up_response)} characters")
+            logger.info(
+                f"📊 {target_name}'s follow-up response size: {len(follow_up_response)} characters ({model_name})"
+            )
             new_responses.append(f"**{target_name} responds to {asker_name}'s follow-up:**\n{follow_up_response}")
 
             # Save the follow-up response to the appropriate conversation file
             conversation_file = os.path.join(
-                conversations_dir, f"{asker_name}_asks_{target_name}.md"
+                conversations_dir,
+                create_review_filename(target_name, asker_name),
             )
             if os.path.exists(conversation_file):
                 with open(conversation_file, "a", encoding="utf-8") as f:
@@ -554,19 +571,19 @@ Stay true to {target_name}'s voice and comedy perspective.
                         f"**{target_name} responds to {asker_name}'s follow-up:**\n\n{follow_up_response}\n\n"
                     )
                 logger.info(
-                    f"✅ {target_name}'s follow-up added to qa_session/conversations/{asker_name}_asks_{target_name}.md"
+                    f"✅ {target_name}'s follow-up added to {os.path.abspath(conversation_file)}"
                 )
 
             # Also update the response summary
             response_summary_file = os.path.join(
-                summary_dir, f"{target_name}_all_responses.md"
+                summary_dir, f"{sanitize_filename(target_name)}_all_responses.md"
             )
             with open(response_summary_file, "a", encoding="utf-8") as f:
                 f.write(
                     f"## Follow-up Response (Round {round_num + 1})\n\n{follow_up_response}\n\n"
                 )
             logger.info(
-                f"✅ {target_name}'s follow-up added to summary in qa_session/summaries/{target_name}_all_responses.md"
+                f"✅ {target_name}'s follow-up added to summary in {os.path.abspath(response_summary_file)}"
             )
 
         # Add new responses to the overall discussion
@@ -637,12 +654,16 @@ def refine_outline(state: EpisodeState) -> Dict:
             outline=merged_outline
         )
         outputs.append({"name": name, "outline": refined_outline})
-        with open(os.path.join(refine_dir, f"{name}.md"), "w", encoding="utf-8") as f:
+        filename = f"{sanitize_filename(name)}.md"
+        filepath = os.path.join(refine_dir, filename)
+        with open(filepath, "w", encoding="utf-8") as f:
             f.write(f"# {name}\n\n{refined_outline}")
-        logger.info(f"✅ {name} completed refinement (saved to refine/{name}.md)")
+        logger.info(
+            f"✅ {name} completed refinement (saved to {os.path.abspath(filepath)})"
+        )
 
     state["agent_outputs"] = outputs  # Overwrite agent_outputs with refined outlines for final discussion
     # Preserve discussion history instead of resetting it
-    
+
     logger.info(f"🔧 Outline refinement complete! {len(outputs)} refined outlines ready.")
     return {"agent_outputs": outputs}

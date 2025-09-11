@@ -100,7 +100,9 @@ def stitch_script(state: EpisodeState) -> Dict:
     with open(os.path.join(state["log_dir"], "script.md"), "w", encoding="utf-8") as f:
         f.write(f"# Episode Script\n\n{script}")
 
-    logger.info("✅ Complete script saved to script.md")
+    logger.info(
+        f"✅ Complete script saved to {os.path.abspath(os.path.join(state['log_dir'], 'script.md'))}"
+    )
     return {"script": script}
 
 
