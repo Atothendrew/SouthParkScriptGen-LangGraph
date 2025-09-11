@@ -1,0 +1,5 @@
+---
+description: Each project should have a AGENT_KNOWLEDGE.md file that is updated as new features are added to the project. This file should NOT be a changelog, that is what AGENT_CHANGELOG.txt is for. This file should contain information about the project that would help an LLM bootstrap a new conversation with relevant project knowledge.
+globs:
+alwaysApply: true
+---

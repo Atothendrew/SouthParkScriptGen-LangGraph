@@ -1,0 +1,5 @@
+---
+description: Each project should have a AGENT_CHANGELOG.txt file that is updated with pre-alpha versioning scheme after a successful addtion to the project. A successful addition is something that has 100% code coverage or has been proven successful via terminal output.
+globs:
+alwaysApply: true
+---

@@ -33,7 +33,9 @@ This system simulates the collaborative creative process of a real writers' room
 
 ## 🔄 Workflow Architecture
 
-The episode generation follows a **12-step collaborative workflow**:
+The episode generation follows a **13-step collaborative workflow**:
+
+> 📋 **Visual Workflow Diagram**: See [WORKFLOW_DIAGRAM.md](WORKFLOW_DIAGRAM.md) for a complete visual representation of the LangGraph flow.
 
 ### Phase 1: Initial Creation
 1. **Research Current Events** (optional) - Gather news context for topical episodes

@@ -7,7 +7,7 @@ from openai import OpenAI
 from langchain_core.tools import tool
 
 # Load LMStudio endpoint from environment variable or default
-LMSTUDIO_ENDPOINT = os.getenv("LMSTUDIO_ENDPOINT", "http://10.0.0.87:1234/v1")
+LMSTUDIO_ENDPOINT = os.getenv("LMSTUDIO_ENDPOINT", "http://localhost:1234/v1")
 
 
 @tool
