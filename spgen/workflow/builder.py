@@ -134,7 +134,7 @@ def build_graph() -> StateGraph:
     add_node_with_progress(WorkflowStep.AGENT_FEEDBACK, agent_feedback)
     add_node_with_progress(WorkflowStep.MERGE_OUTLINES, merge_outlines)
     add_node_with_progress(WorkflowStep.REFINE_OUTLINE, refine_outline)
-    add_node_with_progress(WorkflowStep.FINAL_DISCUSSION, final_discussion)
+    # add_node_with_progress(WorkflowStep.FINAL_DISCUSSION, final_discussion)
     add_node_with_progress(WorkflowStep.WRITE_ACT_ONE, write_act_one)
     add_node_with_progress(WorkflowStep.WRITE_ACT_TWO, write_act_two)
     add_node_with_progress(WorkflowStep.WRITE_ACT_THREE, write_act_three)
@@ -144,7 +144,7 @@ def build_graph() -> StateGraph:
 
     # Define conditional entry point
     graph.set_conditional_entry_point(should_research_news)
-    
+
     # Define edges
     # Graph illustration:
     # RESEARCH_CURRENT_EVENTS --> USER_NEWS_REVIEW --> BRAINSTORM
@@ -166,8 +166,8 @@ def build_graph() -> StateGraph:
     graph.add_edge(WorkflowStep.INTERACTIVE_BRAINSTORM_QUESTIONS.value, WorkflowStep.AGENT_FEEDBACK.value)
     graph.add_edge(WorkflowStep.AGENT_FEEDBACK.value, WorkflowStep.MERGE_OUTLINES.value)
     graph.add_edge(WorkflowStep.MERGE_OUTLINES.value, WorkflowStep.REFINE_OUTLINE.value)
-    graph.add_edge(WorkflowStep.REFINE_OUTLINE.value, WorkflowStep.FINAL_DISCUSSION.value)
-    graph.add_edge(WorkflowStep.FINAL_DISCUSSION.value, WorkflowStep.WRITE_ACT_ONE.value)
+    graph.add_edge(WorkflowStep.REFINE_OUTLINE.value, WorkflowStep.WRITE_ACT_ONE.value)
+    # graph.add_edge(WorkflowStep.FINAL_DISCUSSION.value, WorkflowStep.WRITE_ACT_ONE.value)
     graph.add_edge(WorkflowStep.WRITE_ACT_ONE.value, WorkflowStep.WRITE_ACT_TWO.value)
     graph.add_edge(WorkflowStep.WRITE_ACT_TWO.value, WorkflowStep.WRITE_ACT_THREE.value)
     graph.add_edge(WorkflowStep.WRITE_ACT_THREE.value, WorkflowStep.STITCH_SCRIPT.value)

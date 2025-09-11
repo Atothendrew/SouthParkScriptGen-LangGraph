@@ -23,8 +23,10 @@ def llm_call(template: str, temperature: float = 0.7, tools: List = None, **kwar
     prompt = template.format(**kwargs)
 
     if (i := os.getenv("OPENAI_BASE_URL")) and (k := os.getenv("OPENAI_API_KEY")):
+        print(f"{i=}")
         client = OpenAI(base_url=i, api_key=k)
     else:
+        print(f"{LMSTUDIO_ENDPOINT=}")
         client = OpenAI(base_url=LMSTUDIO_ENDPOINT, api_key="not-needed")
 
     messages = [{"role": "user", "content": prompt}]
