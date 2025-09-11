@@ -23,6 +23,7 @@ Architecture Pattern:
 - Supports both linear and conditional execution paths
 """
 
+from typing import Callable
 from langgraph.graph import StateGraph, END
 
 from spgen.workflow.state import EpisodeState
@@ -122,20 +123,24 @@ def build_graph() -> StateGraph:
     """
     graph = StateGraph(EpisodeState)
 
+    def add_node_with_progress(step: WorkflowStep, node_func: Callable):
+        graph.add_node(step.value, wrap_node_with_progress(node_func, step))
+
     # Define nodes with progress tracking
-    graph.add_node(WorkflowStep.RESEARCH_CURRENT_EVENTS.value, wrap_node_with_progress(research_current_events, WorkflowStep.RESEARCH_CURRENT_EVENTS))
-    graph.add_node(WorkflowStep.USER_NEWS_REVIEW.value, wrap_node_with_progress(user_news_review, WorkflowStep.USER_NEWS_REVIEW))
-    graph.add_node(WorkflowStep.BRAINSTORM.value, wrap_node_with_progress(brainstorm, WorkflowStep.BRAINSTORM))
-    graph.add_node(WorkflowStep.INTERACTIVE_BRAINSTORM_QUESTIONS.value, wrap_node_with_progress(interactive_brainstorm_questions, WorkflowStep.INTERACTIVE_BRAINSTORM_QUESTIONS))
-    graph.add_node(WorkflowStep.AGENT_FEEDBACK.value, wrap_node_with_progress(agent_feedback, WorkflowStep.AGENT_FEEDBACK))
-    graph.add_node(WorkflowStep.MERGE_OUTLINES.value, wrap_node_with_progress(merge_outlines, WorkflowStep.MERGE_OUTLINES))
-    graph.add_node(WorkflowStep.REFINE_OUTLINE.value, wrap_node_with_progress(refine_outline, WorkflowStep.REFINE_OUTLINE))
-    graph.add_node(WorkflowStep.FINAL_DISCUSSION.value, wrap_node_with_progress(final_discussion, WorkflowStep.FINAL_DISCUSSION))
-    graph.add_node(WorkflowStep.WRITE_ACT_ONE.value, wrap_node_with_progress(write_act_one, WorkflowStep.WRITE_ACT_ONE))
-    graph.add_node(WorkflowStep.WRITE_ACT_TWO.value, wrap_node_with_progress(write_act_two, WorkflowStep.WRITE_ACT_TWO))
-    graph.add_node(WorkflowStep.WRITE_ACT_THREE.value, wrap_node_with_progress(write_act_three, WorkflowStep.WRITE_ACT_THREE))
-    graph.add_node(WorkflowStep.STITCH_SCRIPT.value, wrap_node_with_progress(stitch_script, WorkflowStep.STITCH_SCRIPT))
-    graph.add_node(WorkflowStep.SUMMARIZE_SCRIPT.value, wrap_node_with_progress(summarize_script, WorkflowStep.SUMMARIZE_SCRIPT))
+    add_node_with_progress(WorkflowStep.RESEARCH_CURRENT_EVENTS, research_current_events)
+    add_node_with_progress(WorkflowStep.USER_NEWS_REVIEW, user_news_review)
+    add_node_with_progress(WorkflowStep.BRAINSTORM, brainstorm)
+    add_node_with_progress(WorkflowStep.INTERACTIVE_BRAINSTORM_QUESTIONS, interactive_brainstorm_questions)
+    add_node_with_progress(WorkflowStep.AGENT_FEEDBACK, agent_feedback)
+    add_node_with_progress(WorkflowStep.MERGE_OUTLINES, merge_outlines)
+    add_node_with_progress(WorkflowStep.REFINE_OUTLINE, refine_outline)
+    add_node_with_progress(WorkflowStep.FINAL_DISCUSSION, final_discussion)
+    add_node_with_progress(WorkflowStep.WRITE_ACT_ONE, write_act_one)
+    add_node_with_progress(WorkflowStep.WRITE_ACT_TWO, write_act_two)
+    add_node_with_progress(WorkflowStep.WRITE_ACT_THREE, write_act_three)
+    add_node_with_progress(WorkflowStep.STITCH_SCRIPT, stitch_script)
+    add_node_with_progress(WorkflowStep.SUMMARIZE_SCRIPT, summarize_script)
+
 
     # Define conditional entry point
     graph.set_conditional_entry_point(should_research_news)
