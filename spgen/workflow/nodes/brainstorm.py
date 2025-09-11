@@ -352,20 +352,36 @@ Stay true to {responder_name}'s voice and comedy perspective.
         logger.info(f"🔍 Analyzing {len(responses)} responses for follow-up questions...")
         for i, response in enumerate(responses):
             logger.debug(f"Response {i+1}: {response[:100]}...")
-            if "FOLLOW-UP QUESTION FOR" in response:
+            # Check for follow-up questions with case-insensitive matching
+            import re
+            if re.search(r'follow[‑\-]?up\s+question\s+for', response, re.IGNORECASE):
                 logger.info(f"🔍 Found follow-up question marker in response {i+1}")
                 # Parse the follow-up question
                 lines = response.split('\n')
                 for line_num, line in enumerate(lines):
-                    if line.strip().startswith("FOLLOW-UP QUESTION FOR"):
+                    # Handle both formats: "FOLLOW-UP QUESTION FOR" and "**FOLLOW-UP QUESTION FOR" and case variations
+                    clean_line = line.strip().replace("**", "").replace("*", "")
+                    if re.search(r'^follow[‑\-]?up\s+question\s+for', clean_line, re.IGNORECASE):
                         logger.info(f"🔍 Processing follow-up question on line {line_num}: {line}")
                         # Extract target and question
                         try:
-                            parts = line.split("FOLLOW-UP QUESTION FOR", 1)[1]
-                            target_and_question = parts.split(":", 1)
+                            # Use case-insensitive parsing
+                            import re
+                            # Match various formats: "Follow-up question for", "FOLLOW-UP QUESTION FOR", etc.
+                            pattern = r'follow[‑\-]?up\s+question\s+for\s*(.+)'
+                            match = re.search(pattern, clean_line, re.IGNORECASE)
+                            if not match:
+                                continue
+                            
+                            remainder = match.group(1)
+                            target_and_question = remainder.split(":", 1)
                             if len(target_and_question) == 2:
                                 target_name = target_and_question[0].strip()
                                 follow_up_q = target_and_question[1].strip()
+                                
+                                # If the question is empty, check the next line
+                                if not follow_up_q and line_num + 1 < len(lines):
+                                    follow_up_q = lines[line_num + 1].strip()
                                 
                                 # Find the original responder (who's now asking)
                                 asker_name = None
@@ -373,11 +389,21 @@ Stay true to {responder_name}'s voice and comedy perspective.
                                 if response.startswith("**") and " responds:**" in response:
                                     asker_name = response.split("**")[1].split(" responds:")[0]
                                 
-                                if asker_name and target_name:
-                                    logger.info(f"✅ Successfully parsed follow-up: {asker_name} -> {target_name}: {follow_up_q[:50]}...")
+                                # Map first names to full persona names
+                                full_target_name = target_name
+                                if target_name and target_name not in PERSONAS:
+                                    # Try to find a persona that starts with this first name
+                                    for persona_name in PERSONAS.keys():
+                                        if persona_name.lower().startswith(target_name.lower()):
+                                            full_target_name = persona_name
+                                            logger.info(f"🔄 Mapped '{target_name}' to full name '{full_target_name}'")
+                                            break
+                                
+                                if asker_name and full_target_name:
+                                    logger.info(f"✅ Successfully parsed follow-up: {asker_name} -> {full_target_name}: {follow_up_q[:50]}...")
                                     follow_up_questions.append({
                                         "asker": asker_name,
-                                        "target": target_name, 
+                                        "target": full_target_name, 
                                         "question": follow_up_q
                                     })
                                 else:
