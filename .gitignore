@@ -110,4 +110,3 @@ venv/
 .env
 logs/
 .idea/
-.idea/ai_toolkit.xml
