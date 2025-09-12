@@ -5,36 +5,41 @@ import json
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 
-from langchain_core.tools import tool, BaseTool
+from langchain_core.messages import HumanMessage, ToolMessage
 from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage
 
 # Load LMStudio endpoint from environment variable or default
 LMSTUDIO_ENDPOINT = os.getenv("LMSTUDIO_ENDPOINT", "http://localhost:1234/v1")
 
+# Import LM Studio client
+try:
+    from .lm_studio_client import (
+        llm_call_with_lmstudio,
+        check_lmstudio_availability,
+        get_available_models
+    )
+    LMSTUDIO_SDK_AVAILABLE = True
+except ImportError:
+    LMSTUDIO_SDK_AVAILABLE = False
+    print("⚠️  LM Studio SDK client not available")
 
-def log_tool_call(
-    tool_name: str, tool_args: Dict[str, Any], tool_result: str, log_dir: str = None
-) -> None:
-    """
-    Log tool calls and responses to tool_calls.txt file.
+# ---------- Tool-call logging utilities ----------
+# Import shared logging utilities from LM Studio client
+try:
+    from .lm_studio_client import log_tool_call, set_tool_log_dir, get_tool_log_dir
+except ImportError:
+    # Fallback logging utilities if LM Studio client not available
+    def log_tool_call(
+        tool_name: str, tool_args: Dict[str, Any], tool_result: str, log_dir: Optional[str] = None
+    ) -> None:
+        """Log tool calls and responses to tool_calls.txt file."""
+        if log_dir is None:
+            log_dir = os.getcwd()
 
-    Args:
-        tool_name: Name of the tool that was called
-        tool_args: Arguments passed to the tool
-        tool_result: Result returned by the tool
-        log_dir: Directory to write the log file (uses current working directory if None)
-    """
-    if log_dir is None:
-        # Try to get log_dir from environment or current directory
-        log_dir = os.getcwd()
+        tool_log_file = os.path.join(log_dir, "tool_calls.txt")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    tool_log_file = os.path.join(log_dir, "tool_calls.txt")
-
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    # Prepare log entry
-    log_entry = f"""
+        log_entry = f"""
 ===============================================
 TOOL CALL: {timestamp}
 ===============================================
@@ -48,54 +53,43 @@ Full Result:
 
 """
 
-    # Append to tool calls log file
-    try:
-        with open(tool_log_file, "a", encoding="utf-8") as f:
-            f.write(log_entry)
-    except Exception as e:
-        print(f"⚠️ Could not write to tool log file {tool_log_file}: {e}")
+        try:
+            with open(tool_log_file, "a", encoding="utf-8") as f:
+                f.write(log_entry)
+        except Exception as e:
+            print(f"⚠️ Could not write to tool log file {tool_log_file}: {e}")
 
+    _current_log_dir: Optional[str] = None
 
-# Global variable to store current log directory
-_current_log_dir = None
+    def set_tool_log_dir(log_dir: str) -> None:
+        """Set the global log directory for tool call logging."""
+        global _current_log_dir
+        _current_log_dir = log_dir
 
+    def get_tool_log_dir() -> str:
+        """Get the current log directory for tool call logging."""
+        return _current_log_dir or os.getcwd()
 
-def set_tool_log_dir(log_dir: str) -> None:
-    """Set the global log directory for tool call logging."""
-    global _current_log_dir
-    _current_log_dir = log_dir
+# ---------- Optional tools (RAG + DDG) ----------
 
-
-def get_tool_log_dir() -> str:
-    """Get the current log directory for tool call logging."""
-    global _current_log_dir
-    return _current_log_dir or os.getcwd()
-
-
-# Import Episode RAG tool
 try:
     from spgen.tools.episode_rag import search_south_park_episodes
-
     episode_rag_available = True
 except ImportError:
     episode_rag_available = False
     print("⚠️  Episode RAG system not available - continuing with basic tools")
 
-# Import DuckDuckGo search tools
 try:
     from spgen.tools.duckduckgo_search import (
         search_web,
         search_news,
         search_trending_topics,
     )
-
     ddg_tools_available = True
 except ImportError:
     ddg_tools_available = False
     print("⚠️  DuckDuckGo search tools not available - continuing without web search")
 
-
-# Export tool logging functions for use by other modules
 __all__ = [
     "llm_call",
     "llm_call_with_model",
@@ -105,31 +99,98 @@ __all__ = [
     "get_tool_log_dir",
 ]
 
-
 def get_available_tools():
     """Get list of available tools for LLM calls."""
-    tools = []  # Always include the basic search tool
-
+    tools = []
     if episode_rag_available:
         tools.append(search_south_park_episodes)
-
     if ddg_tools_available:
         tools.extend([search_web, search_news, search_trending_topics])
-
     return tools
 
+# ---------- LLM invocation ----------
+
+def _build_llm(temperature: float) -> ChatOpenAI:
+    """
+    Build a ChatOpenAI client from env:
+      - If OPENAI_API_KEY is set (with or without OPENAI_BASE_URL) -> use OpenAI (or custom-compatible) endpoint.
+      - Else -> use LM Studio at LMSTUDIO_ENDPOINT with a dummy key.
+    """
+    model_name = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
+    api_key = os.getenv("OPENAI_API_KEY")
+    base_url = os.getenv("OPENAI_BASE_URL")
+
+    if api_key:
+        # Use OpenAI (or compatible) with provided API key; pass base_url only if provided
+        kwargs: Dict[str, Any] = dict(model=model_name, temperature=temperature, api_key=api_key)
+        if base_url:
+            kwargs["base_url"] = base_url
+        return ChatOpenAI(**kwargs)
+    else:
+        # Fall back to LM Studio
+        return ChatOpenAI(
+            model=model_name,
+            temperature=temperature,
+            base_url=LMSTUDIO_ENDPOINT,
+            api_key="not-needed",
+        )
+
+def _safe_tool_calls_len(msg: Any) -> int:
+    tc = getattr(msg, "tool_calls", None)
+    return len(tc) if isinstance(tc, list) else 0
+
+def _extract_usage_strings(msg: Any) -> str:
+    usage_info = ""
+    try:
+        if hasattr(msg, "usage_metadata") and msg.usage_metadata:
+            u = msg.usage_metadata
+            usage_info = f", Usage: input={u.get('input_tokens', 0)}, output={u.get('output_tokens', 0)}, total={u.get('total_tokens', 0)}"
+        elif hasattr(msg, "response_metadata") and isinstance(msg.response_metadata, dict):
+            rm = msg.response_metadata
+            if "token_usage" in rm and isinstance(rm["token_usage"], dict):
+                tu = rm["token_usage"]
+                usage_info = f", Usage: input={tu.get('prompt_tokens', 0)}, output={tu.get('completion_tokens', 0)}, total={tu.get('total_tokens', 0)}"
+            elif "usage" in rm and isinstance(rm["usage"], dict):
+                tu = rm["usage"]
+                usage_info = f", Usage: input={tu.get('prompt_tokens', 0)}, output={tu.get('completion_tokens', 0)}, total={tu.get('total_tokens', 0)}"
+    except Exception:
+        pass
+    # Try to add reasoning tokens if available
+    try:
+        thinking_tokens = 0
+        # usage_metadata
+        if hasattr(msg, "usage_metadata") and msg.usage_metadata:
+            u = msg.usage_metadata
+            thinking_tokens = max(thinking_tokens, int(u.get("reasoning_tokens", 0) or u.get("thinking_tokens", 0) or u.get("total_reasoning_tokens", 0) or 0))
+            thinking_tokens = max(thinking_tokens, int(u.get("reasoning_input_tokens", 0) or 0) + int(u.get("reasoning_output_tokens", 0) or 0))
+        # response_metadata
+        if hasattr(msg, "response_metadata") and isinstance(msg.response_metadata, dict):
+            rm = msg.response_metadata
+            for container_key in ("token_usage", "usage"):
+                if container_key in rm and isinstance(rm[container_key], dict):
+                    tu = rm[container_key]
+                    thinking_tokens = max(thinking_tokens, int(tu.get("reasoning_tokens", 0) or tu.get("thinking_tokens", 0) or tu.get("total_reasoning_tokens", 0) or 0))
+                    thinking_tokens = max(thinking_tokens, int(tu.get("reasoning_input_tokens", 0) or 0) + int(tu.get("reasoning_output_tokens", 0) or 0))
+        if thinking_tokens > 0:
+            usage_info += f", thinking={thinking_tokens}"
+    except Exception:
+        pass
+    return usage_info
+
+def _extract_model_name(msg: Any, default_model: str) -> str:
+    try:
+        if hasattr(msg, "response_metadata") and isinstance(msg.response_metadata, dict):
+            meta = msg.response_metadata
+            return meta.get("model_name") or meta.get("model") or default_model
+    except Exception:
+        pass
+    return default_model
 
 def llm_call(
-    template: str, temperature: float = 0.7, tools: List = None, **kwargs
+    template: str, temperature: float = 0.7, tools: Optional[List[Any]] = None, **kwargs
 ) -> tuple[str, str]:
     """
     Call LLM chat completion and return both content and model name.
-
-    Args:
-        template: Prompt template string
-        temperature: Sampling temperature (0.0 to 1.0)
-        tools: List of LangChain tools
-        **kwargs: Template formatting parameters
 
     Returns:
         tuple[str, str]: (content, model_name)
@@ -137,179 +198,112 @@ def llm_call(
     prompt = template.format(**kwargs)
     model_name = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
 
-    # Determine API settings
-    if os.getenv("OPENAI_BASE_URL") and os.getenv("OPENAI_API_KEY"):
-        # Use provided API endpoint
-        llm = ChatOpenAI(
-            model=model_name,
-            temperature=temperature,
-            base_url=os.getenv("OPENAI_BASE_URL"),
-            api_key=os.getenv("OPENAI_API_KEY"),
-        )
-    else:
-        # Use LMStudio endpoint
-        llm = ChatOpenAI(
-            model=model_name,
-            temperature=temperature,
-            base_url=LMSTUDIO_ENDPOINT,
-            api_key="not-needed",
-        )
+    # Determine which client to use:
+    # 1. OpenAI if API key is available
+    # 2. LM Studio SDK if available and has models loaded
+    # 3. OpenAI-compatible API endpoint as fallback
+    api_key = os.getenv("OPENAI_API_KEY")
+    base_url = os.getenv("OPENAI_BASE_URL")
 
-    # Check if we should use tools (only for non-LMStudio endpoints)
-    use_tools = (
-        tools
-        and os.getenv("OPENAI_API_KEY")
-        and os.getenv("OPENAI_BASE_URL")
-        and os.getenv("OPENAI_BASE_URL") != LMSTUDIO_ENDPOINT
+    use_openai = bool(api_key)
+    use_lmstudio_sdk = (
+        LMSTUDIO_SDK_AVAILABLE and
+        check_lmstudio_availability() and
+        not use_openai
     )
+    use_openai_compatible = not use_openai and not use_lmstudio_sdk
+
+    # Use LM Studio SDK if available and no OpenAI key
+    if use_lmstudio_sdk:
+        print("🤖 Using LM Studio SDK with tool calling support")
+        try:
+            lmstudio_model = os.getenv("LMSTUDIO_MODEL", "default")
+            return llm_call_with_lmstudio(
+                template=prompt,
+                temperature=temperature,
+                tools=tools,
+                model_name=lmstudio_model,
+                **kwargs
+            )
+        except Exception as e:
+            print(f"❌ LM Studio SDK failed: {e}, falling back to OpenAI-compatible mode")
+            use_openai_compatible = True
+
+    llm = _build_llm(temperature=temperature)
+
+    # Determine if we should enable tool calling:
+    # - OpenAI supports tools natively
+    # - LM Studio SDK supports tools (handled above)
+    # - OpenAI-compatible servers may not support tools fully
+    use_tools = (tools is not None) and (use_openai or use_lmstudio_sdk)
+
+    message = HumanMessage(content=prompt)
 
     if use_tools:
-        # Bind tools to the model for tool-enabled calls
         llm_with_tools = llm.bind_tools(tools)
-
-        # Create message and invoke
-        message = HumanMessage(content=prompt)
         response = llm_with_tools.invoke([message])
+        content = response.content or ""
 
-        # Handle tool calls if present
-        content = response.content
-        if response.tool_calls:
-            print(f"🔧 Model made {len(response.tool_calls)} tool calls")
+        # Execute tool calls if present
+        tool_calls = getattr(response, "tool_calls", None) or []
+        if tool_calls:
+            print(f"🔧 Model made {len(tool_calls)} tool call(s)")
+            tool_messages: List[ToolMessage] = []
 
-            # Execute tool calls and add results to conversation
-            tool_messages = []
-            for tool_call in response.tool_calls:
-                tool_name = tool_call["name"]
-                tool_args = tool_call["args"]
-
-                # Find and execute the tool
+            for tc in tool_calls:
+                tool_name = tc.get("name")
+                tool_args = tc.get("args", {})
                 tool_result = None
-                for tool in tools:
-                    if tool.name == tool_name:
+
+                # Find the tool by name
+                for t in tools:
+                    if getattr(t, "name", None) == tool_name:
                         try:
-                            tool_result = tool.invoke(tool_args)
-                            print(
-                                f"🔧 Executed {tool_name}: {str(tool_result)[:100]}..."
-                            )
+                            tool_result = t.invoke(tool_args)
+                            preview = str(tool_result)
+                            print(f"🔧 Executed {tool_name}: {preview[:100]}{'...' if len(preview) > 100 else ''}")
 
-                            # Log the tool call and result
-                            log_dir = get_tool_log_dir()
-                            log_tool_call(
-                                tool_name, tool_args, str(tool_result), log_dir
-                            )
-
-                            # Log the absolute path to the tool calls file
-                            tool_log_file = os.path.join(log_dir, "tool_calls.txt")
-                            print(
-                                f"📝 Tool call logged to: {os.path.abspath(tool_log_file)}"
-                            )
-
-                            break
+                            log_tool_call(tool_name, tool_args, preview, get_tool_log_dir())
+                            print(f"📝 Tool call logged to: {os.path.abspath(os.path.join(get_tool_log_dir(), 'tool_calls.txt'))}")
                         except Exception as e:
+                            err = f"Error: {e}"
                             print(f"❌ Error executing {tool_name}: {e}")
-                            tool_result = f"Error: {e}"
-
-                            # Log the failed tool call
-                            log_dir = get_tool_log_dir()
-                            log_tool_call(tool_name, tool_args, tool_result, log_dir)
-
-                            # Log the absolute path to the tool calls file
-                            tool_log_file = os.path.join(log_dir, "tool_calls.txt")
-                            print(
-                                f"📝 Failed tool call logged to: {os.path.abspath(tool_log_file)}"
-                            )
+                            log_tool_call(tool_name, tool_args, err, get_tool_log_dir())
+                            print(f"📝 Failed tool call logged to: {os.path.abspath(os.path.join(get_tool_log_dir(), 'tool_calls.txt'))}")
+                            tool_result = err
+                        break  # stop after the first matching tool
 
                 if tool_result is not None:
-                    tool_messages.append(
-                        {
-                            "role": "tool",
-                            "tool_call_id": tool_call["id"],
-                            "content": str(tool_result),
-                        }
-                    )
+                    tool_messages.append(ToolMessage(content=str(tool_result), tool_call_id=tc.get("id")))
 
-            # If we have tool results, get a final response
+            # Follow-up model call with tool results
             if tool_messages:
-                # Convert to LangChain format and get final response
-                from langchain_core.messages import ToolMessage
-
-                conversation = [message, response]
-                for tm in tool_messages:
-                    conversation.append(
-                        ToolMessage(
-                            content=tm["content"], tool_call_id=tm["tool_call_id"]
-                        )
-                    )
-
+                conversation = [message, response, *tool_messages]
                 final_response = llm.invoke(conversation)
-                content = final_response.content
-
-        # Get usage information if available
-        usage_info = ""
-        if hasattr(response, "usage_metadata") and response.usage_metadata:
-            usage = response.usage_metadata
-            usage_info = f", Usage: input={usage.get('input_tokens', 0)}, output={usage.get('output_tokens', 0)}, total={usage.get('total_tokens', 0)}"
-        elif (
-            hasattr(response, "response_metadata")
-            and "token_usage" in response.response_metadata
-        ):
-            usage = response.response_metadata["token_usage"]
-            usage_info = f", Usage: input={usage.get('prompt_tokens', 0)}, output={usage.get('completion_tokens', 0)}, total={usage.get('total_tokens', 0)}"
+                content = (final_response.content or "").strip()
         else:
-            # Debug: check what metadata is available
-            if hasattr(response, "response_metadata"):
-                # Check for usage in a different format
-                metadata = response.response_metadata
-                if "usage" in metadata:
-                    usage = metadata["usage"]
-                    usage_info = f", Usage: input={usage.get('prompt_tokens', 0)}, output={usage.get('completion_tokens', 0)}, total={usage.get('total_tokens', 0)}"
+            final_response = None
 
-        print(
-            f"📊 Model: {model_name}, Tool calls: {len(response.tool_calls) if response.tool_calls else 0}{usage_info}"
-        )
+        # Metrics / model name
+        usage_info = _extract_usage_strings(final_response or response)
+        actual_model_name = _extract_model_name(final_response or response, model_name)
+        print(f"📊 Model: {actual_model_name}, Tool calls: {_safe_tool_calls_len(response)}{usage_info}")
 
-        return content.strip() if content else "", model_name
+        return content.strip(), actual_model_name
 
-    else:
-        # Use ChatOpenAI without tools
-        message = HumanMessage(content=prompt)
-        response = llm.invoke([message])
+    # --- No tools path ---
+    response = llm.invoke([message])
+    content = (response.content or "").strip()
 
-        content = response.content if response.content else ""
+    usage_info = _extract_usage_strings(response)
+    actual_model_name = _extract_model_name(response, model_name)
+    print(f"📊 Model: {actual_model_name}, Tool calls: {_safe_tool_calls_len(response)}{usage_info}")
 
-        # Get usage information if available
-        usage_info = ""
-        if hasattr(response, "usage_metadata") and response.usage_metadata:
-            usage = response.usage_metadata
-            usage_info = f", Usage: input={usage.get('input_tokens', 0)}, output={usage.get('output_tokens', 0)}, total={usage.get('total_tokens', 0)}"
-        elif (
-            hasattr(response, "response_metadata")
-            and "token_usage" in response.response_metadata
-        ):
-            usage = response.response_metadata["token_usage"]
-            usage_info = f", Usage: input={usage.get('prompt_tokens', 0)}, output={usage.get('completion_tokens', 0)}, total={usage.get('total_tokens', 0)}"
-        else:
-            # Check for usage in a different format
-            if hasattr(response, "response_metadata"):
-                metadata = response.response_metadata
-                if "usage" in metadata:
-                    usage = metadata["usage"]
-                    usage_info = f", Usage: input={usage.get('prompt_tokens', 0)}, output={usage.get('completion_tokens', 0)}, total={usage.get('total_tokens', 0)}"
-
-        print(
-            f"📊 Model: {model_name}, Tool calls: {len(response.tool_calls) if response.tool_calls else 0}{usage_info}"
-        )
-
-        return content.strip(), model_name
-
+    return content, actual_model_name
 
 # Backward compatibility alias (deprecated - use llm_call directly)
 def llm_call_with_model(
-    template: str, temperature: float = 0.7, tools: List = None, **kwargs
+    template: str, temperature: float = 0.7, tools: Optional[List[Any]] = None, **kwargs
 ) -> tuple[str, str]:
-    """
-    Deprecated: Use llm_call() directly instead.
-
-    This function is kept for backward compatibility but will be removed in future versions.
-    """
+    """Deprecated: Use llm_call() directly instead."""
     return llm_call(template, temperature, tools, **kwargs)
