@@ -221,6 +221,7 @@ def _extract_usage_strings(msg: Optional[BaseMessage]) -> str:
         return ""
     
     u = msg.usage_metadata
+    print(f"Usage metadata: {msg}")
     usage_info = f", Usage: input={u.get('input_tokens', 0)}, output={u.get('output_tokens', 0)}, total={u.get('total_tokens', 0)}"
     
     # Add reasoning/thinking tokens if available
@@ -279,7 +280,7 @@ def _extract_final_content_from_lmstudio(content: str, prompt: str) -> str:
     return final_content
 
 def _llm_call_with_lmstudio_sdk(
-    prompt: str, temperature: float, tools: Optional[List[Any]], model_name: str
+    prompt: str, temperature: float, tools: Optional[List[Any]], model_name: str, response_format: Optional[Dict[str, Any]] = None
 ) -> Tuple[str, str]:
     """Handle LLM call using the native LM Studio SDK."""
     if not LMSTUDIO_SDK_AVAILABLE:
@@ -295,6 +296,10 @@ def _llm_call_with_lmstudio_sdk(
         model_name = models[0].identifier
 
     config = {"temperature": temperature}
+    
+    # Add response format if specified
+    if response_format:
+        config["response_format"] = response_format
     
     if not tools:
         result = model.respond(prompt, config=config)
@@ -329,8 +334,9 @@ def llm_call(
     template: str,
     temperature: float = 0.7,
     tools: Optional[List[Any]] = None,
-    provider: Optional[LLMProvider] = None,
+    provider: Optional[LLMProvider] = "openai_compatible",
     model: Optional[str] = None,
+    response_format: Optional[Dict[str, Any]] = None,
     **kwargs
 ) -> Tuple[str, str]:
     """
@@ -342,6 +348,7 @@ def llm_call(
         tools: A list of LangChain tools to make available to the model.
         provider: Explicitly specify the provider to use. If None, auto-detects.
         model: Explicitly specify the model name. If None, uses provider's default.
+        response_format: Optional structured output format specification.
         **kwargs: Arguments to format into the prompt template.
 
     Returns:
@@ -361,7 +368,7 @@ def llm_call(
     # 2. Handle LM Studio SDK as a special case
     if provider == "lmstudio_sdk":
         try:
-            return _llm_call_with_lmstudio_sdk(prompt, temperature, tools, model_name)
+            return _llm_call_with_lmstudio_sdk(prompt, temperature, tools, model_name, response_format)
         except Exception as e:
             print(f"❌ LM Studio SDK call failed: {e}. Falling back to OpenAI-compatible mode.")
             provider = "openai_compatible"
