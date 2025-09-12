@@ -187,7 +187,11 @@ def _extract_model_name(msg: Any, default_model: str) -> str:
     return default_model
 
 def llm_call(
-    template: str, temperature: float = 0.7, tools: Optional[List[Any]] = None, **kwargs
+    template: str,
+    temperature: float = 0.7,
+    tools: Optional[List[Any]] = None,
+    override_use_lmstudio_sdk: Optional[bool] = False,
+    **kwargs
 ) -> tuple[str, str]:
     """
     Call LLM chat completion and return both content and model name.
@@ -207,9 +211,14 @@ def llm_call(
 
     use_openai = bool(api_key)
     use_lmstudio_sdk = (
-        LMSTUDIO_SDK_AVAILABLE and
-        check_lmstudio_availability() and
-        not use_openai
+        override_use_lmstudio_sdk is not False and (
+            override_use_lmstudio_sdk is True or (
+                override_use_lmstudio_sdk is None and
+                LMSTUDIO_SDK_AVAILABLE and
+                check_lmstudio_availability() and
+                not use_openai
+            )
+        )
     )
     use_openai_compatible = not use_openai and not use_lmstudio_sdk
 

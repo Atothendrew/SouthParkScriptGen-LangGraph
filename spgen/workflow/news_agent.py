@@ -330,8 +330,37 @@ Do not include any explanation, just the prompt.
 
             print("🤖 Generating dynamic episode prompt from news...")
             generated_prompt, model_name = llm_call(prompt_generation, temperature=0.7)
-            # Clean up the response to just the prompt
-            clean_prompt = generated_prompt.strip().strip('"').strip("'")
+            
+            # Parse the response to extract just the final prompt
+            # Handle responses with reasoning channels (LM Studio models)
+            clean_prompt = generated_prompt.strip()
+            
+            # Look for the final message in channel format
+            if '<|channel|>final<|message|>' in clean_prompt:
+                # Extract content after the final channel marker
+                parts = clean_prompt.split('<|channel|>final<|message|>')
+                if len(parts) > 1:
+                    clean_prompt = parts[-1].strip()
+            
+            # Look for content between quotes if it exists
+            import re
+            quote_match = re.search(r'"([^"]+)"', clean_prompt)
+            if quote_match:
+                clean_prompt = quote_match.group(1)
+            else:
+                # If no quotes, take the last sentence that looks like an episode prompt
+                sentences = clean_prompt.split('.')
+                for sentence in reversed(sentences):
+                    sentence = sentence.strip()
+                    if (sentence and 
+                        len(sentence) > 50 and  # Long enough to be a prompt
+                        ('boys' in sentence.lower() or 'south park' in sentence.lower())):
+                        clean_prompt = sentence
+                        break
+            
+            # Final cleanup
+            clean_prompt = clean_prompt.strip().strip('"').strip("'").strip('.')
+            
             print(f"✅ Generated dynamic prompt: '{clean_prompt}'")
             return clean_prompt
 

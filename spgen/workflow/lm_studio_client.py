@@ -46,6 +46,52 @@ Full Result:
         print(f"⚠️ Could not write to tool log file {tool_log_file}: {e}")
 
 
+def log_llm_analysis(
+    prompt: str, analysis: str, final_response: str, log_dir: Optional[str] = None
+) -> None:
+    """Log LLM analysis/reasoning to llm_analysis.txt file."""
+    if log_dir is None:
+        log_dir = os.getcwd()
+
+    analysis_log_file = os.path.join(log_dir, "llm_analysis.txt")
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Format the analysis for better readability
+    formatted_analysis = analysis.replace('. ', '.\n\n').replace('? ', '?\n\n').replace(': ', ':\n  ')
+    
+    log_entry = f"""
+===============================================
+LLM ANALYSIS: {timestamp}
+===============================================
+
+PROMPT:
+{'-' * 60}
+{prompt}
+{'-' * 60}
+
+REASONING/ANALYSIS:
+{'-' * 60}
+{formatted_analysis}
+{'-' * 60}
+
+FINAL RESPONSE:
+{'-' * 60}
+{final_response}
+{'-' * 60}
+
+Analysis Length: {len(analysis)} characters
+Response Length: {len(final_response)} characters
+
+"""
+
+    try:
+        with open(analysis_log_file, "a", encoding="utf-8") as f:
+            f.write(log_entry)
+        print(f"📝 LLM analysis logged to: {analysis_log_file}")
+    except Exception as e:
+        print(f"⚠️ Could not write to analysis log file {analysis_log_file}: {e}")
+
+
 def set_tool_log_dir(log_dir: str) -> None:
     """Set the global log directory for tool call logging."""
     global _current_log_dir
@@ -69,6 +115,120 @@ def set_last_tool_result(result: str) -> None:
 
 
 _current_log_dir: Optional[str] = None
+
+
+def _extract_usage_strings(result: Any) -> str:
+    """Extract usage information from LM Studio result, similar to llm_client.py format."""
+    usage_info = ""
+    try:
+        # LM Studio ActResult may have usage information in different places
+        if hasattr(result, 'usage') and result.usage:
+            u = result.usage
+            if isinstance(u, dict):
+                input_tokens = u.get('prompt_tokens', 0) or u.get('input_tokens', 0)
+                output_tokens = u.get('completion_tokens', 0) or u.get('output_tokens', 0)
+                total_tokens = u.get('total_tokens', 0) or (input_tokens + output_tokens)
+                usage_info = f", Usage: input={input_tokens}, output={output_tokens}, total={total_tokens}"
+                
+                # Check for reasoning/thinking tokens
+                thinking_tokens = (u.get('reasoning_tokens', 0) or 
+                                 u.get('thinking_tokens', 0) or 
+                                 u.get('total_reasoning_tokens', 0) or 0)
+                if thinking_tokens > 0:
+                    usage_info += f", thinking={thinking_tokens}"
+        
+        # Try to extract from metadata if available
+        elif hasattr(result, 'metadata') and result.metadata:
+            meta = result.metadata
+            if isinstance(meta, dict) and 'usage' in meta:
+                u = meta['usage']
+                if isinstance(u, dict):
+                    input_tokens = u.get('prompt_tokens', 0) or u.get('input_tokens', 0)
+                    output_tokens = u.get('completion_tokens', 0) or u.get('output_tokens', 0)
+                    total_tokens = u.get('total_tokens', 0) or (input_tokens + output_tokens)
+                    usage_info = f", Usage: input={input_tokens}, output={output_tokens}, total={total_tokens}"
+                    
+                    thinking_tokens = (u.get('reasoning_tokens', 0) or 
+                                     u.get('thinking_tokens', 0) or 
+                                     u.get('total_reasoning_tokens', 0) or 0)
+                    if thinking_tokens > 0:
+                        usage_info += f", thinking={thinking_tokens}"
+        
+        # For simple response objects, check if they have content and estimate tokens
+        elif hasattr(result, 'content') and result.content:
+            # Rough token estimation (1 token ≈ 4 characters for English text)
+            content_length = len(str(result.content))
+            estimated_tokens = content_length // 4
+            usage_info = f", Usage: estimated_total≈{estimated_tokens}"
+            
+    except Exception:
+        pass
+    
+    return usage_info
+
+
+def _extract_model_name_from_lmstudio(result: Any, default_model: str) -> str:
+    """Extract model name from LM Studio result."""
+    try:
+        if hasattr(result, 'model') and result.model:
+            return result.model
+        elif hasattr(result, 'metadata') and result.metadata:
+            meta = result.metadata
+            if isinstance(meta, dict):
+                return meta.get('model_name') or meta.get('model') or default_model
+    except Exception:
+        pass
+    return default_model
+
+
+def _extract_final_content(content: str, prompt: str = "") -> str:
+    """
+    Extract the final content from LM Studio response, handling reasoning channels.
+    
+    Some LM Studio models use reasoning channels like:
+    <|channel|>analysis<|message|>thinking process<|end|><|start|>assistant<|channel|>final<|message|>actual answer
+    
+    Args:
+        content: Raw response content
+        prompt: Original prompt (for logging)
+        
+    Returns:
+        Cleaned final content
+    """
+    if not content:
+        return content
+        
+    analysis_content = ""
+    final_content = content
+    
+    # Extract and log analysis content if present
+    if '<|channel|>analysis<|message|>' in content:
+        analysis_parts = content.split('<|channel|>analysis<|message|>')
+        if len(analysis_parts) > 1:
+            analysis_content = analysis_parts[1].split('<|end|>')[0].strip()
+            if analysis_content:
+                print("🧠 LLM Analysis/Reasoning:")
+                print("-" * 50)
+                # Format the analysis for better readability
+                formatted_analysis = analysis_content.replace('. ', '.\n• ').replace('? ', '?\n• ')
+                print(f"• {formatted_analysis}")
+                print("-" * 50)
+        
+    # Handle reasoning channels - extract content after final channel marker
+    if '<|channel|>final<|message|>' in content:
+        parts = content.split('<|channel|>final<|message|>')
+        if len(parts) > 1:
+            final_content = parts[-1].strip()
+    
+    # Remove any remaining channel markers
+    import re
+    final_content = re.sub(r'<\|[^|]*\|>[^<]*', '', final_content).strip()
+    
+    # Log the analysis if we found any
+    if analysis_content and prompt:
+        log_llm_analysis(prompt, analysis_content, final_content, get_tool_log_dir())
+    
+    return final_content
 
 
 def _convert_langchain_tool_to_lmstudio(tool: Any) -> Callable:
@@ -172,7 +332,16 @@ def llm_call_with_lmstudio(
     # If no tools, just do a simple chat
     if not tools:
         result = model.respond(prompt, config=config)
-        return str(result.content), actual_model_name
+        content = str(result.content)
+        # Parse response to extract final content from reasoning channels
+        content = _extract_final_content(content, prompt)
+        
+        # Log usage information like llm_client.py
+        usage_info = _extract_usage_strings(result)
+        extracted_model_name = _extract_model_name_from_lmstudio(result, actual_model_name)
+        print(f"📊 Model: {extracted_model_name}, Tool calls: 0{usage_info}")
+        
+        return content, extracted_model_name
 
     # Pass tools directly to LM Studio (assume they are already functions, not LangChain tools)
     lmstudio_tools = []
@@ -191,7 +360,16 @@ def llm_call_with_lmstudio(
     if not lmstudio_tools:
         # No valid tools found, fall back to simple chat
         result = model.respond(prompt, config=config)
-        return str(result.content), actual_model_name
+        content = str(result.content)
+        # Parse response to extract final content from reasoning channels
+        content = _extract_final_content(content, prompt)
+        
+        # Log usage information like llm_client.py
+        usage_info = _extract_usage_strings(result)
+        extracted_model_name = _extract_model_name_from_lmstudio(result, actual_model_name)
+        print(f"📊 Model: {extracted_model_name}, Tool calls: 0{usage_info}")
+        
+        return content, extracted_model_name
 
     try:
         # Use act method for tool execution
@@ -203,12 +381,29 @@ def llm_call_with_lmstudio(
         
         # Return a simple success message
         content = f"Tool executed successfully in {result.rounds} rounds."
-        return content.strip(), actual_model_name
+        
+        # Log usage information like llm_client.py
+        usage_info = _extract_usage_strings(result)
+        extracted_model_name = _extract_model_name_from_lmstudio(result, actual_model_name)
+        tool_calls_count = max(0, result.rounds - 1) if hasattr(result, 'rounds') else 0
+        print(f"📊 Model: {extracted_model_name}, Tool calls: {tool_calls_count}{usage_info}")
+        
+        return content.strip(), extracted_model_name
         
     except Exception as e:
         # Fallback to simple chat
         result = model.respond(prompt, config=config)
-        return str(result.content), actual_model_name
+        content = str(result.content)
+        
+        # Parse response to extract final content from reasoning channels
+        content = _extract_final_content(content, prompt)
+        
+        # Log usage information like llm_client.py
+        usage_info = _extract_usage_strings(result)
+        extracted_model_name = _extract_model_name_from_lmstudio(result, actual_model_name)
+        print(f"📊 Model: {extracted_model_name}, Tool calls: 0{usage_info}")
+        
+        return content, extracted_model_name
 
 
 def check_lmstudio_availability() -> bool:

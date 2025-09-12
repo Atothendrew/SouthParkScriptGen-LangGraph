@@ -176,7 +176,7 @@ def main(argv: list[str]) -> int:
         set_final_result
     ]
 
-    content, model_name = llm_call(template=template, temperature=0.0, tools=all_tools)
+    content, model_name = llm_call(template=template, temperature=0.0, tools=all_tools, override_use_lmstudio_sdk=True)
 
     print(f"\n📦 Model: {model_name}")
     print("🔚 Final content:")

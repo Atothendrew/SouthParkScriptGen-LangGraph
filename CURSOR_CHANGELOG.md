@@ -7,5 +7,9 @@
 - **FIXED TOOL CALLING**: Resolved LM Studio SDK tool calling issues where tools were being called with empty arguments `{}`. Root cause was mismatch between LangChain `@tool` decorators and LM Studio expectations. Solution: converted smoke test to use plain Python functions with proper docstrings.
 - **CLEANED UP LM STUDIO CLIENT**: Made `spgen/workflow/lm_studio_client.py` completely generic by removing all smoke test specific code, debug logging, and unused functions. Client now handles both direct Python functions and LangChain tools seamlessly.
 - **SMOKE TEST SUCCESS**: Tool calling now works correctly - `add_numbers(2,3)=5`, `power_numbers(4,2)=16`, `multiply_numbers(5,16)=80`. Test exits with code 0.
+- **ADDED LLM ANALYSIS LOGGING**: Created `log_llm_analysis()` function in LM Studio client to capture and log the model's reasoning process. When models use reasoning channels (`<|channel|>analysis<|message|>`), the analysis is now logged to `llm_analysis.txt` with formatted prompt, reasoning, and final response for easy debugging.
+- **CREATED TOOL DECORATORS**: Added `tools/tool_decorators.py` with `@tool_logger` decorator for consistent logging and error handling across all tool functions. Simplifies tool code and ensures consistent output formatting.
+- **ADDED TOKEN USAGE LOGGING**: Enhanced LM Studio client with consistent token usage logging matching `llm_client.py` format. Shows input/output/total/thinking tokens when available, with estimates when exact counts unavailable.
+- **FIXED OVERRIDE LOGIC**: Corrected `llm_client.py` logic so that `override_use_lmstudio_sdk=False` properly forces OpenAI usage instead of falling through to other conditions.
 
 
