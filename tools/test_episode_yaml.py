@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Test script for episode YAML loading functionality."""
 
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from spgen.schemas import EpisodeSummaryLoader, EpisodeDatabase
 
 def test_yaml_loading():

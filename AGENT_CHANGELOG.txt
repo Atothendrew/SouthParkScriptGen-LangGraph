@@ -1,5 +1,34 @@
 AGENT_CHANGELOG.txt - South Park Script Generator
 
+v0.0.6 - Repository Cleanup and Organization (2025-09-12)
+
+COMPLETED:
+- Reorganized repository structure for better maintainability
+- Created dedicated docs/ directory with comprehensive documentation index
+- Moved utility scripts to tools/ directory for better organization
+- Cleaned up test logs and development artifacts from logs/ directory
+- Removed Python cache files (__pycache__) across the repository
+- Updated README.md with documentation and tools reference tables
+- Fixed import paths for relocated tools
+- Verified all tools and tests work after reorganization
+- Created docs/README.md as documentation index and navigation guide
+
+REPOSITORY STRUCTURE:
+- docs/ - All documentation and guides
+- tools/ - Utility scripts (validate_episode.py, test_episode_yaml.py)
+- episode_summaries/ - 31 schema-compliant episode YAML files
+- configs/ - Persona configuration files
+- spgen/ - Core application code
+- tests/ - Unit tests and test utilities
+- logs/ - Episode generation logs (cleaned up test artifacts)
+
+IMPROVED ORGANIZATION:
+- Clear separation of documentation, tools, and application code
+- Comprehensive documentation index for easy navigation
+- Updated README with links to all documentation and tools
+- Removed redundant and test files that cluttered the repository
+- Maintained 100% functionality while improving structure
+
 v0.0.5 - Episode YAML Schema Compliance and Migration (2025-09-11)
 
 COMPLETED:

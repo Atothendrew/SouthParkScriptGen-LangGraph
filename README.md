@@ -275,6 +275,26 @@ temperature:
   refine: 0.5        # Focused for polishing
 ```
 
+## 📚 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | System architecture and design patterns |
+| [`docs/WORKFLOW_DIAGRAM.md`](docs/WORKFLOW_DIAGRAM.md) | Visual workflow diagrams and process flows |
+| [`docs/USAGE_GUIDE.md`](docs/USAGE_GUIDE.md) | Comprehensive usage instructions |
+| [`docs/EPISODE_RAG_GUIDE.md`](docs/EPISODE_RAG_GUIDE.md) | Episode RAG system documentation |
+| [`docs/EPISODE_CREATION_GUIDELINES.md`](docs/EPISODE_CREATION_GUIDELINES.md) | Guidelines for creating new episode summaries |
+| [`docs/CLAUDE.md`](docs/CLAUDE.md) | Claude-specific integration notes |
+| [`docs/GEMINI.md`](docs/GEMINI.md) | Gemini-specific integration notes |
+| [`docs/LLM_TOOLS_PROPOSAL.md`](docs/LLM_TOOLS_PROPOSAL.md) | LLM tools architecture proposal |
+
+## 🛠️ Tools
+
+| Tool | Description |
+|------|-------------|
+| [`tools/validate_episode.py`](tools/validate_episode.py) | Validate episode YAML files against schema |
+| [`tools/test_episode_yaml.py`](tools/test_episode_yaml.py) | Test episode database loading |
+
 ## 📈 Performance Characteristics
 
 - **Episode Generation Time**: ~10-15 minutes for full episode (model dependent)
