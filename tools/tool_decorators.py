@@ -47,6 +47,7 @@ def tool_logger(func: Callable) -> Callable:
             print(f"❌ {func.__name__}({all_args}) failed: {exc}")
             return error_msg
     
+    wrapper.name = func.__name__
     return wrapper
 
 

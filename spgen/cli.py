@@ -349,7 +349,7 @@ def main() -> None:
         logger = WorkflowLogger(log_dir)
         set_logger(logger)
 
-        from spgen.workflow.llm_client import set_tool_log_dir
+        from spgen.workflow.llm_provider import set_tool_log_dir
         set_tool_log_dir(log_dir)
 
         logger.info("➕ Generating next part from existing run")
@@ -471,7 +471,7 @@ def main() -> None:
             logger = WorkflowLogger(log_dir)
             set_logger(logger)
 
-            from spgen.workflow.llm_client import set_tool_log_dir
+            from spgen.workflow.llm_provider import set_tool_log_dir
             set_tool_log_dir(log_dir)
 
             logger.info("🔁 Resuming episode generation workflow")
@@ -633,7 +633,7 @@ def main() -> None:
         set_logger(logger)
 
         # Set up tool logging directory
-        from spgen.workflow.llm_client import set_tool_log_dir
+        from spgen.workflow.llm_provider import set_tool_log_dir
 
         set_tool_log_dir(log_dir)
 

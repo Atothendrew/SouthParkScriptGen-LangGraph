@@ -4,9 +4,8 @@ import os
 from typing import Dict
 
 from spgen.workflow.state import EpisodeState
-from spgen.workflow.llm_client import (
+from spgen.workflow.llm_provider import (
     llm_call,
-    llm_call_with_model,
     get_available_tools,
 )
 from spgen.workflow.logger import get_logger
@@ -43,7 +42,7 @@ def agent_feedback(state: EpisodeState) -> Dict:
 
         logger.info(f"💭 {name} is providing feedback...")
         feedback_prompt = persona["discussion_prompt"]
-        response, model_name = llm_call_with_model(
+        response, model_name = llm_call(
             feedback_prompt,
             temperature=persona["temperature"]["discussion"],
             tools=get_available_tools(),
@@ -98,7 +97,7 @@ def merge_outlines(state: EpisodeState) -> Dict:
     # Use a neutral persona (Trey) to merge
     merge_prompt = PERSONAS["Trey Parker"]["discussion_prompt"]
     prompt = f"{merge_prompt}\n\nHere is the discussion history:\n{discussion_history}"
-    merged_outline, model_name = llm_call_with_model(
+    merged_outline, model_name = llm_call(
         prompt,
         temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"],
         tools=get_available_tools(),
@@ -143,7 +142,7 @@ def final_discussion(state: EpisodeState) -> Dict:
 
         logger.info(f"🎯 {name} is providing final feedback...")
         feedback_prompt = persona["discussion_prompt"]
-        response, model_name = llm_call_with_model(
+        response, model_name = llm_call(
             feedback_prompt,
             temperature=persona["temperature"]["discussion"],
             tools=get_available_tools(),
@@ -179,7 +178,7 @@ def final_discussion(state: EpisodeState) -> Dict:
     logger.info(f"  - Final discussion: {len(final_discussion_text)} characters")
     logger.info(f"  - Total merge context: {len(outlines_text) + len(final_discussion_text)} characters")
 
-    final_merged_outline, model_name = llm_call_with_model(
+    final_merged_outline, model_name = llm_call(
         merge_prompt,
         temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"],
         tools=get_available_tools(),

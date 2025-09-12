@@ -31,9 +31,8 @@ import random
 from typing import Dict, List
 
 from spgen.workflow.state import EpisodeState
-from spgen.workflow.llm_client import (
+from spgen.workflow.llm_provider import (
     llm_call,
-    llm_call_with_model,
     get_available_tools,
 )
 from spgen.workflow.logger import get_logger
@@ -270,7 +269,7 @@ As {asker_name}, ask {target_agent} 2-3 specific, constructive questions about t
 Address {target_agent} directly and keep your questions in character for {asker_name}'s voice and comedy style.
 """
 
-        questions, model_name = llm_call_with_model(
+        questions, model_name = llm_call(
             question_prompt,
             temperature=asker_persona["temperature"]["discussion"],
             tools=get_available_tools(),
@@ -367,7 +366,7 @@ This will trigger another round of back-and-forth discussion.
 Stay true to {responder_name}'s voice and comedy perspective. Make sure to directly address {asker_name} and respond specifically to their questions.
 """
 
-            individual_response, model_name = llm_call_with_model(
+            individual_response, model_name = llm_call(
                 response_prompt,
                 temperature=responder_persona["temperature"]["discussion"],
                 tools=get_available_tools(),
@@ -552,7 +551,7 @@ Respond to this follow-up question. You can also ask your own follow-up question
 Stay true to {target_name}'s voice and comedy perspective.
 """
 
-            follow_up_response, model_name = llm_call_with_model(
+            follow_up_response, model_name = llm_call(
                 follow_up_prompt,
                 temperature=target_persona["temperature"]["discussion"],
                 tools=get_available_tools(),

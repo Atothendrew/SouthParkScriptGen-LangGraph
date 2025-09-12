@@ -31,7 +31,7 @@ from typing import Any
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from spgen.workflow.llm_client import llm_call, set_tool_log_dir
+from spgen.workflow.llm_provider import llm_call, set_tool_log_dir
 from tools.tool_decorators import tool_logger
 
 FINAL_RESULT = None
@@ -176,7 +176,7 @@ def main(argv: list[str]) -> int:
         set_final_result
     ]
 
-    content, model_name = llm_call(template=template, temperature=0.0, tools=all_tools, override_use_lmstudio_sdk=True)
+    content, model_name = llm_call(template=template, temperature=0.0, tools=all_tools, provider="lmstudio_sdk")
 
     print(f"\n📦 Model: {model_name}")
     print("🔚 Final content:")

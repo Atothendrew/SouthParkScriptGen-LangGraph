@@ -84,7 +84,7 @@ for result in results:
 The Episode RAG tool is automatically available to all AI personas during brainstorming:
 
 ```python
-from spgen.workflow.llm_client import get_available_tools
+from spgen.workflow.llm_provider import get_available_tools
 
 tools = get_available_tools()
 # ['search_tool', 'search_south_park_episodes']

@@ -4,7 +4,7 @@ import os
 from typing import Dict
 
 from spgen.workflow.state import EpisodeState
-from spgen.workflow.llm_client import llm_call, get_available_tools
+from spgen.workflow.llm_provider import llm_call, get_available_tools
 from spgen.workflow.logger import get_logger
 from spgen.agents import PERSONAS
 

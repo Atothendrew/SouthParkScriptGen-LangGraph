@@ -5,7 +5,7 @@ from datetime import datetime, timezone, timedelta
 from typing import List, Dict
 
 from ddgs import DDGS
-from spgen.workflow.llm_client import llm_call
+from spgen.workflow.llm_provider import llm_call
 
 
 class NewsResearchAgent:
