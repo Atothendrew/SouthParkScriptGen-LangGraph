@@ -384,50 +384,65 @@ def llm_call(
         print(f"📊 Model: {actual_model_name}, Tool calls: 0{usage_info}")
         return content, actual_model_name
 
-    # 4. Tool-calling logic
+    # 4. Tool-calling loop
     llm_with_tools = llm.bind_tools(tools)
-    response = llm_with_tools.invoke(messages)
     
-    tool_calls = getattr(response, "tool_calls", [])
-    if not tool_calls:
-        content = (response.content or "").strip()
-        usage_info = _extract_usage_strings(response)
-        actual_model_name = _extract_model_name(response, model_name)
-        print(f"📊 Model: {actual_model_name}, Tool calls: 0{usage_info}")
-        return content, actual_model_name
-
-    print(f"🔧 Model made {len(tool_calls)} tool call(s)")
-    messages.append(response)
-    
-    for tc in tool_calls:
-        tool_name = tc.get("name")
-        tool_args = tc.get("args", {})
-        tool_to_call = next((t for t in tools if getattr(t, "name", "") == tool_name), None)
+    while True:
+        response = llm_with_tools.invoke(messages)
         
-        if not tool_to_call:
-            result = f"Error: Tool '{tool_name}' not found."
-        else:
-            try:
-                if hasattr(tool_to_call, 'invoke'):
-                    result = tool_to_call.invoke(tool_args)
+        tool_calls = getattr(response, "tool_calls", [])
+        if not tool_calls:
+            # No more tool calls, we're done
+            content = (response.content or "").strip()
+            # Log analysis if there were any tool calls in previous steps
+            if len(messages) > 1: # More than just the initial human message
+                # Extract all reasoning content from the message history for the analysis log
+                all_reasoning = "\n\n".join([
+                    m.content for m in messages 
+                    if hasattr(m, 'tool_calls') and m.content and isinstance(m.content, str)
+                ])
+                # If there was no reasoning content, fall back to logging the tool calls
+                if not all_reasoning:
+                    all_tool_calls = []
+                    for m in messages:
+                        if hasattr(m, 'tool_calls'):
+                            all_tool_calls.extend(m.tool_calls)
+                    analysis = json.dumps(all_tool_calls, indent=2)
                 else:
-                    result = tool_to_call(**tool_args)
-                preview = str(result)[:100] + ('...' if len(str(result)) > 100 else '')
-                print(f"✅ Executed {tool_name}: {preview}")
-            except Exception as e:
-                result = f"Error executing tool {tool_name}: {e}"
-                print(f"❌ {result}")
-        
-        log_tool_call(tool_name, tool_args, str(result), get_tool_log_dir())
-        messages.append(ToolMessage(content=str(result), tool_call_id=tc.get("id")))
+                    analysis = all_reasoning
+                log_llm_analysis(prompt, analysis, content, get_tool_log_dir())
+            break
 
-    # Follow-up call with tool results
-    final_response = llm_with_tools.invoke(messages)
-    content = (final_response.content or "").strip()
-    
-    usage_info = _extract_usage_strings(final_response)
-    actual_model_name = _extract_model_name(final_response, model_name)
-    print(f"📊 Model: {actual_model_name}, Tool calls: {len(tool_calls)}{usage_info}")
+        print(f"🔧 Model made {len(tool_calls)} tool call(s)")
+        messages.append(response)
+        
+        for tc in tool_calls:
+            tool_name = tc.get("name")
+            tool_args = tc.get("args", {})
+            tool_to_call = next((t for t in tools if getattr(t, "name", "") == tool_name), None)
+            
+            if not tool_to_call:
+                result = f"Error: Tool '{tool_name}' not found."
+            else:
+                try:
+                    if hasattr(tool_to_call, 'invoke'):
+                        result = tool_to_call.invoke(tool_args)
+                    else:
+                        result = tool_to_call(**tool_args)
+                    preview = str(result)[:100] + ('...' if len(str(result)) > 100 else '')
+                    print(f"✅ Executed {tool_name}: {preview}")
+                except Exception as e:
+                    result = f"Error executing tool {tool_name}: {e}"
+                    print(f"❌ {result}")
+            
+            log_tool_call(tool_name, tool_args, str(result), get_tool_log_dir())
+            messages.append(ToolMessage(content=str(result), tool_call_id=tc.get("id")))
+
+    # After the loop, content is set from the last response without tool calls.
+    usage_info = _extract_usage_strings(response)
+    actual_model_name = _extract_model_name(response, model_name)
+    total_tool_calls = sum(len(getattr(m, 'tool_calls', [])) for m in messages)
+    print(f"📊 Model: {actual_model_name}, Tool calls: {total_tool_calls}{usage_info}")
 
     return content, actual_model_name
 

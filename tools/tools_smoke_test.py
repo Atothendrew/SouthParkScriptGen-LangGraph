@@ -23,6 +23,7 @@ Outputs:
 
 import os
 import sys
+import argparse
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -155,6 +156,15 @@ def _ensure_log_dir() -> Path:
 
 
 def main(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(description="Run a smoke test for LLM tool calling.")
+    parser.add_argument(
+        "--provider",
+        type=str,
+        default=None,
+        choices=["openai", "anthropic", "google", "lmstudio_sdk", "openai_compatible"],
+        help="The LLM provider to use (e.g., 'openai', 'anthropic', 'google', 'lmstudio_sdk', 'openai_compatible'). Auto-detects if not specified."
+    )
+    args = parser.parse_args(argv)
 
     log_dir = _ensure_log_dir()
     print(f"📝 Tool logs will be written to: {log_dir}/tool_calls.txt")
@@ -176,7 +186,7 @@ def main(argv: list[str]) -> int:
         set_final_result
     ]
 
-    content, model_name = llm_call(template=template, temperature=0.0, tools=all_tools, provider="lmstudio_sdk")
+    content, model_name = llm_call(template=template, temperature=0.0, tools=all_tools, provider=args.provider)
 
     print(f"\n📦 Model: {model_name}")
     print("🔚 Final content:")
