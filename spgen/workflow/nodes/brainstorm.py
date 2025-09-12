@@ -31,7 +31,11 @@ import random
 from typing import Dict, List
 
 from spgen.workflow.state import EpisodeState
-from spgen.workflow.llm_client import llm_call, llm_call_with_model, search_tool
+from spgen.workflow.llm_client import (
+    llm_call,
+    llm_call_with_model,
+    get_available_tools,
+)
 from spgen.workflow.logger import get_logger
 from spgen.workflow.utils import (
     should_include_persona,
@@ -179,11 +183,11 @@ def brainstorm(state: EpisodeState) -> Dict:
                 "established_locations": ""
             })
 
-        outline = llm_call(
-            persona["brainstorm_prompt"], 
-            temperature=persona["temperature"]["brainstorm"], 
-            tools=[search_tool], 
-            **prompt_kwargs
+        outline, model_name = llm_call(
+            persona["brainstorm_prompt"],
+            temperature=persona["temperature"]["brainstorm"],
+            tools=get_available_tools(),
+            **prompt_kwargs,
         )
         outputs.append({"name": name, "outline": outline})
         filename = create_persona_filename(name)
@@ -269,7 +273,7 @@ Address {target_agent} directly and keep your questions in character for {asker_
         questions, model_name = llm_call_with_model(
             question_prompt,
             temperature=asker_persona["temperature"]["discussion"],
-            tools=[search_tool],
+            tools=get_available_tools(),
         )
 
         log_response_size(logger, asker_name, questions, model_name, "questions")
@@ -366,7 +370,7 @@ Stay true to {responder_name}'s voice and comedy perspective. Make sure to direc
             individual_response, model_name = llm_call_with_model(
                 response_prompt,
                 temperature=responder_persona["temperature"]["discussion"],
-                tools=[search_tool],
+                tools=get_available_tools(),
             )
 
             log_response_size(
@@ -551,7 +555,7 @@ Stay true to {target_name}'s voice and comedy perspective.
             follow_up_response, model_name = llm_call_with_model(
                 follow_up_prompt,
                 temperature=target_persona["temperature"]["discussion"],
-                tools=[search_tool],
+                tools=get_available_tools(),
             )
 
             logger.info(
@@ -647,11 +651,11 @@ def refine_outline(state: EpisodeState) -> Dict:
             continue
 
         logger.info(f"🔧 {name} is refining the merged outline...")
-        refined_outline = llm_call(
-            persona["refine_prompt"], 
-            temperature=persona["temperature"]["refine"], 
-            tools=[search_tool], 
-            outline=merged_outline
+        refined_outline, model_name = llm_call(
+            persona["refine_prompt"],
+            temperature=persona["temperature"]["refine"],
+            tools=get_available_tools(),
+            outline=merged_outline,
         )
         outputs.append({"name": name, "outline": refined_outline})
         filename = f"{sanitize_filename(name)}.md"

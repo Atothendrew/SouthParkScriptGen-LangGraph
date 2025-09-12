@@ -1,115 +1,161 @@
+---
 basic_info:
-  title: "Pinkeye"
+  title: Pinkeye
   season: 1
-  episode: 7
-  air_date: "1997-10-29"
-  episode_type: "HOLIDAY"
-  runtime_minutes: 22
-
+  episode_type: holiday
+  episode_number: 7
+  original_air_date: '1997-10-29'
 plot:
-  main_storyline: "A zombie outbreak occurs in South Park on Halloween when Kenny dies and is accidentally embalmed with Worcestershire sauce instead of formaldehyde, causing him to rise from the dead and bite others, turning them into zombies."
-  subplot: "The boys are excited about Halloween and trick-or-treating, with Cartman dressing as Hitler (thinking he's a ghost) while the adults initially mistake the zombie outbreak for pinkeye."
-  resolution: "Chef and the boys discover that killing the original zombie (Kenny) will cure everyone. They chainsaw Kenny in half, ending the outbreak and returning everyone to normal."
-  episode_arc: "Halloween special that parodies zombie movies while exploring themes of death and resurrection."
-
+  logline: A zombie outbreak occurs in South Park on Halloween when Kenny dies and
+    is accidentally embalmed wit...
+  plot_summary: A zombie outbreak occurs in South Park on Halloween when Kenny dies
+    and is accidentally embalmed with Worcestershire sauce instead of formaldehyde,
+    causing him to rise from the dead and bite others, turning them into zombies.
+    The boys are excited about Halloween and trick-or-treating, with Cartman dressing
+    as Hitler (thinking he's a ghost) while the adults initially mistake the zombie
+    outbreak for pinkeye. Chef and the boys discover that killing the original zombie
+    (Kenny) will cure everyone. They chainsaw Kenny in half, ending the outbreak and
+    returning everyone to normal.
+  plot_threads:
+  - title: Main Plot
+    description: A zombie outbreak occurs in South Park on Halloween when Kenny dies
+      and is accidentally embalmed with Worcestershire sauce instead of formaldehyde,
+      causing him to rise from the dead and bite others, turning them into zombies.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Subplot
+    description: The boys are excited about Halloween and trick-or-treating, with
+      Cartman dressing as Hitler (thinking he's a ghost) while the adults initially
+      mistake the zombie outbreak for pinkeye.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
 characters:
-  main_characters:
-    - name: "Stan Marsh"
-      role: "PROTAGONIST"
-      description: "Tries to understand and stop the zombie outbreak while dealing with Halloween preparations"
-      character_development: "Shows leadership in crisis situations"
-    - name: "Kyle Broflovski"
-      role: "MAIN"
-      description: "Helps figure out the zombie problem and participates in Halloween activities"
-      character_development: "Continues to be analytical and helpful"
-    - name: "Eric Cartman"
-      role: "MAIN"
-      description: "Dresses as Hitler for Halloween, causing controversy, and gets caught up in the zombie chaos"
-      character_development: "Shows his ignorance and insensitivity with his costume choice"
-    - name: "Kenny McCormick"
-      role: "MAIN"
-      description: "Dies early in the episode and becomes the original zombie that starts the outbreak"
-      character_development: "First time his death directly drives the main plot"
-
-  supporting_characters:
-    - name: "Chef"
-      role: "SUPPORTING"
-      description: "Helps the boys understand what's happening and provides guidance on stopping the zombies"
-    - name: "Dr. Doctor"
-      role: "SUPPORTING"
-      description: "The incompetent doctor who misdiagnoses the zombie condition as pinkeye"
-    - name: "Mortician"
-      role: "SUPPORTING"
-      description: "Accidentally uses Worcestershire sauce instead of formaldehyde, causing Kenny's resurrection"
-    - name: "Principal Victoria"
-      role: "SUPPORTING"
-      description: "Becomes a zombie and chases the children at school"
-
+  main:
+  - name: Stan Marsh
+    role: main
+    key_moments: []
+    character_development: Shows leadership in crisis situations
+    relationships_affected: []
+  - name: Kyle Broflovski
+    role: main
+    key_moments: []
+    character_development: Continues to be analytical and helpful
+    relationships_affected: []
+  - name: Eric Cartman
+    role: main
+    key_moments: []
+    character_development: Shows his ignorance and insensitivity with his costume
+      choice
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    key_moments: []
+    character_development: First time his death directly drives the main plot
+    relationships_affected: []
+  supporting:
+  - name: Chef
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Dr. Doctor
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Mortician
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Principal Victoria
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  new: []
 content_elements:
-  violence_level: "HIGH"
-  language: "MILD"
-  adult_themes:
-    - "Death and resurrection"
-    - "Zombie apocalypse"
-    - "Medical incompetence"
-    - "Historical insensitivity (Hitler costume)"
   cultural_references:
-    - reference: "Night of the Living Dead"
-      context: "Classic zombie movie tropes and scenarios"
-    - reference: "Michael Jackson's Thriller"
-      context: "Zombie dance sequences and horror-comedy elements"
-    - reference: "Adolf Hitler"
-      context: "Cartman's controversial Halloween costume choice"
-    - reference: "Worcestershire sauce"
-      context: "British condiment used as plot device for zombie creation"
-
-themes:
-  primary_themes:
-    - "Death and its consequences"
-    - "Halloween traditions and horror"
-    - "Medical and institutional incompetence"
-    - "Historical ignorance and insensitivity"
-  social_commentary:
-    - "Satire of zombie movie clichés"
-    - "Critique of medical misdiagnosis"
-    - "Commentary on inappropriate costume choices"
-    - "Parody of horror genre conventions"
-
-continuity:
-  character_introductions:
-    - "Dr. Doctor (incompetent physician)"
-    - "Various South Park residents as zombies"
+  - type: unknown
+    target: ''
+    description: ''
+    context: Classic zombie movie tropes and scenarios
+  - type: unknown
+    target: ''
+    description: ''
+    context: Zombie dance sequences and horror-comedy elements
+  - type: unknown
+    target: ''
+    description: ''
+    context: Cartman's controversial Halloween costume choice
+  - type: unknown
+    target: ''
+    description: ''
+    context: British condiment used as plot device for zombie creation
   running_gags:
-    - gag: "Kenny's death"
-      description: "Kenny dies from being crushed by a statue, then becomes a zombie"
-    - gag: "Cartman's ignorance"
-      description: "Thinks Hitler was a Halloween ghost, showing his historical ignorance"
-  plot_connections:
-    - "Establishes Halloween as a recurring holiday theme"
-    - "Shows Kenny's deaths can have supernatural consequences"
-    - "Introduces Dr. Doctor as recurring incompetent medical figure"
-
-locations:
-  primary_locations:
-    - name: "South Park Elementary"
-      description: "Where much of the zombie outbreak occurs during Halloween activities"
-    - name: "South Park Cemetery"
-      description: "Where Kenny is buried and rises as a zombie"
-    - name: "Funeral Home"
-      description: "Where the embalming mistake occurs"
-    - name: "Various South Park homes"
-      description: "Where trick-or-treating and zombie encounters happen"
-
-production_notes:
-  writer: "Trey Parker and Matt Stone"
-  director: "Trey Parker"
-  notable_aspects:
-    - "First Halloween-themed episode"
-    - "Heavy use of zombie movie parody"
-    - "Controversial Hitler costume subplot"
-    - "Kenny's death drives main plot for first time"
-
-cultural_impact:
-  significance: "Established South Park's approach to holiday episodes and horror parody"
-  controversy: "Cartman's Hitler costume sparked discussions about appropriate Halloween costumes"
-  legacy: "Set template for future Halloween episodes and supernatural storylines"
+  - name: Kenny's death
+    description: Kenny dies from being crushed by a statue, then becomes a zombie
+    frequency: 1
+    first_appearance: null
+    evolution_notes: null
+  - name: Cartman's ignorance
+    description: Thinks Hitler was a Halloween ghost, showing his historical ignorance
+    frequency: 1
+    first_appearance: null
+    evolution_notes: null
+  locations: []
+themes:
+- theme: Death and its consequences
+  description: 'Primary theme: Death and its consequences'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Halloween traditions and horror
+  description: 'Primary theme: Halloween traditions and horror'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Medical and institutional incompetence
+  description: 'Primary theme: Medical and institutional incompetence'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Historical ignorance and insensitivity
+  description: 'Primary theme: Historical ignorance and insensitivity'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks:
+  - Establishes Halloween as a recurring holiday theme
+  - Shows Kenny's deaths can have supernatural consequences
+  - Introduces Dr. Doctor as recurring incompetent medical figure
+  setup_for_future: []
+  character_developments:
+  - Dr. Doctor (incompetent physician)
+  - Various South Park residents as zombies
+  world_building: []
+production:
+  notable_quotes:
+  - '[Quote from Pinkeye]'
+  memorable_scenes:
+  - '[Scene from Pinkeye]'
+  animation_notes: []
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired in 1997 during South Park's early seasons
+  controversy_notes: Part of South Park's controversial early content
+  reception_notes: Episode from South Park's foundational years
+  social_commentary:
+  - Social commentary from Pinkeye

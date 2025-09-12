@@ -15,8 +15,13 @@ This system simulates the collaborative creative process of a real writers' room
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  ┌─────────────┐    ┌──────────────┐    ┌─────────────┐     │
-│  │   Personas  │    │   Workflow   │    │   Logging   │     │
-│  │   System    │    │    Engine    │    │   System    │     │
+│  │   Personas  │    │   Workflow   │    │   Episode   │     │
+│  │   System    │    │    Engine    │    │     RAG     │     │
+│  └─────────────┘    └──────────────┘    └─────────────┘     │
+│         │                   │                   │          │
+│  ┌─────────────┐    ┌──────────────┐    ┌─────────────┐     │
+│  │   Logging   │    │    Tools     │    │  Historical │     │
+│  │   System    │    │   System     │    │  Episodes   │     │
 │  └─────────────┘    └──────────────┘    └─────────────┘     │
 │         │                   │                   │          │
 │         │            ┌──────────────┐            │          │
@@ -69,6 +74,38 @@ Each writer persona is defined with:
 - **Follow-up Conversations**: Support for multi-round back-and-forth discussions
 - **Collaborative Refinement**: Ideas evolve through genuine peer feedback
 - **Context Preservation**: All discussions inform final script generation
+
+## 📚 Episode RAG System
+
+### Historical Episode Search
+The system includes a sophisticated Retrieval-Augmented Generation (RAG) system that allows AI personas to search and reference historical South Park episodes during brainstorming:
+
+- **Semantic Search**: Find episodes by themes, characters, cultural references, or plot elements
+- **Intelligent Grading**: Automatically assess relevance of retrieved episodes 
+- **Query Rewriting**: Improve search results with automatic query enhancement
+- **13 Season 1 Episodes**: Fully indexed with comprehensive summaries
+
+### RAG Capabilities
+```python
+# Available during brainstorming sessions
+search_south_park_episodes("episodes about Kenny dying")
+search_south_park_episodes("Cartman schemes and manipulation") 
+search_south_park_episodes("episodes with aliens or supernatural elements")
+```
+
+**Example Results:**
+- **"episodes about Kenny dying"** → S1E3: Volcano, S1E1: Cartman Gets an Anal Probe
+- **"Cartman schemes"** → S1E2: Weight Gain 4000, S1E1: Cartman Gets an Anal Probe  
+- **"Christmas episodes"** → S1E9: Mr. Hankey, the Christmas Poo
+
+This enables personas to:
+- **Reference Similar Themes** for inspiration
+- **Check Character Consistency** across episodes
+- **Avoid Repetition** of existing storylines
+- **Find Running Gags** and callbacks
+- **Get Cultural Reference Ideas** from past parodies
+
+*See [EPISODE_RAG_GUIDE.md](EPISODE_RAG_GUIDE.md) for detailed documentation.*
 
 ## 🔧 Technical Implementation
 

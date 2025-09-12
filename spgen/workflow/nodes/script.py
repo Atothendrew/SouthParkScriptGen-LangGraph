@@ -4,7 +4,7 @@ import os
 from typing import Dict
 
 from spgen.workflow.state import EpisodeState
-from spgen.workflow.llm_client import llm_call, search_tool
+from spgen.workflow.llm_client import llm_call, get_available_tools
 from spgen.workflow.logger import get_logger
 from spgen.agents import PERSONAS
 
@@ -24,12 +24,12 @@ def write_act_one(state: EpisodeState) -> Dict:
         "COLLABORATIVE FEEDBACK:\n{discussion_context}\n\n---\n\n"
         "OUTLINE:\n{outline}"
     )
-    script = llm_call(
-        act_one_prompt, 
-        temperature=PERSONAS["Trey Parker"]["temperature"]["brainstorm"], 
-        tools=[search_tool], 
+    script, model_name = llm_call(
+        act_one_prompt,
+        temperature=PERSONAS["Trey Parker"]["temperature"]["brainstorm"],
+        tools=get_available_tools(),
         outline=state["merged_outline"],
-        discussion_context=discussion_context
+        discussion_context=discussion_context,
     )
     state["act_one_script"] = script
     logger.info("✅ Act One script completed!")
@@ -51,12 +51,12 @@ def write_act_two(state: EpisodeState) -> Dict:
         "COLLABORATIVE FEEDBACK:\n{discussion_context}\n\n---\n\n"
         "OUTLINE:\n{outline}"
     )
-    script = llm_call(
-        act_two_prompt, 
-        temperature=PERSONAS["Trey Parker"]["temperature"]["brainstorm"], 
-        tools=[search_tool], 
+    script, model_name = llm_call(
+        act_two_prompt,
+        temperature=PERSONAS["Trey Parker"]["temperature"]["brainstorm"],
+        tools=get_available_tools(),
         outline=state["merged_outline"],
-        discussion_context=discussion_context
+        discussion_context=discussion_context,
     )
     state["act_two_script"] = script
     logger.info("✅ Act Two script completed!")
@@ -78,12 +78,12 @@ def write_act_three(state: EpisodeState) -> Dict:
         "COLLABORATIVE FEEDBACK:\n{discussion_context}\n\n---\n\n"
         "OUTLINE:\n{outline}"
     )
-    script = llm_call(
-        act_three_prompt, 
-        temperature=PERSONAS["Trey Parker"]["temperature"]["brainstorm"], 
-        tools=[search_tool], 
+    script, model_name = llm_call(
+        act_three_prompt,
+        temperature=PERSONAS["Trey Parker"]["temperature"]["brainstorm"],
+        tools=get_available_tools(),
         outline=state["merged_outline"],
-        discussion_context=discussion_context
+        discussion_context=discussion_context,
     )
     state["act_three_script"] = script
     logger.info("✅ Act Three script completed!")
@@ -114,11 +114,11 @@ def summarize_script(state: EpisodeState) -> Dict:
         "You are a scriptwriter for South Park. Summarize the following script in a few sentences. "
         "The summary should capture the main plot points and the overall tone of the episode.\n\n---\n\n{script}"
     )
-    summary = llm_call(
-        summary_prompt, 
-        temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"], 
-        tools=[search_tool], 
-        script=state["script"]
+    summary, model_name = llm_call(
+        summary_prompt,
+        temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"],
+        tools=get_available_tools(),
+        script=state["script"],
     )
     state["script_summary"] = summary
     logger.info("✅ Script summary completed!")

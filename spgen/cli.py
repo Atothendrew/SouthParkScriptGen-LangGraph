@@ -188,13 +188,13 @@ def main() -> None:
         if args.prompt:
             print("⚠️  When using --dynamic-prompt, the episode idea will be generated from current events.")
             print("   Your provided prompt will be ignored in favor of trending news analysis.")
-        
+
         print("🔍 Generating episode concept from trending news...")
         from spgen.workflow.news_agent import NewsResearchAgent
         news_agent = NewsResearchAgent()
         generated_prompt = news_agent.generate_episode_prompt_from_news()
         print(f"📰 Generated concept: {generated_prompt}")
-        
+
         original_prompt = generated_prompt
         prompt = generated_prompt
     else:
@@ -222,7 +222,7 @@ def main() -> None:
 
     for i in range(args.num_parts):
         print(f"--- Generating Part {i+1}/{args.num_parts} ---")
-        
+
         # Create part directory under the timestamped folder
         part_dir = os.path.join(timestamp_dir, f"part_{i+1:02d}")
         os.makedirs(part_dir, exist_ok=True)
@@ -248,30 +248,30 @@ def main() -> None:
         # Write prompt and continuity context
         with open(os.path.join(log_dir, "prompt.md"), "w", encoding="utf-8") as f:
             f.write(f"# Part {i+1} Prompt\\n\\n{prompt}")
-            
+
             if continuity:
                 f.write(f"\\n\\n## Continuity Context\\n\\n")
                 f.write(f"**Part {i+1} of {args.num_parts}**\\n\\n")
                 f.write(f"**Original Prompt:** {original_prompt}\\n\\n")
-                
+
                 if continuity["previous_summaries"]:
                     f.write("**Previous Parts:**\\n")
                     for idx, summary in enumerate(continuity["previous_summaries"]):
                         f.write(f"- Part {idx+1}: {summary}\\n")
                     f.write("\\n")
-                
+
                 if continuity["character_developments"]:
                     f.write("**Character Developments:**\\n")
                     for dev in continuity["character_developments"]:
                         f.write(f"- {dev}\\n")
                     f.write("\\n")
-                
+
                 if continuity["running_gags"]:
                     f.write("**Running Gags:**\\n")
                     for gag in continuity["running_gags"]:
                         f.write(f"- {gag}\\n")
                     f.write("\\n")
-                
+
                 if continuity["unresolved_plotlines"]:
                     f.write("**Unresolved Plotlines:**\\n")
                     for plot in continuity["unresolved_plotlines"]:
@@ -281,7 +281,7 @@ def main() -> None:
         # Build and compile graph
         graph = build_graph()
         app = graph.compile()
-        
+
         print(f"🔧 Built episode generation workflow with {len(WorkflowStep)} steps")
 
         # Run the graph
@@ -302,23 +302,28 @@ def main() -> None:
             "news_context_files": None,
             "dynamic_prompt": args.dynamic_prompt,
         }
-        
+
         # Set up logger for this part
         logger = WorkflowLogger(log_dir)
         set_logger(logger)
-        
-        # Log workflow initialization and start
+
+        # Set up tool logging directory
+        from spgen.workflow.llm_client import set_tool_log_dir
+
+        set_tool_log_dir(log_dir)
+
+        # Log workflow initiarlization and start
         logger.info("🔧 Episode generation workflow initialized")
         logger.log_workflow_start(i+1, args.num_parts)
-        
+
         final_state = app.invoke(state)
-        
+
         # Log workflow completion
         logger.log_workflow_complete(i+1)
 
         # Extract continuity elements from this part
         new_continuity_elements = extract_continuity_elements(final_state)
-        
+
         # Update continuity data for next part
         continuity_data["previous_summaries"].append(final_state["script_summary"])
         continuity_data["previous_outlines"].append(final_state["merged_outline"])
@@ -327,21 +332,21 @@ def main() -> None:
         continuity_data["unresolved_plotlines"].extend(new_continuity_elements.unresolved_plotlines)
         continuity_data["established_locations"].extend(new_continuity_elements.established_locations)
         continuity_data["previous_log_dirs"].append(log_dir)
-        
+
         # Remove duplicates
         continuity_data["established_locations"] = list(set(continuity_data["established_locations"]))
-        
+
         # Save updated continuity data
         save_continuity_data(continuity_data, prompt_dir)
 
         # Use the generated script summary as the prompt for the next part, but enhance it
         if i < args.num_parts - 1:  # Not the last part
             continuation_prompt = f"Continuing from the previous part: {final_state['script_summary']}"
-            
+
             # Add context about unresolved elements
             if continuity_data["unresolved_plotlines"]:
                 continuation_prompt += f"\\n\\nUnresolved plotlines to address: {', '.join(continuity_data['unresolved_plotlines'][-3:])}"
-            
+
             prompt = continuation_prompt
 
         print(f"Part {i+1} complete. ")

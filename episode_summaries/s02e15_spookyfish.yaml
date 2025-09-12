@@ -1,0 +1,121 @@
+---
+basic_info:
+  title: Spookyfish
+  season: 2
+  episode_number: 15
+  original_air_date: '1998-10-28'
+  episode_type: standalone
+plot:
+  logline: Stan's Aunt Flo gives him a goldfish that turns out to be evil and murderous,
+    while an alternate dim...
+  plot_summary: Stan's Aunt Flo gives him a goldfish that turns out to be evil and
+    murderous, while an alternate dimension version of Cartman who is incredibly nice
+    visits South Park.
+  plot_threads:
+  - title: Main Plot
+    description: Stan's Aunt Flo gives him a goldfish that turns out to be evil and
+      murderous, while an alternate dimension version of Cartman who is incredibly
+      nice visits South Park.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Stan Marsh
+    role: main
+    character_development: Receives evil goldfish, investigates murders
+    key_moments: []
+    relationships_affected: []
+  - name: Kyle Broflovski
+    role: main
+    character_development: Helps investigate the mysterious deaths
+    key_moments: []
+    relationships_affected: []
+  - name: Eric Cartman
+    role: main
+    character_development: Regular Cartman, contrasted with nice version
+    key_moments: []
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    character_development: Participates in mystery solving
+    key_moments: []
+    relationships_affected: []
+  - name: Nice Cartman
+    role: main
+    character_development: Alternate dimension version who is kind and helpful
+    key_moments: []
+    relationships_affected: []
+  supporting:
+  - name: Aunt Flo
+    role: supporting
+    character_development: Stan's aunt who gives him the evil goldfish
+    key_moments: []
+    relationships_affected: []
+  - name: The Evil Goldfish
+    role: supporting
+    character_development: Murderous pet that kills people
+    key_moments: []
+    relationships_affected: []
+  - name: South Park Residents
+    role: supporting
+    character_development: Victims and witnesses to the goldfish's crimes
+    key_moments: []
+    relationships_affected: []
+  new:
+  - name: Alternate Dimension Characters
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+content_elements:
+  cultural_references: []
+  running_gags: []
+  locations: []
+themes:
+- theme: Appearances can be deceiving
+  description: 'Primary theme: Appearances can be deceiving'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Good vs evil duality
+  description: 'Primary theme: Good vs evil duality'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Alternate possibilities
+  description: 'Primary theme: Alternate possibilities'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Family obligations and gifts
+  description: 'Primary theme: Family obligations and gifts'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks:
+  - Cartman's established personality traits
+  setup_for_future:
+  - Establishes concept of alternate dimensions in South Park universe
+  character_developments: []
+  world_building: []
+production:
+  notable_quotes: []
+  memorable_scenes: []
+  animation_notes:
+  - Evil goldfish animation and effects
+  - Alternate dimension visual differences
+  - Halloween/horror atmosphere
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Halloween episode aired near Halloween 1998
+  controversy_notes: Part of South Park's controversial content
+  reception_notes: Popular Halloween episode, well-received for nice Cartman concept
+  social_commentary:
+  - Social commentary from Spookyfish

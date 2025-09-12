@@ -1,0 +1,123 @@
+---
+basic_info:
+  title: Merry Christmas Charlie Manson!
+  season: 2
+  episode_number: 16
+  original_air_date: '1998-12-09'
+  episode_type: standalone
+plot:
+  logline: The boys visit Cartman's family in Nebraska for Christmas, where they encounter
+    Cartman's Uncle Howa...
+  plot_summary: The boys visit Cartman's family in Nebraska for Christmas, where they
+    encounter Cartman's Uncle Howard and his cellmate Charlie Manson, who has escaped
+    from prison.
+  plot_threads:
+  - title: Main Plot
+    description: The boys visit Cartman's family in Nebraska for Christmas, where
+      they encounter Cartman's Uncle Howard and his cellmate Charlie Manson, who has
+      escaped from prison.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Eric Cartman
+    role: main
+    character_development: Takes friends to meet his extended family
+    key_moments: []
+    relationships_affected: []
+  - name: Stan Marsh
+    role: main
+    character_development: Experiences culture shock with Cartman's family
+    key_moments: []
+    relationships_affected: []
+  - name: Kyle Broflovski
+    role: main
+    character_development: Observes and reacts to the chaotic family situation
+    key_moments: []
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    character_development: Participates in the Nebraska Christmas adventure
+    key_moments: []
+    relationships_affected: []
+  supporting:
+  - name: Uncle Howard
+    role: supporting
+    character_development: Cartman's uncle who harbors Charlie Manson
+    key_moments: []
+    relationships_affected: []
+  - name: Charlie Manson
+    role: supporting
+    character_development: Escaped convict who disrupts Christmas
+    key_moments: []
+    relationships_affected: []
+  - name: Cartman's Extended Family
+    role: supporting
+    character_development: Various dysfunctional relatives
+    key_moments: []
+    relationships_affected: []
+  - name: Nebraska Residents
+    role: supporting
+    character_development: Local townspeople affected by Manson's presence
+    key_moments: []
+    relationships_affected: []
+  new:
+  - name: Cartman's Nebraska relatives
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+content_elements:
+  cultural_references: []
+  running_gags: []
+  locations: []
+themes:
+- theme: Family dysfunction
+  description: 'Primary theme: Family dysfunction'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Christmas spirit vs reality
+  description: 'Primary theme: Christmas spirit vs reality'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Criminal rehabilitation
+  description: 'Primary theme: Criminal rehabilitation'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Cultural differences
+  description: 'Primary theme: Cultural differences'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks:
+  - Cartman's family background and personality traits
+  setup_for_future:
+  - Establishes more of Cartman's extended family
+  character_developments: []
+  world_building: []
+production:
+  notable_quotes: []
+  memorable_scenes: []
+  animation_notes:
+  - Nebraska rural setting design
+  - Prison and escape sequences
+  - Christmas decoration and holiday atmosphere
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Christmas episode aired during 1998 holiday season, references
+    real Charles Manson
+  controversy_notes: Part of South Park's controversial content
+  reception_notes: Controversial for featuring Charles Manson but praised for dark
+    Christmas humor
+  social_commentary:
+  - Social commentary from Merry Christmas Charlie Manson!

@@ -1,0 +1,273 @@
+---
+basic_info:
+  season: 2
+  episode_number: 2
+  title: Cartman's Mom is Still a Dirty Slut
+  original_air_date: '1998-04-22'
+  episode_type: multi_part
+plot:
+  logline: The long-awaited revelation of Cartman's father is finally revealed, while
+    a natural disaster threatens South Park.
+  plot_summary: 'Following the cliffhanger from Season 1''s finale, this episode finally
+    reveals the identity of Cartman''s father. However, the revelation is complicated
+    by a massive blizzard that traps the town and cuts off all communication. Dr.
+    Mephesto, who has the DNA test results, is shot by an unknown assailant before
+    he can reveal the truth.
+
+
+    While the adults deal with the crisis and try to save Dr. Mephesto''s life, the
+    boys are stuck at the community center during the storm. The episode builds tension
+    around multiple mysteries: who shot Dr. Mephesto, who is Cartman''s father, and
+    how will the town survive the natural disaster.
+
+
+    The climax reveals that Cartman''s mother Liane is actually intersex and is technically
+    Cartman''s father, while his biological father remains unknown. This shocking
+    twist subverts audience expectations and adds another layer to the show''s willingness
+    to push boundaries. The episode also resolves the immediate crisis with Dr. Mephesto''s
+    recovery and the town''s survival of the blizzard.
+
+    '
+  plot_threads:
+  - title: Cartman's Father Mystery
+    description: The long-awaited revelation of who Cartman's biological father is
+    characters_involved:
+    - Eric Cartman
+    - Liane Cartman
+    - Dr. Mephesto
+    - Various potential fathers
+    resolution_status: partially_resolved
+    connects_to_episodes:
+    - S01E13
+  - title: Dr. Mephesto's Shooting
+    description: Someone shoots Dr. Mephesto before he can reveal Cartman's father
+    characters_involved:
+    - Dr. Mephesto
+    - Unknown shooter
+    - South Park residents
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: The Great Blizzard
+    description: A massive snowstorm traps the town and creates a survival situation
+    characters_involved:
+    - All South Park residents
+    - The boys
+    - Emergency responders
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Desperately wants to know who his father is
+    - Deals with the shocking revelation about his mother
+    - Struggles with the truth about his parentage
+    - Shows vulnerability about his family situation
+    character_development: Reveals Cartman's deep insecurity about his family and
+      identity
+    relationships_affected:
+    - Liane Cartman
+    - Stan Marsh
+    - Kyle Broflovski
+    - Kenny McCormick
+  - name: Liane Cartman
+    role: main
+    key_moments:
+    - Revealed to be intersex
+    - Technically identified as Cartman's 'father'
+    - Continues to be promiscuous despite the revelation
+    - Shows maternal care during the crisis
+    character_development: Adds complexity to her character while maintaining her
+      established traits
+    relationships_affected:
+    - Eric Cartman
+    - South Park men
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Supports Cartman during the revelation
+    - Helps during the blizzard crisis
+    - Witnesses the shocking truth
+    character_development: Shows Stan's loyalty to friends even in bizarre situations
+    relationships_affected:
+    - Eric Cartman
+    - Kyle Broflovski
+    - Kenny McCormick
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Reacts with disbelief to the revelation
+    - Provides rational perspective on the situation
+    - Helps during the emergency
+    character_development: Demonstrates Kyle's ability to process shocking information
+    relationships_affected:
+    - Eric Cartman
+    - Stan Marsh
+    - Kenny McCormick
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Dies during the blizzard crisis
+    - Participates in the group's activities
+    - Witnesses the father revelation
+    character_development: Continues the pattern of Kenny's deaths in dramatic situations
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+  supporting:
+  - name: Dr. Mephesto
+    role: supporting
+    key_moments:
+    - Has the DNA test results
+    - Gets shot before revealing the truth
+    - Survives the assassination attempt
+    - Eventually reveals the shocking truth
+    character_development: Shows his importance to the town's scientific needs
+    relationships_affected:
+    - Eric Cartman
+    - Liane Cartman
+    - South Park residents
+  - name: Chef
+    role: supporting
+    key_moments:
+    - Helps during the blizzard crisis
+    - Provides adult guidance to the boys
+    - Reacts to the shocking revelation
+    character_development: Continues his role as the boys' adult confidant
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+  - name: Officer Barbrady
+    role: supporting
+    key_moments:
+    - Investigates Dr. Mephesto's shooting
+    - Helps coordinate emergency response
+    - Maintains order during the crisis
+    character_development: Shows his dedication despite his incompetence
+    relationships_affected:
+    - Dr. Mephesto
+    - South Park residents
+  new:
+  - name: The Shooter
+    role: minor
+    key_moments:
+    - Shoots Dr. Mephesto
+    - Identity eventually revealed
+    - Motives explained
+    character_development: Serves as a plot device for the mystery element
+    relationships_affected:
+    - Dr. Mephesto
+content_elements:
+  cultural_references:
+  - type: tv_show
+    target: Dallas
+    description: Parodies the famous 'Who Shot J.R.?' storyline
+    context: The shooting of Dr. Mephesto mirrors the classic TV mystery
+  - type: movie
+    target: Disaster Films
+    description: The blizzard scenario references disaster movie tropes
+    context: Trapped townspeople dealing with natural disaster follows genre conventions
+  - type: current_event
+    target: DNA Testing
+    description: References the growing use of DNA testing for paternity
+    context: Reflects 1990s advances in genetic testing technology
+  running_gags:
+  - name: Kenny Dies
+    description: Kenny McCormick dies during the blizzard
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Death occurs during a natural disaster rather than direct violence
+  - name: Oh My God, They Killed Kenny
+    description: The boys' reaction to Kenny's death
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Continues the established pattern of reactions to Kenny's death
+  - name: Liane Cartman's Promiscuity
+    description: References to Mrs. Cartman's sexual relationships with multiple men
+    frequency: 5
+    first_appearance: S01E13
+    evolution_notes: Reaches its climax with the revelation of her intersex nature
+  locations:
+  - name: South Park Community Center
+    description: Where the townspeople gather during the blizzard
+    is_new: true
+    significance: Central location for the crisis and revelation scenes
+  - name: Hell's Pass Hospital
+    description: Where Dr. Mephesto is taken after being shot
+    is_new: false
+    significance: Critical location for the medical emergency subplot
+  - name: Dr. Mephesto's Laboratory
+    description: Where the DNA testing was conducted
+    is_new: false
+    significance: Source of the paternity revelation
+themes:
+- theme: Truth and Consequences
+  description: How the truth can be more shocking than expected
+  how_explored: The revelation about Cartman's parentage subverts all expectations
+  moral_lesson: Sometimes the truth is stranger than fiction
+- theme: Family Identity
+  description: What defines family and parentage
+  how_explored: Cartman's complex family situation challenges traditional definitions
+  moral_lesson: Family structures can be more complex than they appear
+- theme: Community in Crisis
+  description: How people come together during emergencies
+  how_explored: The town unites during the blizzard to help each other survive
+  moral_lesson: Communities must work together to overcome challenges
+continuity:
+  callbacks:
+  - Direct continuation of S01E13's cliffhanger
+  - References to all the potential fathers from the previous episode
+  - Continuation of Liane Cartman's character development
+  setup_for_future:
+  - Establishes the ongoing mystery of Cartman's biological father
+  - Sets up future episodes dealing with Cartman's family issues
+  - Creates ongoing questions about Cartman's identity
+  character_developments:
+  - Major revelation about Liane Cartman's biology
+  - Deepens Cartman's character through family trauma
+  - Shows the boys' loyalty during crisis situations
+  world_building:
+  - Establishes South Park's vulnerability to natural disasters
+  - Shows the town's emergency response capabilities
+  - Expands the medical facilities and personnel
+production:
+  notable_quotes:
+  - I am your father, Eric. - Liane Cartman
+  - That's impossible! - Eric Cartman
+  - Oh my God, they killed Kenny! - Kyle
+  - You bastards! - Stan
+  - This is more confusing than that time I had sex with that hermaphrodite! - Chef
+  memorable_scenes:
+  - Dr. Mephesto getting shot just before the revelation
+  - The blizzard trapping everyone in the community center
+  - The shocking revelation about Liane Cartman
+  - Cartman's reaction to learning the truth
+  - Kenny's death in the blizzard
+  animation_notes:
+  - Dramatic lighting during the revelation scene
+  - Blizzard effects and snow animation
+  - Hospital scenes with medical equipment
+  - Community center crowd scenes
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired during a time when DNA paternity testing was becoming
+    more common and accessible to the general public
+  controversy_notes: The intersex revelation was controversial and groundbreaking
+    for television, pushing boundaries of gender discussion in mainstream media
+  reception_notes: Mixed reception due to the subversive nature of the revelation,
+    with some fans feeling cheated by the non-traditional answer to the paternity
+    question
+  social_commentary:
+  - Challenges traditional concepts of gender and parentage
+  - Satirizes soap opera storytelling and cliffhanger resolutions
+  - Comments on society's obsession with paternity and family lineage
+  - Explores themes of identity and belonging in non-traditional families

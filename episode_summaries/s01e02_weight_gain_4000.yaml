@@ -2,239 +2,257 @@
 basic_info:
   season: 1
   episode_number: 2
-  title: "Weight Gain 4000"
-  original_air_date: "1997-08-20"
-  episode_type: "standalone"
-
+  title: Weight Gain 4000
+  original_air_date: '1997-08-20'
+  episode_type: standalone
 plot:
-  logline: "Cartman becomes famous after winning an essay contest, while Mr. Garrison and Mr. Hat plot to assassinate Kathie Lee Gifford."
-  plot_summary: |
-    When Cartman wins a national essay contest with his piece "Save the Rainforest," he becomes an instant celebrity and is invited to appear on television. The attention goes to his head, and he begins using Weight Gain 4000 to bulk up for his TV appearance, not realizing it's making him extremely fat rather than muscular.
+  logline: Cartman becomes famous after winning an essay contest, while Mr. Garrison
+    and Mr. Hat plot to assassinate Kathie Lee Gifford.
+  plot_summary: 'When Cartman wins a national essay contest with his piece "Save the
+    Rainforest," he becomes an instant celebrity and is invited to appear on television.
+    The attention goes to his head, and he begins using Weight Gain 4000 to bulk up
+    for his TV appearance, not realizing it''s making him extremely fat rather than
+    muscular.
 
-    Meanwhile, Mr. Garrison harbors a deep resentment toward Kathie Lee Gifford, who is coming to South Park to present Cartman with his award. Along with his hand puppet Mr. Hat, Garrison plots to assassinate Gifford during the ceremony. The boys become suspicious of Garrison's behavior and try to stop him.
 
-    The episode culminates at the award ceremony where Garrison's assassination attempt fails spectacularly, Cartman's obesity becomes apparent, and the town's excitement over their celebrity visitor leads to chaos. The episode establishes early themes about fame, vanity, and the absurdity of small-town celebrity worship.
+    Meanwhile, Mr. Garrison harbors a deep resentment toward Kathie Lee Gifford, who
+    is coming to South Park to present Cartman with his award. Along with his hand
+    puppet Mr. Hat, Garrison plots to assassinate Gifford during the ceremony. The
+    boys become suspicious of Garrison''s behavior and try to stop him.
+
+
+    The episode culminates at the award ceremony where Garrison''s assassination attempt
+    fails spectacularly, Cartman''s obesity becomes apparent, and the town''s excitement
+    over their celebrity visitor leads to chaos. The episode establishes early themes
+    about fame, vanity, and the absurdity of small-town celebrity worship.
+
+    '
   plot_threads:
-    - title: "Cartman's Essay Contest Win"
-      description: "Cartman wins a national essay contest and becomes temporarily famous"
-      characters_involved:
-        - "Eric Cartman"
-        - "Stan Marsh"
-        - "Kyle Broflovski"
-        - "Kenny McCormick"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-    - title: "Weight Gain 4000 Misuse"
-      description: "Cartman uses a weight gain supplement thinking it will make him muscular, but it just makes him fat"
-      characters_involved:
-        - "Eric Cartman"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-    - title: "Mr. Garrison's Assassination Plot"
-      description: "Mr. Garrison and Mr. Hat plot to kill Kathie Lee Gifford during her visit to South Park"
-      characters_involved:
-        - "Mr. Garrison"
-        - "Mr. Hat"
-        - "Kathie Lee Gifford"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-
+  - title: Cartman's Essay Contest Win
+    description: Cartman wins a national essay contest and becomes temporarily famous
+    characters_involved:
+    - Eric Cartman
+    - Stan Marsh
+    - Kyle Broflovski
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Weight Gain 4000 Misuse
+    description: Cartman uses a weight gain supplement thinking it will make him muscular,
+      but it just makes him fat
+    characters_involved:
+    - Eric Cartman
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Mr. Garrison's Assassination Plot
+    description: Mr. Garrison and Mr. Hat plot to kill Kathie Lee Gifford during her
+      visit to South Park
+    characters_involved:
+    - Mr. Garrison
+    - Mr. Hat
+    - Kathie Lee Gifford
+    resolution_status: resolved
+    connects_to_episodes: []
 characters:
   main:
-    - name: "Eric Cartman"
-      role: "main"
-      key_moments:
-        - "Wins the essay contest with 'Save the Rainforest'"
-        - "Becomes obsessed with fame and TV appearance"
-        - "Uses Weight Gain 4000 and becomes extremely fat"
-        - "Appears on TV despite his condition"
-      character_development: "Shows Cartman's vanity, desire for fame, and tendency to misunderstand situations"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Kyle Broflovski"
-        - "Kenny McCormick"
-    - name: "Kyle Broflovski"
-      role: "main"
-      key_moments:
-        - "Is skeptical of Cartman's essay win"
-        - "Tries to warn Cartman about the weight gain"
-        - "Helps investigate Mr. Garrison's suspicious behavior"
-      character_development: "Continues to be the voice of reason and Cartman's primary foil"
-      relationships_affected:
-        - "Eric Cartman"
-        - "Stan Marsh"
-    - name: "Stan Marsh"
-      role: "main"
-      key_moments:
-        - "Supports the investigation into Mr. Garrison"
-        - "Witnesses Cartman's transformation"
-        - "Tries to help stop the assassination plot"
-      character_development: "Shows Stan as a loyal friend who gets involved in the town's problems"
-      relationships_affected:
-        - "Kyle Broflovski"
-        - "Eric Cartman"
-    - name: "Kenny McCormick"
-      role: "main"
-      key_moments:
-        - "Dies during the episode's events"
-        - "Participates in the group's activities"
-      character_development: "Continues the pattern of dying in episodes"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Kyle Broflovski"
-        - "Eric Cartman"
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Wins the essay contest with 'Save the Rainforest'
+    - Becomes obsessed with fame and TV appearance
+    - Uses Weight Gain 4000 and becomes extremely fat
+    - Appears on TV despite his condition
+    character_development: Shows Cartman's vanity, desire for fame, and tendency to
+      misunderstand situations
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Kenny McCormick
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Is skeptical of Cartman's essay win
+    - Tries to warn Cartman about the weight gain
+    - Helps investigate Mr. Garrison's suspicious behavior
+    character_development: Continues to be the voice of reason and Cartman's primary
+      foil
+    relationships_affected:
+    - Eric Cartman
+    - Stan Marsh
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Supports the investigation into Mr. Garrison
+    - Witnesses Cartman's transformation
+    - Tries to help stop the assassination plot
+    character_development: Shows Stan as a loyal friend who gets involved in the town's
+      problems
+    relationships_affected:
+    - Kyle Broflovski
+    - Eric Cartman
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Dies during the episode's events
+    - Participates in the group's activities
+    character_development: Continues the pattern of dying in episodes
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
   supporting:
-    - name: "Mr. Garrison"
-      role: "supporting"
-      key_moments:
-        - "Reveals his hatred for Kathie Lee Gifford"
-        - "Plots assassination with Mr. Hat"
-        - "Attempts to kill Gifford at the ceremony"
-        - "Fails in his assassination attempt"
-      character_development: "Establishes Mr. Garrison as unstable and potentially dangerous"
-      relationships_affected:
-        - "Mr. Hat"
-        - "Kathie Lee Gifford"
-    - name: "Mr. Hat"
-      role: "supporting"
-      key_moments:
-        - "Conspires with Mr. Garrison"
-        - "Encourages the assassination plot"
-        - "Acts as Garrison's accomplice"
-      character_development: "Shows Mr. Hat as Garrison's darker impulses personified"
-      relationships_affected:
-        - "Mr. Garrison"
-    - name: "Kathie Lee Gifford"
-      role: "supporting"
-      key_moments:
-        - "Comes to South Park for the award ceremony"
-        - "Becomes the target of assassination"
-        - "Survives the attempt on her life"
-      character_development: "Represents celebrity culture and media attention"
-      relationships_affected:
-        - "Eric Cartman"
-        - "Mr. Garrison"
+  - name: Mr. Garrison
+    role: supporting
+    key_moments:
+    - Reveals his hatred for Kathie Lee Gifford
+    - Plots assassination with Mr. Hat
+    - Attempts to kill Gifford at the ceremony
+    - Fails in his assassination attempt
+    character_development: Establishes Mr. Garrison as unstable and potentially dangerous
+    relationships_affected:
+    - Mr. Hat
+    - Kathie Lee Gifford
+  - name: Mr. Hat
+    role: supporting
+    key_moments:
+    - Conspires with Mr. Garrison
+    - Encourages the assassination plot
+    - Acts as Garrison's accomplice
+    character_development: Shows Mr. Hat as Garrison's darker impulses personified
+    relationships_affected:
+    - Mr. Garrison
+  - name: Kathie Lee Gifford
+    role: supporting
+    key_moments:
+    - Comes to South Park for the award ceremony
+    - Becomes the target of assassination
+    - Survives the attempt on her life
+    character_development: Represents celebrity culture and media attention
+    relationships_affected:
+    - Eric Cartman
+    - Mr. Garrison
   new:
-    - name: "Weight Gain 4000 Spokesperson"
-      role: "minor"
-      key_moments:
-        - "Appears in commercials for the product"
-        - "Misleads Cartman about the product's effects"
-      character_development: "Represents false advertising and consumer manipulation"
-      relationships_affected:
-        - "Eric Cartman"
-
+  - name: Weight Gain 4000 Spokesperson
+    role: minor
+    key_moments:
+    - Appears in commercials for the product
+    - Misleads Cartman about the product's effects
+    character_development: Represents false advertising and consumer manipulation
+    relationships_affected:
+    - Eric Cartman
 content_elements:
   cultural_references:
-    - type: "celebrity"
-      target: "Kathie Lee Gifford"
-      description: "Parodies the TV host and her public persona"
-      context: "Used as a target for Mr. Garrison's inexplicable hatred and assassination plot"
-    - type: "tv_show"
-      target: "Regis and Kathie Lee"
-      description: "References the popular morning talk show"
-      context: "Kathie Lee's fame and TV presence drives the plot"
-    - type: "current_event"
-      target: "Celebrity Worship Culture"
-      description: "Satirizes small-town excitement over celebrity visits"
-      context: "South Park's over-the-top reaction to Kathie Lee's visit"
-    - type: "movie"
-      target: "Assassination Films"
-      description: "Parodies political thriller and assassination movies"
-      context: "Mr. Garrison's elaborate assassination plot"
+  - type: celebrity
+    target: Kathie Lee Gifford
+    description: Parodies the TV host and her public persona
+    context: Used as a target for Mr. Garrison's inexplicable hatred and assassination
+      plot
+  - type: tv_show
+    target: Regis and Kathie Lee
+    description: References the popular morning talk show
+    context: Kathie Lee's fame and TV presence drives the plot
+  - type: current_event
+    target: Celebrity Worship Culture
+    description: Satirizes small-town excitement over celebrity visits
+    context: South Park's over-the-top reaction to Kathie Lee's visit
+  - type: movie
+    target: Assassination Films
+    description: Parodies political thriller and assassination movies
+    context: Mr. Garrison's elaborate assassination plot
   running_gags:
-    - name: "Kenny Dies"
-      description: "Kenny McCormick dies during the episode"
-      frequency: 1
-      first_appearance: "S01E01"
-      evolution_notes: "Continues the established pattern from the pilot"
-    - name: "Cartman's Misunderstanding"
-      description: "Cartman completely misunderstands what Weight Gain 4000 does"
-      frequency: 1
-      first_appearance: "S01E02"
-      evolution_notes: "Establishes Cartman's tendency to misinterpret things to his detriment"
-    - name: "Mr. Garrison's Instability"
-      description: "Mr. Garrison shows extreme and irrational behavior"
-      frequency: 1
-      first_appearance: "S01E02"
-      evolution_notes: "First major display of Garrison's psychological issues"
+  - name: Kenny Dies
+    description: Kenny McCormick dies during the episode
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Continues the established pattern from the pilot
+  - name: Cartman's Misunderstanding
+    description: Cartman completely misunderstands what Weight Gain 4000 does
+    frequency: 1
+    first_appearance: S01E02
+    evolution_notes: Establishes Cartman's tendency to misinterpret things to his
+      detriment
+  - name: Mr. Garrison's Instability
+    description: Mr. Garrison shows extreme and irrational behavior
+    frequency: 1
+    first_appearance: S01E02
+    evolution_notes: First major display of Garrison's psychological issues
   locations:
-    - name: "South Park Elementary School"
-      description: "Where the boys attend school and Garrison teaches"
-      is_new: false
-      significance: "Central location for character interactions and plot development"
-    - name: "South Park Town Square"
-      description: "Location of the award ceremony and assassination attempt"
-      is_new: true
-      significance: "Becomes a recurring location for town events and gatherings"
-    - name: "Cartman's House"
-      description: "Where Cartman uses Weight Gain 4000 and prepares for fame"
-      is_new: true
-      significance: "First detailed look at Cartman's home environment"
-
+  - name: South Park Elementary School
+    description: Where the boys attend school and Garrison teaches
+    is_new: false
+    significance: Central location for character interactions and plot development
+  - name: South Park Town Square
+    description: Location of the award ceremony and assassination attempt
+    is_new: true
+    significance: Becomes a recurring location for town events and gatherings
+  - name: Cartman's House
+    description: Where Cartman uses Weight Gain 4000 and prepares for fame
+    is_new: true
+    significance: First detailed look at Cartman's home environment
 themes:
-  - theme: "Fame and Vanity"
-    description: "The corrupting influence of fame and the dangers of vanity"
-    how_explored: "Through Cartman's obsession with his TV appearance and celebrity status"
-    moral_lesson: "Fame can make people lose sight of what's important and lead to poor decisions"
-  - theme: "False Advertising"
-    description: "How misleading marketing can exploit people's insecurities"
-    how_explored: "Through the Weight Gain 4000 product that doesn't work as advertised"
-    moral_lesson: "Be skeptical of products that promise easy solutions to complex problems"
-  - theme: "Irrational Hatred"
-    description: "How people can develop inexplicable hatred toward public figures"
-    how_explored: "Through Mr. Garrison's bizarre hatred of Kathie Lee Gifford"
-    moral_lesson: "Hatred without reason can lead to dangerous and destructive behavior"
-
+- theme: Fame and Vanity
+  description: The corrupting influence of fame and the dangers of vanity
+  how_explored: Through Cartman's obsession with his TV appearance and celebrity status
+  moral_lesson: Fame can make people lose sight of what's important and lead to poor
+    decisions
+- theme: False Advertising
+  description: How misleading marketing can exploit people's insecurities
+  how_explored: Through the Weight Gain 4000 product that doesn't work as advertised
+  moral_lesson: Be skeptical of products that promise easy solutions to complex problems
+- theme: Irrational Hatred
+  description: How people can develop inexplicable hatred toward public figures
+  how_explored: Through Mr. Garrison's bizarre hatred of Kathie Lee Gifford
+  moral_lesson: Hatred without reason can lead to dangerous and destructive behavior
 continuity:
   callbacks:
-    - "References to the boys' established personalities from S01E01"
-    - "Continuation of Kenny's death pattern"
+  - References to the boys' established personalities from S01E01
+  - Continuation of Kenny's death pattern
   setup_for_future:
-    - "Establishes Mr. Garrison's psychological instability"
-    - "Shows Cartman's susceptibility to fame and vanity"
-    - "Introduces the town square as a gathering place"
-    - "Sets up Mr. Hat as Garrison's darker alter ego"
+  - Establishes Mr. Garrison's psychological instability
+  - Shows Cartman's susceptibility to fame and vanity
+  - Introduces the town square as a gathering place
+  - Sets up Mr. Hat as Garrison's darker alter ego
   character_developments:
-    - "Cartman's vanity and desire for fame become apparent"
-    - "Mr. Garrison revealed as potentially dangerous and unstable"
-    - "Kyle continues to be the skeptical voice of reason"
-    - "Stan shows loyalty to his friends and community involvement"
+  - Cartman's vanity and desire for fame become apparent
+  - Mr. Garrison revealed as potentially dangerous and unstable
+  - Kyle continues to be the skeptical voice of reason
+  - Stan shows loyalty to his friends and community involvement
   world_building:
-    - "South Park shown as a place where celebrities occasionally visit"
-    - "Town's tendency to get overly excited about minor fame"
-    - "Establishes that the town has formal ceremonies and events"
-
+  - South Park shown as a place where celebrities occasionally visit
+  - Town's tendency to get overly excited about minor fame
+  - Establishes that the town has formal ceremonies and events
 production:
   notable_quotes:
-    - "I'm not fat, I'm big-boned! - Cartman (early version of his famous denial)"
-    - "Oh my God, they killed Kenny! - Kyle"
-    - "You bastards! - Stan"
-    - "That does it! Kathie Lee Gifford must die! - Mr. Garrison"
+  - I'm not fat, I'm big-boned! - Cartman (early version of his famous denial)
+  - Oh my God, they killed Kenny! - Kyle
+  - You bastards! - Stan
+  - That does it! Kathie Lee Gifford must die! - Mr. Garrison
   memorable_scenes:
-    - "Cartman's essay contest win announcement"
-    - "Cartman using Weight Gain 4000 and getting fatter"
-    - "Mr. Garrison and Mr. Hat plotting the assassination"
-    - "The chaotic award ceremony"
-    - "Garrison's failed assassination attempt"
+  - Cartman's essay contest win announcement
+  - Cartman using Weight Gain 4000 and getting fatter
+  - Mr. Garrison and Mr. Hat plotting the assassination
+  - The chaotic award ceremony
+  - Garrison's failed assassination attempt
   animation_notes:
-    - "Cartman's progressive weight gain throughout the episode"
-    - "Mr. Garrison's exaggerated facial expressions during plotting"
-    - "Crowd scenes during the award ceremony"
+  - Cartman's progressive weight gain throughout the episode
+  - Mr. Garrison's exaggerated facial expressions during plotting
+  - Crowd scenes during the award ceremony
   writers:
-    - "Trey Parker"
-    - "Matt Stone"
+  - Trey Parker
+  - Matt Stone
   directors:
-    - "Trey Parker"
+  - Trey Parker
   guest_voices:
-    - "Kathie Lee Gifford (as herself)"
-
+  - Kathie Lee Gifford (as herself)
 context:
-  historical_context: "Aired during the height of Kathie Lee Gifford's fame on Regis and Kathie Lee, and reflects 1990s celebrity culture and morning TV popularity"
-  controversy_notes: "The assassination plot against a real celebrity was controversial, though treated comedically"
-  reception_notes: "Helped establish South Park's willingness to target real celebrities and current events"
+  historical_context: Aired during the height of Kathie Lee Gifford's fame on Regis
+    and Kathie Lee, and reflects 1990s celebrity culture and morning TV popularity
+  controversy_notes: The assassination plot against a real celebrity was controversial,
+    though treated comedically
+  reception_notes: Helped establish South Park's willingness to target real celebrities
+    and current events
   social_commentary:
-    - "Satirizes celebrity worship and small-town excitement over fame"
-    - "Comments on false advertising and consumer gullibility"
-    - "Parodies the absurdity of inexplicable celebrity hatred"
-    - "Critiques vanity and the pursuit of fame over substance"
+  - Satirizes celebrity worship and small-town excitement over fame
+  - Comments on false advertising and consumer gullibility
+  - Parodies the absurdity of inexplicable celebrity hatred
+  - Critiques vanity and the pursuit of fame over substance

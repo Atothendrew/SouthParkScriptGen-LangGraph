@@ -4,7 +4,11 @@ import os
 from typing import Dict
 
 from spgen.workflow.state import EpisodeState
-from spgen.workflow.llm_client import llm_call, llm_call_with_model, search_tool
+from spgen.workflow.llm_client import (
+    llm_call,
+    llm_call_with_model,
+    get_available_tools,
+)
 from spgen.workflow.logger import get_logger
 from spgen.workflow.utils import should_include_persona, sanitize_filename
 from spgen.agents import PERSONAS
@@ -42,7 +46,7 @@ def agent_feedback(state: EpisodeState) -> Dict:
         response, model_name = llm_call_with_model(
             feedback_prompt,
             temperature=persona["temperature"]["discussion"],
-            tools=[search_tool],
+            tools=get_available_tools(),
             outlines=outlines_text,
         )
         feedback.append(f"**{name}'s Brainstorm Ideas:**\n{response}")
@@ -97,7 +101,7 @@ def merge_outlines(state: EpisodeState) -> Dict:
     merged_outline, model_name = llm_call_with_model(
         prompt,
         temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"],
-        tools=[search_tool],
+        tools=get_available_tools(),
         outlines=outlines_text,
     )
 
@@ -142,7 +146,7 @@ def final_discussion(state: EpisodeState) -> Dict:
         response, model_name = llm_call_with_model(
             feedback_prompt,
             temperature=persona["temperature"]["discussion"],
-            tools=[search_tool],
+            tools=get_available_tools(),
             outlines=outlines_text,
         )
         feedback.append(f"**{name}'s Final Feedback:**\n{response}")
@@ -178,7 +182,7 @@ def final_discussion(state: EpisodeState) -> Dict:
     final_merged_outline, model_name = llm_call_with_model(
         merge_prompt,
         temperature=PERSONAS["Trey Parker"]["temperature"]["discussion"],
-        tools=[search_tool],
+        tools=get_available_tools(),
         outlines=outlines_text,
         discussion=final_discussion_text,
     )

@@ -1,0 +1,121 @@
+---
+basic_info:
+  title: Chef Aid
+  season: 2
+  episode_number: 14
+  original_air_date: '1998-10-07'
+  episode_type: standalone
+plot:
+  logline: Chef is sued by a record company for allegedly stealing a song he actually
+    wrote years ago, and the ...
+  plot_summary: Chef is sued by a record company for allegedly stealing a song he
+    actually wrote years ago, and the boys organize a benefit concert to raise money
+    for his legal defense.
+  plot_threads:
+  - title: Main Plot
+    description: Chef is sued by a record company for allegedly stealing a song he
+      actually wrote years ago, and the boys organize a benefit concert to raise money
+      for his legal defense.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Chef (Jerome McElroy)
+    role: main
+    character_development: Victim of music industry lawsuit
+    key_moments: []
+    relationships_affected: []
+  - name: Stan Marsh
+    role: main
+    character_development: Organizes benefit concert for Chef
+    key_moments: []
+    relationships_affected: []
+  - name: Kyle Broflovski
+    role: main
+    character_development: Helps organize Chef Aid concert
+    key_moments: []
+    relationships_affected: []
+  - name: Eric Cartman
+    role: main
+    character_development: Participates in helping Chef
+    key_moments: []
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    character_development: Helps with concert organization
+    key_moments: []
+    relationships_affected: []
+  supporting:
+  - name: Record Company Executives
+    role: supporting
+    character_development: Antagonists trying to steal Chef's song
+    key_moments: []
+    relationships_affected: []
+  - name: Johnnie Cochran
+    role: supporting
+    character_development: Chef's lawyer
+    key_moments: []
+    relationships_affected: []
+  - name: Various Celebrity Musicians
+    role: supporting
+    character_development: Perform at Chef Aid concert
+    key_moments: []
+    relationships_affected: []
+  new:
+  - name: Multiple real-world musicians
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+content_elements:
+  cultural_references: []
+  running_gags: []
+  locations: []
+themes:
+- theme: Loyalty and friendship
+  description: 'Primary theme: Loyalty and friendship'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Music industry corruption
+  description: 'Primary theme: Music industry corruption'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Justice vs corporate power
+  description: 'Primary theme: Justice vs corporate power'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Community support
+  description: 'Primary theme: Community support'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks:
+  - Chef's background and personality established in previous episodes
+  setup_for_future:
+  - Establishes Chef's deeper musical background
+  character_developments: []
+  world_building: []
+production:
+  notable_quotes: []
+  memorable_scenes: []
+  animation_notes:
+  - Concert stage and performance animations
+  - Flashback sequences with period-appropriate styling
+  - Celebrity musician character designs
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired during era of high-profile music industry legal battles
+  controversy_notes: Part of South Park's controversial content
+  reception_notes: Notable for celebrity musician appearances and musical performances
+  social_commentary:
+  - Social commentary from Chef Aid

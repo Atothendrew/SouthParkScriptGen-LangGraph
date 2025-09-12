@@ -1,0 +1,308 @@
+---
+basic_info:
+  season: 2
+  episode_number: 5
+  title: Conjoined Fetus Lady
+  original_air_date: '1998-06-03'
+  episode_type: standalone
+plot:
+  logline: The boys' dodgeball team advances to the championships while dealing with
+    prejudice against the school nurse who has a conjoined fetus on her head.
+  plot_summary: 'South Park Elementary''s dodgeball team, led by the boys, unexpectedly
+    advances through regional championships toward the state finals. However, their
+    success is overshadowed by the town''s cruel treatment of the school nurse, who
+    has a conjoined fetus attached to her head. The townspeople mock and fear her,
+    calling her names and treating her as a freak.
+
+
+    As the boys continue their winning streak in dodgeball, they begin to understand
+    the unfairness of how the nurse is treated. The episode explores themes of prejudice,
+    acceptance, and what it means to be different. The nurse, despite being competent
+    and kind, faces constant discrimination and isolation from the community.
+
+
+    The climax comes during the state championship game, where the boys must decide
+    whether to continue playing or take a stand against the prejudice they''ve witnessed.
+    The episode addresses disability rights, social acceptance, and the harm caused
+    by treating people as objects of curiosity rather than as human beings. The resolution
+    shows the boys learning about tolerance and the importance of treating everyone
+    with dignity.
+
+    '
+  plot_threads:
+  - title: Dodgeball Championship Run
+    description: The boys' team advances through dodgeball tournaments toward the
+      state championship
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - Other team members
+    - Coach
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Nurse's Discrimination
+    description: The school nurse faces prejudice and mockery due to her conjoined
+      fetus
+    characters_involved:
+    - School Nurse
+    - South Park residents
+    - The boys
+    - School staff
+    resolution_status: partially_resolved
+    connects_to_episodes: []
+  - title: Learning About Tolerance
+    description: The boys learn about prejudice and the importance of treating people
+      with dignity
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - School Nurse
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Plays on the dodgeball team
+    - Witnesses the nurse's mistreatment
+    - Begins to question the town's behavior
+    - Takes a stand against prejudice
+    - Shows leadership in promoting tolerance
+    character_development: Demonstrates Stan's growing moral awareness and leadership
+      qualities
+    relationships_affected:
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - School Nurse
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Participates in dodgeball championships
+    - Recognizes the injustice of the nurse's treatment
+    - Advocates for treating her with respect
+    - Helps educate others about tolerance
+    character_development: Reinforces Kyle's role as the moral compass and advocate
+      for justice
+    relationships_affected:
+    - Stan Marsh
+    - Eric Cartman
+    - Kenny McCormick
+    - School Nurse
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Initially participates in mocking the nurse
+    - Focuses primarily on dodgeball success
+    - Slowly begins to understand the issue
+    - Eventually goes along with the group's stance
+    character_development: Shows Cartman's typical insensitivity but eventual capacity
+      for group conformity
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Kenny McCormick
+    - School Nurse
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Plays dodgeball with the team
+    - Dies during the episode
+    - Participates in the team's moral journey
+    character_development: Continues his pattern of participation and inevitable death
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+  - name: School Nurse
+    role: main
+    key_moments:
+    - Faces constant mockery and discrimination
+    - Continues to do her job professionally despite mistreatment
+    - Shows dignity in the face of prejudice
+    - Becomes the focus of the boys' moral awakening
+    - Represents the target of societal prejudice
+    character_development: Serves as a symbol of dignity under persecution and the
+      harm of discrimination
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - South Park residents
+  supporting:
+  - name: Dodgeball Coach
+    role: supporting
+    key_moments:
+    - Coaches the boys' team to success
+    - Focuses on winning rather than moral issues
+    - Represents adult priorities in competition
+    character_development: Shows how adults can miss important moral lessons while
+      focusing on achievement
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+  - name: South Park Residents
+    role: supporting
+    key_moments:
+    - Mock and discriminate against the nurse
+    - Treat her as a curiosity rather than a person
+    - Show typical small-town prejudice
+    - Eventually confronted about their behavior
+    character_development: Represent societal prejudice and the harm of treating people
+      as different
+    relationships_affected:
+    - School Nurse
+    - The boys
+  - name: Opposing Dodgeball Teams
+    role: supporting
+    key_moments:
+    - Compete against South Park in tournaments
+    - Provide the competitive framework for the story
+    - React to South Park's team and situation
+    character_development: Serve as the competitive element driving the sports storyline
+    relationships_affected:
+    - The boys
+    - Dodgeball Coach
+  new:
+  - name: Tournament Officials
+    role: minor
+    key_moments:
+    - Oversee the dodgeball competitions
+    - Maintain tournament structure
+    - Witness the team's moral stance
+    character_development: Represent official authority in competitive sports
+    relationships_affected:
+    - The boys
+    - Dodgeball Coach
+content_elements:
+  cultural_references:
+  - type: current_event
+    target: Disability Rights Movement
+    description: References ongoing struggles for disability acceptance and rights
+    context: Reflects real-world discrimination against people with physical differences
+  - type: movie
+    target: Sports Underdog Films
+    description: The dodgeball championship follows classic underdog sports movie
+      tropes
+    context: Parodies the structure and themes of sports competition films
+  - type: current_event
+    target: Freak Show Exploitation
+    description: References historical exploitation of people with physical differences
+    context: Comments on society's tendency to treat different people as entertainment
+  running_gags:
+  - name: Kenny Dies
+    description: Kenny McCormick dies during the dodgeball activities
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Death occurs during sports-related activities
+  - name: Oh My God, They Killed Kenny
+    description: The boys' reaction to Kenny's death
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Continues the established pattern during the sports storyline
+  - name: South Park's Unexpected Success
+    description: The town's team succeeding beyond expectations
+    frequency: 3
+    first_appearance: S02E05
+    evolution_notes: Establishes pattern of South Park achieving unlikely victories
+  locations:
+  - name: South Park Elementary Gymnasium
+    description: Where dodgeball practices and some games take place
+    is_new: false
+    significance: Central location for the sports storyline and team development
+  - name: School Nurse's Office
+    description: The nurse's workplace where she faces daily discrimination
+    is_new: false
+    significance: Represents the intersection of professional duty and personal persecution
+  - name: Various Tournament Venues
+    description: Different locations where championship games are held
+    is_new: true
+    significance: Show the progression of the team's success and growing stakes
+  - name: State Championship Arena
+    description: The final venue for the climactic game and moral decision
+    is_new: true
+    significance: Represents the culmination of both the sports and moral storylines
+themes:
+- theme: Prejudice and Discrimination
+  description: How society treats people who are different
+  how_explored: The nurse's treatment by the community despite her competence and
+    kindness
+  moral_lesson: People should be judged by their character and actions, not their
+    appearance
+- theme: Dignity and Respect
+  description: The importance of treating all people with basic human dignity
+  how_explored: The contrast between how the nurse should be treated versus how she
+    is treated
+  moral_lesson: Everyone deserves to be treated with respect regardless of physical
+    differences
+- theme: Moral Courage
+  description: Standing up for what's right even when it's difficult
+  how_explored: The boys' decision to take a stand against the prejudice they witness
+  moral_lesson: True courage means doing the right thing even when others disagree
+- theme: Success vs. Values
+  description: Balancing achievement with moral principles
+  how_explored: The tension between winning the championship and taking a moral stand
+  moral_lesson: Moral principles should take precedence over competitive success
+continuity:
+  callbacks:
+  - References the school nurse from previous episodes
+  - Builds on the boys' established friendship and group dynamics
+  - Continues themes of South Park's small-town prejudices
+  setup_for_future:
+  - Establishes the boys' capacity for moral growth and leadership
+  - Sets up patterns for episodes dealing with discrimination
+  - Shows the school's sports programs and competitive spirit
+  character_developments:
+  - Shows the boys' growing moral awareness and willingness to take stands
+  - Develops the nurse as a sympathetic character facing discrimination
+  - Demonstrates the community's capacity for both prejudice and potential growth
+  world_building:
+  - Expands South Park's school sports programs
+  - Shows the town's participation in regional competitions
+  - Establishes patterns for how the community deals with difference
+production:
+  notable_quotes:
+  - She's not a freak, she's just different! - Kyle
+  - We can't win if we don't play! - Coach
+  - Some things are more important than winning. - Stan
+  - Oh my God, they killed Kenny! - Kyle
+  - You bastards! - Stan
+  - I'm not a monster, I'm just a nurse. - School Nurse
+  memorable_scenes:
+  - The boys' first dodgeball victory
+  - Townspeople mocking the nurse
+  - The boys realizing the injustice of the situation
+  - The moral dilemma at the championship game
+  - The boys taking their stand against prejudice
+  - The resolution of both storylines
+  animation_notes:
+  - Dodgeball action sequences and sports competition scenes
+  - The nurse's distinctive appearance and dignified expressions
+  - Tournament venues and competitive atmospheres
+  - Crowd reactions and community dynamics
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired during increased awareness of disability rights and the
+    Americans with Disabilities Act implementation
+  controversy_notes: The episode's portrayal of physical differences was controversial
+    but ultimately served to condemn discrimination
+  reception_notes: Generally praised for its anti-discrimination message and handling
+    of disability issues with sensitivity
+  social_commentary:
+  - Condemns discrimination against people with physical differences
+  - Explores how society treats people as curiosities rather than individuals
+  - Comments on the importance of moral courage over competitive success
+  - Examines how children can lead adults in moral development

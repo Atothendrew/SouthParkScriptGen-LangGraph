@@ -2,258 +2,277 @@
 basic_info:
   season: 1
   episode_number: 5
-  title: "An Elephant Makes Love to a Pig"
-  original_air_date: "1997-09-10"
-  episode_type: "standalone"
-
+  title: An Elephant Makes Love to a Pig
+  original_air_date: '1997-09-10'
+  episode_type: standalone
 plot:
-  logline: "Kyle's elephant and Cartman's pig are bred together for a science fair project, while Stan deals with his sister Shelley's bullying."
-  plot_summary: |
-    For the South Park Elementary science fair, Kyle decides to crossbreed his pet elephant with Cartman's pig to create a new hybrid animal. The boys believe this will win them first place and make them rich and famous. However, the genetic experiment proves more complicated than expected, leading to unexpected and chaotic results.
+  logline: Kyle's elephant and Cartman's pig are bred together for a science fair
+    project, while Stan deals with his sister Shelley's bullying.
+  plot_summary: 'For the South Park Elementary science fair, Kyle decides to crossbreed
+    his pet elephant with Cartman''s pig to create a new hybrid animal. The boys believe
+    this will win them first place and make them rich and famous. However, the genetic
+    experiment proves more complicated than expected, leading to unexpected and chaotic
+    results.
 
-    Meanwhile, Stan struggles with his older sister Shelley, who constantly bullies and torments him. Shelley's aggressive behavior escalates throughout the episode, making Stan's home life miserable. The family dynamics become strained as Stan tries to deal with his sister's abuse while his parents seem oblivious to the severity of the situation.
 
-    The episode explores themes of scientific ethics, sibling rivalry, and the consequences of playing with nature. As the science fair approaches, the boys' experiment spirals out of control, while Stan's family issues reach a breaking point. The two storylines intersect as the chaos from both situations converges at the science fair.
+    Meanwhile, Stan struggles with his older sister Shelley, who constantly bullies
+    and torments him. Shelley''s aggressive behavior escalates throughout the episode,
+    making Stan''s home life miserable. The family dynamics become strained as Stan
+    tries to deal with his sister''s abuse while his parents seem oblivious to the
+    severity of the situation.
+
+
+    The episode explores themes of scientific ethics, sibling rivalry, and the consequences
+    of playing with nature. As the science fair approaches, the boys'' experiment
+    spirals out of control, while Stan''s family issues reach a breaking point. The
+    two storylines intersect as the chaos from both situations converges at the science
+    fair.
+
+    '
   plot_threads:
-    - title: "Elephant-Pig Breeding Experiment"
-      description: "Kyle and Cartman attempt to breed an elephant with a pig for the science fair"
-      characters_involved:
-        - "Kyle Broflovski"
-        - "Eric Cartman"
-        - "Stan Marsh"
-        - "Kenny McCormick"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-    - title: "Stan vs. Shelley Bullying"
-      description: "Stan deals with constant bullying and abuse from his older sister Shelley"
-      characters_involved:
-        - "Stan Marsh"
-        - "Shelley Marsh"
-        - "Randy Marsh"
-        - "Sharon Marsh"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-    - title: "Science Fair Competition"
-      description: "The boys compete in the school science fair with their genetic experiment"
-      characters_involved:
-        - "The boys"
-        - "Mr. Garrison"
-        - "Other students"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-
+  - title: Elephant-Pig Breeding Experiment
+    description: Kyle and Cartman attempt to breed an elephant with a pig for the
+      science fair
+    characters_involved:
+    - Kyle Broflovski
+    - Eric Cartman
+    - Stan Marsh
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Stan vs. Shelley Bullying
+    description: Stan deals with constant bullying and abuse from his older sister
+      Shelley
+    characters_involved:
+    - Stan Marsh
+    - Shelley Marsh
+    - Randy Marsh
+    - Sharon Marsh
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Science Fair Competition
+    description: The boys compete in the school science fair with their genetic experiment
+    characters_involved:
+    - The boys
+    - Mr. Garrison
+    - Other students
+    resolution_status: resolved
+    connects_to_episodes: []
 characters:
   main:
-    - name: "Kyle Broflovski"
-      role: "main"
-      key_moments:
-        - "Proposes the elephant-pig breeding experiment"
-        - "Works on the science fair project"
-        - "Deals with the consequences of genetic manipulation"
-      character_development: "Shows Kyle's scientific curiosity and ambition, but also his naivety about consequences"
-      relationships_affected:
-        - "Eric Cartman"
-        - "Stan Marsh"
-    - name: "Eric Cartman"
-      role: "main"
-      key_moments:
-        - "Provides his pig for the breeding experiment"
-        - "Gets excited about potential fame and fortune"
-        - "Participates in the science fair"
-      character_development: "Displays his greed and willingness to exploit animals for personal gain"
-      relationships_affected:
-        - "Kyle Broflovski"
-        - "Stan Marsh"
-    - name: "Stan Marsh"
-      role: "main"
-      key_moments:
-        - "Suffers constant bullying from sister Shelley"
-        - "Tries to get help from his parents"
-        - "Participates in the science fair project"
-        - "Confronts his family situation"
-      character_development: "Shows Stan dealing with family dysfunction and learning to stand up for himself"
-      relationships_affected:
-        - "Shelley Marsh"
-        - "Randy Marsh"
-        - "Sharon Marsh"
-    - name: "Kenny McCormick"
-      role: "main"
-      key_moments:
-        - "Dies during the episode's events"
-        - "Helps with the science project"
-      character_development: "Continues the established death pattern"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Kyle Broflovski"
-        - "Eric Cartman"
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Proposes the elephant-pig breeding experiment
+    - Works on the science fair project
+    - Deals with the consequences of genetic manipulation
+    character_development: Shows Kyle's scientific curiosity and ambition, but also
+      his naivety about consequences
+    relationships_affected:
+    - Eric Cartman
+    - Stan Marsh
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Provides his pig for the breeding experiment
+    - Gets excited about potential fame and fortune
+    - Participates in the science fair
+    character_development: Displays his greed and willingness to exploit animals for
+      personal gain
+    relationships_affected:
+    - Kyle Broflovski
+    - Stan Marsh
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Suffers constant bullying from sister Shelley
+    - Tries to get help from his parents
+    - Participates in the science fair project
+    - Confronts his family situation
+    character_development: Shows Stan dealing with family dysfunction and learning
+      to stand up for himself
+    relationships_affected:
+    - Shelley Marsh
+    - Randy Marsh
+    - Sharon Marsh
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Dies during the episode's events
+    - Helps with the science project
+    character_development: Continues the established death pattern
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
   supporting:
-    - name: "Shelley Marsh"
-      role: "supporting"
-      key_moments:
-        - "Constantly bullies and torments Stan"
-        - "Shows extreme aggression toward her brother"
-        - "Causes family tension and conflict"
-      character_development: "Introduces Shelley as Stan's abusive older sister"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Randy Marsh"
-        - "Sharon Marsh"
-    - name: "Randy Marsh"
-      role: "supporting"
-      key_moments:
-        - "Fails to address Shelley's bullying of Stan"
-        - "Shows parental obliviousness to family problems"
-        - "Attends the science fair"
-      character_development: "Shows Randy as a well-meaning but ineffective father"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Shelley Marsh"
-        - "Sharon Marsh"
-    - name: "Sharon Marsh"
-      role: "supporting"
-      key_moments:
-        - "Doesn't recognize the severity of Shelley's behavior"
-        - "Tries to maintain family harmony"
-        - "Supports Stan at the science fair"
-      character_development: "Introduces Sharon as Stan's mother who struggles with family dynamics"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Shelley Marsh"
-        - "Randy Marsh"
-    - name: "Mr. Garrison"
-      role: "supporting"
-      key_moments:
-        - "Oversees the science fair"
-        - "Judges the students' projects"
-        - "Reacts to the chaos of the genetic experiment"
-      character_development: "Shows Mr. Garrison in his teaching role"
-      relationships_affected:
-        - "The boys"
+  - name: Shelley Marsh
+    role: supporting
+    key_moments:
+    - Constantly bullies and torments Stan
+    - Shows extreme aggression toward her brother
+    - Causes family tension and conflict
+    character_development: Introduces Shelley as Stan's abusive older sister
+    relationships_affected:
+    - Stan Marsh
+    - Randy Marsh
+    - Sharon Marsh
+  - name: Randy Marsh
+    role: supporting
+    key_moments:
+    - Fails to address Shelley's bullying of Stan
+    - Shows parental obliviousness to family problems
+    - Attends the science fair
+    character_development: Shows Randy as a well-meaning but ineffective father
+    relationships_affected:
+    - Stan Marsh
+    - Shelley Marsh
+    - Sharon Marsh
+  - name: Sharon Marsh
+    role: supporting
+    key_moments:
+    - Doesn't recognize the severity of Shelley's behavior
+    - Tries to maintain family harmony
+    - Supports Stan at the science fair
+    character_development: Introduces Sharon as Stan's mother who struggles with family
+      dynamics
+    relationships_affected:
+    - Stan Marsh
+    - Shelley Marsh
+    - Randy Marsh
+  - name: Mr. Garrison
+    role: supporting
+    key_moments:
+    - Oversees the science fair
+    - Judges the students' projects
+    - Reacts to the chaos of the genetic experiment
+    character_development: Shows Mr. Garrison in his teaching role
+    relationships_affected:
+    - The boys
   new:
-    - name: "Dr. Mephesto"
-      role: "minor"
-      key_moments:
-        - "Assists with the genetic engineering experiment"
-        - "Provides scientific expertise"
-        - "Deals with the consequences of the breeding"
-      character_development: "Introduces Dr. Mephesto as a mad scientist character"
-      relationships_affected:
-        - "Kyle Broflovski"
-        - "Eric Cartman"
-
+  - name: Dr. Mephesto
+    role: minor
+    key_moments:
+    - Assists with the genetic engineering experiment
+    - Provides scientific expertise
+    - Deals with the consequences of the breeding
+    character_development: Introduces Dr. Mephesto as a mad scientist character
+    relationships_affected:
+    - Kyle Broflovski
+    - Eric Cartman
 content_elements:
   cultural_references:
-    - type: "movie"
-      target: "Frankenstein/Mad Scientist Films"
-      description: "Parodies classic mad scientist and genetic manipulation movies"
-      context: "The elephant-pig breeding experiment and Dr. Mephesto's involvement"
-    - type: "current_event"
-      target: "Genetic Engineering Debates"
-      description: "Satirizes 1990s debates about genetic manipulation and cloning"
-      context: "The ethical implications of crossbreeding different species"
-    - type: "tv_show"
-      target: "Science Fair Competitions"
-      description: "Parodies school science fairs and competitive academic events"
-      context: "The boys' participation in the elementary school science fair"
-    - type: "current_event"
-      target: "Sibling Rivalry and Family Dysfunction"
-      description: "Addresses common family dynamics and sibling abuse"
-      context: "Stan's relationship with his sister Shelley and parental neglect"
+  - type: movie
+    target: Frankenstein/Mad Scientist Films
+    description: Parodies classic mad scientist and genetic manipulation movies
+    context: The elephant-pig breeding experiment and Dr. Mephesto's involvement
+  - type: current_event
+    target: Genetic Engineering Debates
+    description: Satirizes 1990s debates about genetic manipulation and cloning
+    context: The ethical implications of crossbreeding different species
+  - type: tv_show
+    target: Science Fair Competitions
+    description: Parodies school science fairs and competitive academic events
+    context: The boys' participation in the elementary school science fair
+  - type: current_event
+    target: Sibling Rivalry and Family Dysfunction
+    description: Addresses common family dynamics and sibling abuse
+    context: Stan's relationship with his sister Shelley and parental neglect
   running_gags:
-    - name: "Kenny Dies"
-      description: "Kenny McCormick dies during the episode"
-      frequency: 1
-      first_appearance: "S01E01"
-      evolution_notes: "Fifth consecutive episode with Kenny's death"
-    - name: "Shelley's Bullying"
-      description: "Shelley constantly torments and abuses Stan"
-      frequency: 4
-      first_appearance: "S01E05"
-      evolution_notes: "Establishes Shelley's pattern of sibling abuse"
-    - name: "Cartman's Greed"
-      description: "Cartman gets excited about potential money and fame"
-      frequency: 2
-      first_appearance: "S01E05"
-      evolution_notes: "Shows Cartman's materialistic motivations"
+  - name: Kenny Dies
+    description: Kenny McCormick dies during the episode
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Fifth consecutive episode with Kenny's death
+  - name: Shelley's Bullying
+    description: Shelley constantly torments and abuses Stan
+    frequency: 4
+    first_appearance: S01E05
+    evolution_notes: Establishes Shelley's pattern of sibling abuse
+  - name: Cartman's Greed
+    description: Cartman gets excited about potential money and fame
+    frequency: 2
+    first_appearance: S01E05
+    evolution_notes: Shows Cartman's materialistic motivations
   locations:
-    - name: "South Park Elementary Science Fair"
-      description: "The school gymnasium set up for the annual science fair"
-      is_new: true
-      significance: "Introduces the school's academic competition environment"
-    - name: "Stan's House Interior"
-      description: "Detailed look at the Marsh family home and dynamics"
-      is_new: true
-      significance: "Shows the domestic environment where Stan faces bullying"
-    - name: "Dr. Mephesto's Laboratory"
-      description: "The mad scientist's lab where genetic experiments take place"
-      is_new: true
-      significance: "Introduces a recurring location for scientific chaos"
-
+  - name: South Park Elementary Science Fair
+    description: The school gymnasium set up for the annual science fair
+    is_new: true
+    significance: Introduces the school's academic competition environment
+  - name: Stan's House Interior
+    description: Detailed look at the Marsh family home and dynamics
+    is_new: true
+    significance: Shows the domestic environment where Stan faces bullying
+  - name: Dr. Mephesto's Laboratory
+    description: The mad scientist's lab where genetic experiments take place
+    is_new: true
+    significance: Introduces a recurring location for scientific chaos
 themes:
-  - theme: "Scientific Ethics"
-    description: "The moral implications of genetic manipulation and playing with nature"
-    how_explored: "Through the elephant-pig breeding experiment and its consequences"
-    moral_lesson: "Scientific advancement should be tempered with ethical considerations"
-  - theme: "Sibling Abuse and Family Dysfunction"
-    description: "The serious issue of bullying within families and parental neglect"
-    how_explored: "Through Stan's suffering at the hands of his sister Shelley"
-    moral_lesson: "Family problems need to be addressed, not ignored"
-  - theme: "Ambition vs. Consequences"
-    description: "How the desire for success can lead to poor decision-making"
-    how_explored: "Through the boys' willingness to manipulate genetics for science fair glory"
-    moral_lesson: "Consider the potential consequences before pursuing ambitious goals"
-
+- theme: Scientific Ethics
+  description: The moral implications of genetic manipulation and playing with nature
+  how_explored: Through the elephant-pig breeding experiment and its consequences
+  moral_lesson: Scientific advancement should be tempered with ethical considerations
+- theme: Sibling Abuse and Family Dysfunction
+  description: The serious issue of bullying within families and parental neglect
+  how_explored: Through Stan's suffering at the hands of his sister Shelley
+  moral_lesson: Family problems need to be addressed, not ignored
+- theme: Ambition vs. Consequences
+  description: How the desire for success can lead to poor decision-making
+  how_explored: Through the boys' willingness to manipulate genetics for science fair
+    glory
+  moral_lesson: Consider the potential consequences before pursuing ambitious goals
 continuity:
   callbacks:
-    - "Kenny's death pattern continues"
-    - "Mr. Garrison's role as teacher"
-    - "The boys' friendship and group projects"
+  - Kenny's death pattern continues
+  - Mr. Garrison's role as teacher
+  - The boys' friendship and group projects
   setup_for_future:
-    - "Introduces Shelley Marsh as Stan's abusive sister"
-    - "Establishes the Marsh family dynamics"
-    - "Introduces Dr. Mephesto as a recurring mad scientist"
-    - "Shows the school's science fair tradition"
+  - Introduces Shelley Marsh as Stan's abusive sister
+  - Establishes the Marsh family dynamics
+  - Introduces Dr. Mephesto as a recurring mad scientist
+  - Shows the school's science fair tradition
   character_developments:
-    - "Stan shown dealing with serious family abuse"
-    - "Kyle displays scientific ambition and curiosity"
-    - "Cartman's greed and exploitation become more apparent"
-    - "Shelley established as a genuinely threatening antagonist"
+  - Stan shown dealing with serious family abuse
+  - Kyle displays scientific ambition and curiosity
+  - Cartman's greed and exploitation become more apparent
+  - Shelley established as a genuinely threatening antagonist
   world_building:
-    - "South Park Elementary has academic competitions and science fairs"
-    - "The town has scientific facilities and mad scientists"
-    - "Family dysfunction exists beneath the surface of suburban life"
-    - "Genetic manipulation is possible in the South Park universe"
-
+  - South Park Elementary has academic competitions and science fairs
+  - The town has scientific facilities and mad scientists
+  - Family dysfunction exists beneath the surface of suburban life
+  - Genetic manipulation is possible in the South Park universe
 production:
   notable_quotes:
-    - "Oh my God, they killed Kenny! - Kyle"
-    - "You bastards! - Stan"
-    - "Turd! - Shelley (to Stan)"
-    - "Sweet! - Cartman (about potential money)"
+  - Oh my God, they killed Kenny! - Kyle
+  - You bastards! - Stan
+  - Turd! - Shelley (to Stan)
+  - Sweet! - Cartman (about potential money)
   memorable_scenes:
-    - "The elephant and pig breeding attempts"
-    - "Shelley's violent bullying of Stan"
-    - "The science fair presentation chaos"
-    - "Dr. Mephesto's laboratory experiments"
-    - "The family confrontation about Shelley's behavior"
+  - The elephant and pig breeding attempts
+  - Shelley's violent bullying of Stan
+  - The science fair presentation chaos
+  - Dr. Mephesto's laboratory experiments
+  - The family confrontation about Shelley's behavior
   animation_notes:
-    - "Genetic experiment visual effects"
-    - "Science fair booth setups and displays"
-    - "Shelley's aggressive physical actions"
-    - "Laboratory equipment and scientific apparatus"
+  - Genetic experiment visual effects
+  - Science fair booth setups and displays
+  - Shelley's aggressive physical actions
+  - Laboratory equipment and scientific apparatus
   writers:
-    - "Trey Parker"
-    - "Matt Stone"
+  - Trey Parker
+  - Matt Stone
   directors:
-    - "Trey Parker"
+  - Trey Parker
   guest_voices: []
-
 context:
-  historical_context: "Aired during the late 1990s when genetic engineering and cloning were major scientific and ethical topics following Dolly the sheep"
-  controversy_notes: "The genetic manipulation theme was controversial, as was the portrayal of serious sibling abuse in a comedy context"
-  reception_notes: "Mixed reception due to the darker themes of family abuse contrasted with the comedic genetic experiment plot"
+  historical_context: Aired during the late 1990s when genetic engineering and cloning
+    were major scientific and ethical topics following Dolly the sheep
+  controversy_notes: The genetic manipulation theme was controversial, as was the
+    portrayal of serious sibling abuse in a comedy context
+  reception_notes: Mixed reception due to the darker themes of family abuse contrasted
+    with the comedic genetic experiment plot
   social_commentary:
-    - "Satirizes the rush to genetic engineering without considering consequences"
-    - "Addresses the serious issue of sibling abuse and family neglect"
-    - "Comments on academic competition and the pressure to succeed"
-    - "Explores the ethics of scientific experimentation"
+  - Satirizes the rush to genetic engineering without considering consequences
+  - Addresses the serious issue of sibling abuse and family neglect
+  - Comments on academic competition and the pressure to succeed
+  - Explores the ethics of scientific experimentation

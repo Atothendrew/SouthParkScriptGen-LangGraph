@@ -1,0 +1,308 @@
+---
+basic_info:
+  season: 2
+  episode_number: 6
+  title: The Mexican Staring Frog of Southern Sri Lanka
+  original_air_date: '1998-06-10'
+  episode_type: standalone
+plot:
+  logline: The boys create a fake documentary about a mythical creature to win a contest,
+    while Jesus and Satan prepare for their boxing match.
+  plot_summary: 'When the boys learn about a documentary contest with a cash prize,
+    they decide to create their own film. However, lacking any real subject matter,
+    they fabricate a story about the "Mexican Staring Frog of Southern Sri Lanka,"
+    a completely fictional creature they claim to have discovered. Their fake documentary
+    includes staged interviews, manipulated footage, and elaborate lies about the
+    creature''s behavior and habitat.
+
+
+    Meanwhile, Jesus Christ and Satan are preparing for their highly anticipated boxing
+    match, which has captured the attention of the entire town. The fight becomes
+    a major betting event, with residents placing wagers on the outcome. The boys''
+    documentary subplot intersects with the boxing storyline as both events build
+    toward their respective climaxes.
+
+
+    The episode explores themes of deception, media manipulation, and the gullibility
+    of audiences. The boys'' fake documentary succeeds beyond their expectations,
+    raising questions about truth in media and the ease with which people can be fooled
+    by convincing presentations. The resolution brings together both storylines in
+    typical South Park fashion, with unexpected consequences for everyone involved.
+
+    '
+  plot_threads:
+  - title: The Fake Documentary
+    description: The boys create a fraudulent documentary about a fictional creature
+      to win a contest
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - Documentary judges
+    - TV audience
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Jesus vs. Satan Boxing Match
+    description: The highly anticipated boxing match between Jesus and Satan
+    characters_involved:
+    - Jesus Christ
+    - Satan
+    - South Park residents
+    - Boxing promoters
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Media Deception
+    description: The ease with which fake media can fool audiences
+    characters_involved:
+    - The boys
+    - TV viewers
+    - Documentary contest judges
+    - Media outlets
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Helps conceive the fake documentary idea
+    - Participates in creating fraudulent footage
+    - Shows some moral concern about the deception
+    - Witnesses the consequences of their actions
+    character_development: Demonstrates Stan's participation in group schemes while
+      maintaining some ethical awareness
+    relationships_affected:
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Helps plan and execute the documentary fraud
+    - Shows creativity in fabricating evidence
+    - Eventually questions the ethics of their deception
+    - Learns about media manipulation
+    character_development: Shows Kyle's intelligence and creativity, but also his
+      capacity for questionable decisions
+    relationships_affected:
+    - Stan Marsh
+    - Eric Cartman
+    - Kenny McCormick
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Enthusiastically embraces the deception
+    - Shows no moral qualms about lying
+    - Enjoys the attention and potential rewards
+    - Demonstrates his manipulative nature
+    character_development: Reinforces Cartman's lack of ethics and his enjoyment of
+      deception
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Kenny McCormick
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Participates in the documentary creation
+    - Dies during the episode
+    - Contributes to the group's deceptive efforts
+    character_development: Continues his pattern of group participation and inevitable
+      death
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+  - name: Jesus Christ
+    role: main
+    key_moments:
+    - Prepares for the boxing match against Satan
+    - Deals with the pressure and expectations
+    - Shows his competitive side
+    - Participates in the climactic fight
+    character_development: Continues to portray Jesus as a regular guy dealing with
+      extraordinary circumstances
+    relationships_affected:
+    - Satan
+    - South Park residents
+  - name: Satan
+    role: main
+    key_moments:
+    - Trains for the boxing match against Jesus
+    - Shows his competitive nature
+    - Deals with public expectations
+    - Participates in the climactic fight
+    character_development: Portrays Satan as a complex character with his own motivations
+      and pressures
+    relationships_affected:
+    - Jesus Christ
+    - South Park residents
+  supporting:
+  - name: Documentary Contest Judges
+    role: supporting
+    key_moments:
+    - Evaluate the boys' fake documentary
+    - Fall for the deception
+    - Award recognition to the fraudulent film
+    - Represent the gullibility of authority figures
+    character_development: Show how even experts can be fooled by convincing deception
+    relationships_affected:
+    - The boys
+  - name: Boxing Promoters
+    role: supporting
+    key_moments:
+    - Organize and promote the Jesus vs. Satan fight
+    - Handle the media attention and betting
+    - Manage the event logistics
+    - Represent commercial interests in the spectacle
+    character_development: Show the commercialization of even religious conflicts
+    relationships_affected:
+    - Jesus Christ
+    - Satan
+    - South Park residents
+  - name: South Park Residents
+    role: supporting
+    key_moments:
+    - Get caught up in both the documentary and boxing storylines
+    - Place bets on the Jesus vs. Satan fight
+    - Fall for the boys' fake documentary
+    - Show typical crowd mentality
+    character_development: Demonstrate the community's susceptibility to both media
+      manipulation and spectacle
+    relationships_affected:
+    - The boys
+    - Jesus Christ
+    - Satan
+  new:
+  - name: TV Network Executives
+    role: minor
+    key_moments:
+    - Consider airing the boys' documentary
+    - Show interest in sensational content
+    - Represent media industry priorities
+    character_development: Illustrate how media prioritizes entertainment over truth
+    relationships_affected:
+    - The boys
+content_elements:
+  cultural_references:
+  - type: tv_show
+    target: Nature Documentaries
+    description: Parodies the style and format of wildlife documentaries
+    context: The boys mimic the serious tone and presentation of legitimate nature
+      films
+  - type: current_event
+    target: Boxing Promotion
+    description: References the hype and commercialization of major boxing matches
+    context: The Jesus vs. Satan fight mirrors real-world boxing promotion tactics
+  - type: current_event
+    target: Media Hoaxes
+    description: Comments on fake documentaries and media manipulation
+    context: Reflects real concerns about truth in media and documentary fraud
+  running_gags:
+  - name: Kenny Dies
+    description: Kenny McCormick dies during the documentary filming or boxing events
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Death occurs in context of media production or sporting event
+  - name: Oh My God, They Killed Kenny
+    description: The boys' reaction to Kenny's death
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Continues the established pattern during the episode's events
+  - name: Jesus and Satan's Relationship
+    description: The ongoing dynamic between Jesus and Satan as characters
+    frequency: 3
+    first_appearance: S01E10
+    evolution_notes: Develops their relationship through competitive conflict
+  locations:
+  - name: Documentary Filming Locations
+    description: Various fake locations where the boys film their fraudulent documentary
+    is_new: true
+    significance: Show the boys' creativity in creating convincing deception
+  - name: Boxing Arena
+    description: Where the Jesus vs. Satan fight takes place
+    is_new: true
+    significance: Central location for the major sporting event and community gathering
+  - name: TV Studio
+    description: Where the documentary contest is judged and broadcast
+    is_new: true
+    significance: Represents the media industry and its role in spreading information
+  - name: Training Facilities
+    description: Where Jesus and Satan prepare for their boxing match
+    is_new: true
+    significance: Show the preparation and dedication of both fighters
+themes:
+- theme: Truth vs. Deception in Media
+  description: How easily audiences can be fooled by convincing but false presentations
+  how_explored: The boys' fake documentary succeeds in fooling judges and audiences
+  moral_lesson: Critical thinking is essential when consuming media
+- theme: The Power of Presentation
+  description: How style and presentation can make lies seem credible
+  how_explored: The boys' professional-looking documentary convinces people despite
+    being completely false
+  moral_lesson: Impressive presentation doesn't guarantee truthful content
+- theme: Commercialization of Everything
+  description: How even sacred or serious things become commercial spectacles
+  how_explored: The Jesus vs. Satan fight becomes a betting event and media circus
+  moral_lesson: Commercial interests can corrupt even the most meaningful conflicts
+- theme: Gullibility and Critical Thinking
+  description: The importance of questioning what we see and hear
+  how_explored: Multiple characters fall for obvious deceptions and manipulations
+  moral_lesson: People should think critically about information they receive
+continuity:
+  callbacks:
+  - References Jesus and Satan from previous episodes
+  - Builds on the boys' established creativity and scheming
+  - Continues themes of South Park's media satire
+  setup_for_future:
+  - Establishes patterns for media manipulation episodes
+  - Develops Jesus and Satan as recurring characters
+  - Sets up the boys' capacity for elaborate deceptions
+  character_developments:
+  - Shows the boys' growing sophistication in their schemes
+  - Develops Jesus and Satan's competitive relationship
+  - Demonstrates the community's susceptibility to media manipulation
+  world_building:
+  - Expands South Park's media landscape
+  - Shows the town's capacity for major events and spectacles
+  - Establishes patterns for how information spreads in the community
+production:
+  notable_quotes:
+  - The Mexican Staring Frog of Southern Sri Lanka is a rare and elusive creature.
+    - Stan (narrating)
+  - This is totally going to work! - Cartman
+  - Are we really going to lie about this? - Kyle
+  - Oh my God, they killed Kenny! - Kyle
+  - You bastards! - Stan
+  - Let's get ready to rumble! - Boxing Announcer
+  memorable_scenes:
+  - The boys planning their fake documentary
+  - Filming fraudulent footage of the 'Mexican Staring Frog'
+  - Jesus and Satan training for their fight
+  - The documentary contest judging
+  - The climactic boxing match
+  - The revelation of the boys' deception
+  animation_notes:
+  - Documentary-style filming and presentation
+  - Boxing match choreography and arena atmosphere
+  - Fake creature effects and staged nature footage
+  - TV studio and media production environments
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired during increased awareness of media manipulation and fake
+    documentaries in the late 1990s
+  controversy_notes: The religious themes and portrayal of Jesus and Satan in a boxing
+    match were controversial for some viewers
+  reception_notes: Praised for its clever satire of media manipulation and documentary
+    filmmaking
+  social_commentary:
+  - Satirizes the ease of media manipulation and audience gullibility
+  - Comments on the commercialization of religious and spiritual conflicts
+  - Explores how presentation can make lies seem credible
+  - Examines the media's role in spreading both truth and deception

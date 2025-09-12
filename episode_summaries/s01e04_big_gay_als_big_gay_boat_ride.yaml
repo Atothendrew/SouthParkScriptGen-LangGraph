@@ -2,249 +2,270 @@
 basic_info:
   season: 1
   episode_number: 4
-  title: "Big Gay Al's Big Gay Boat Ride"
-  original_air_date: "1997-09-03"
-  episode_type: "standalone"
-
+  title: Big Gay Al's Big Gay Boat Ride
+  original_air_date: '1997-09-03'
+  episode_type: standalone
 plot:
-  logline: "Stan's dog Sparky is revealed to be gay, leading Stan to Big Gay Al's sanctuary, while the boys' football team faces their rivals."
-  plot_summary: |
-    When Stan's dog Sparky displays homosexual behavior, Stan becomes confused and embarrassed, not knowing how to handle the situation. The other boys, particularly Cartman, mock Stan about having a "gay dog." Stan's discomfort with Sparky's sexuality leads him to reject his pet, causing Sparky to run away.
+  logline: Stan's dog Sparky is revealed to be gay, leading Stan to Big Gay Al's sanctuary,
+    while the boys' football team faces their rivals.
+  plot_summary: 'When Stan''s dog Sparky displays homosexual behavior, Stan becomes
+    confused and embarrassed, not knowing how to handle the situation. The other boys,
+    particularly Cartman, mock Stan about having a "gay dog." Stan''s discomfort with
+    Sparky''s sexuality leads him to reject his pet, causing Sparky to run away.
 
-    Sparky ends up at Big Gay Al's Big Gay Animal Sanctuary, a refuge for homosexual animals run by the flamboyantly gay Big Gay Al. When Stan goes to retrieve Sparky, Big Gay Al takes him on a boat ride through the sanctuary, educating Stan about homosexuality and acceptance. Through various musical numbers and explanations, Al helps Stan understand that being gay is natural and that love comes in many forms.
 
-    Meanwhile, the South Park Cows football team, coached by Chef, prepares for a big game against their rivals. The team struggles without their mascot Sparky, and the game becomes a backdrop for Stan's journey of acceptance. The episode culminates with Stan learning to accept Sparky for who he is, and the town learning about tolerance and understanding.
+    Sparky ends up at Big Gay Al''s Big Gay Animal Sanctuary, a refuge for homosexual
+    animals run by the flamboyantly gay Big Gay Al. When Stan goes to retrieve Sparky,
+    Big Gay Al takes him on a boat ride through the sanctuary, educating Stan about
+    homosexuality and acceptance. Through various musical numbers and explanations,
+    Al helps Stan understand that being gay is natural and that love comes in many
+    forms.
+
+
+    Meanwhile, the South Park Cows football team, coached by Chef, prepares for a
+    big game against their rivals. The team struggles without their mascot Sparky,
+    and the game becomes a backdrop for Stan''s journey of acceptance. The episode
+    culminates with Stan learning to accept Sparky for who he is, and the town learning
+    about tolerance and understanding.
+
+    '
   plot_threads:
-    - title: "Sparky's Homosexuality"
-      description: "Stan discovers his dog Sparky is gay and struggles to accept it"
-      characters_involved:
-        - "Stan Marsh"
-        - "Sparky"
-        - "Kyle Broflovski"
-        - "Eric Cartman"
-        - "Kenny McCormick"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-    - title: "Big Gay Al's Sanctuary"
-      description: "Stan visits Big Gay Al's sanctuary and learns about acceptance"
-      characters_involved:
-        - "Stan Marsh"
-        - "Big Gay Al"
-        - "Sparky"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-    - title: "Football Game"
-      description: "The South Park Cows play against their rivals without their mascot"
-      characters_involved:
-        - "The boys"
-        - "Chef"
-        - "South Park football team"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-
+  - title: Sparky's Homosexuality
+    description: Stan discovers his dog Sparky is gay and struggles to accept it
+    characters_involved:
+    - Stan Marsh
+    - Sparky
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Big Gay Al's Sanctuary
+    description: Stan visits Big Gay Al's sanctuary and learns about acceptance
+    characters_involved:
+    - Stan Marsh
+    - Big Gay Al
+    - Sparky
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Football Game
+    description: The South Park Cows play against their rivals without their mascot
+    characters_involved:
+    - The boys
+    - Chef
+    - South Park football team
+    resolution_status: resolved
+    connects_to_episodes: []
 characters:
   main:
-    - name: "Stan Marsh"
-      role: "main"
-      key_moments:
-        - "Discovers Sparky is gay"
-        - "Becomes embarrassed and rejects Sparky"
-        - "Goes to Big Gay Al's sanctuary"
-        - "Takes the educational boat ride"
-        - "Learns to accept Sparky's sexuality"
-      character_development: "Shows Stan's capacity for growth and learning about acceptance and tolerance"
-      relationships_affected:
-        - "Sparky"
-        - "Big Gay Al"
-        - "Kyle Broflovski"
-    - name: "Kyle Broflovski"
-      role: "main"
-      key_moments:
-        - "Supports Stan during his confusion"
-        - "Participates in the football game"
-        - "Witnesses Stan's journey of acceptance"
-      character_development: "Continues to be supportive and understanding of his friends"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Eric Cartman"
-    - name: "Eric Cartman"
-      role: "main"
-      key_moments:
-        - "Mocks Stan about having a 'gay dog'"
-        - "Shows intolerance and prejudice"
-        - "Participates in the football game"
-      character_development: "Displays his tendency toward bigotry and insensitivity"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Kyle Broflovski"
-    - name: "Kenny McCormick"
-      role: "main"
-      key_moments:
-        - "Dies during the episode"
-        - "Participates in football activities"
-      character_development: "Continues the established death pattern"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Kyle Broflovski"
-        - "Eric Cartman"
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Discovers Sparky is gay
+    - Becomes embarrassed and rejects Sparky
+    - Goes to Big Gay Al's sanctuary
+    - Takes the educational boat ride
+    - Learns to accept Sparky's sexuality
+    character_development: Shows Stan's capacity for growth and learning about acceptance
+      and tolerance
+    relationships_affected:
+    - Sparky
+    - Big Gay Al
+    - Kyle Broflovski
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Supports Stan during his confusion
+    - Participates in the football game
+    - Witnesses Stan's journey of acceptance
+    character_development: Continues to be supportive and understanding of his friends
+    relationships_affected:
+    - Stan Marsh
+    - Eric Cartman
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Mocks Stan about having a 'gay dog'
+    - Shows intolerance and prejudice
+    - Participates in the football game
+    character_development: Displays his tendency toward bigotry and insensitivity
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Dies during the episode
+    - Participates in football activities
+    character_development: Continues the established death pattern
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
   supporting:
-    - name: "Big Gay Al"
-      role: "supporting"
-      key_moments:
-        - "Runs the Big Gay Animal Sanctuary"
-        - "Takes Stan on the educational boat ride"
-        - "Teaches Stan about acceptance and tolerance"
-        - "Sings musical numbers about gay pride"
-      character_development: "Introduces Big Gay Al as a positive, educational figure promoting acceptance"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Sparky"
-    - name: "Sparky"
-      role: "supporting"
-      key_moments:
-        - "Displays homosexual behavior"
-        - "Gets rejected by Stan"
-        - "Runs away to Big Gay Al's sanctuary"
-        - "Is eventually accepted by Stan"
-      character_development: "Represents the struggle of being different and seeking acceptance"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Big Gay Al"
-    - name: "Chef"
-      role: "supporting"
-      key_moments:
-        - "Coaches the South Park Cows football team"
-        - "Provides guidance to the boys"
-        - "Supports the team during the big game"
-      character_development: "Shows Chef in his role as a mentor and coach"
-      relationships_affected:
-        - "The boys"
-        - "Football team"
+  - name: Big Gay Al
+    role: supporting
+    key_moments:
+    - Runs the Big Gay Animal Sanctuary
+    - Takes Stan on the educational boat ride
+    - Teaches Stan about acceptance and tolerance
+    - Sings musical numbers about gay pride
+    character_development: Introduces Big Gay Al as a positive, educational figure
+      promoting acceptance
+    relationships_affected:
+    - Stan Marsh
+    - Sparky
+  - name: Sparky
+    role: supporting
+    key_moments:
+    - Displays homosexual behavior
+    - Gets rejected by Stan
+    - Runs away to Big Gay Al's sanctuary
+    - Is eventually accepted by Stan
+    character_development: Represents the struggle of being different and seeking
+      acceptance
+    relationships_affected:
+    - Stan Marsh
+    - Big Gay Al
+  - name: Chef
+    role: supporting
+    key_moments:
+    - Coaches the South Park Cows football team
+    - Provides guidance to the boys
+    - Supports the team during the big game
+    character_development: Shows Chef in his role as a mentor and coach
+    relationships_affected:
+    - The boys
+    - Football team
   new:
-    - name: "South Park Football Team"
-      role: "minor"
-      key_moments:
-        - "Plays in the big game"
-        - "Struggles without their mascot Sparky"
-        - "Learns about teamwork and acceptance"
-      character_development: "Represents the broader community learning about tolerance"
-      relationships_affected:
-        - "Chef"
-        - "The boys"
-
+  - name: South Park Football Team
+    role: minor
+    key_moments:
+    - Plays in the big game
+    - Struggles without their mascot Sparky
+    - Learns about teamwork and acceptance
+    character_development: Represents the broader community learning about tolerance
+    relationships_affected:
+    - Chef
+    - The boys
 content_elements:
   cultural_references:
-    - type: "current_event"
-      target: "LGBTQ+ Rights Movement"
-      description: "Addresses homosexuality and gay rights in a positive, educational way"
-      context: "The episode aired during ongoing debates about LGBTQ+ acceptance in the 1990s"
-    - type: "tv_show"
-      target: "Educational Children's Shows"
-      description: "Parodies educational programming with Big Gay Al's boat ride"
-      context: "The boat ride sequence mimics children's educational shows"
-    - type: "movie"
-      target: "Disney Animated Films"
-      description: "References Disney-style musical numbers and educational sequences"
-      context: "Big Gay Al's musical numbers and the boat ride format"
-    - type: "current_event"
-      target: "High School Football Culture"
-      description: "Satirizes American high school football traditions and rivalries"
-      context: "The South Park Cows vs. rivals football game subplot"
+  - type: current_event
+    target: LGBTQ+ Rights Movement
+    description: Addresses homosexuality and gay rights in a positive, educational
+      way
+    context: The episode aired during ongoing debates about LGBTQ+ acceptance in the
+      1990s
+  - type: tv_show
+    target: Educational Children's Shows
+    description: Parodies educational programming with Big Gay Al's boat ride
+    context: The boat ride sequence mimics children's educational shows
+  - type: movie
+    target: Disney Animated Films
+    description: References Disney-style musical numbers and educational sequences
+    context: Big Gay Al's musical numbers and the boat ride format
+  - type: current_event
+    target: High School Football Culture
+    description: Satirizes American high school football traditions and rivalries
+    context: The South Park Cows vs. rivals football game subplot
   running_gags:
-    - name: "Kenny Dies"
-      description: "Kenny McCormick dies during the episode's events"
-      frequency: 1
-      first_appearance: "S01E01"
-      evolution_notes: "Fourth consecutive episode with Kenny's death"
-    - name: "Cartman's Bigotry"
-      description: "Cartman displays intolerance and makes offensive comments"
-      frequency: 2
-      first_appearance: "S01E04"
-      evolution_notes: "First major display of Cartman's prejudiced attitudes"
-    - name: "Stan's Moral Growth"
-      description: "Stan learns an important lesson about acceptance"
-      frequency: 1
-      first_appearance: "S01E04"
-      evolution_notes: "Establishes Stan's pattern of moral development through episodes"
+  - name: Kenny Dies
+    description: Kenny McCormick dies during the episode's events
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Fourth consecutive episode with Kenny's death
+  - name: Cartman's Bigotry
+    description: Cartman displays intolerance and makes offensive comments
+    frequency: 2
+    first_appearance: S01E04
+    evolution_notes: First major display of Cartman's prejudiced attitudes
+  - name: Stan's Moral Growth
+    description: Stan learns an important lesson about acceptance
+    frequency: 1
+    first_appearance: S01E04
+    evolution_notes: Establishes Stan's pattern of moral development through episodes
   locations:
-    - name: "Big Gay Al's Big Gay Animal Sanctuary"
-      description: "A refuge for homosexual animals run by Big Gay Al"
-      is_new: true
-      significance: "Represents a safe space for those who are different"
-    - name: "South Park Football Field"
-      description: "Where the South Park Cows play their games"
-      is_new: true
-      significance: "Introduces the school's athletic facilities and team culture"
-    - name: "Stan's Backyard"
-      description: "Where Sparky's homosexual behavior is first observed"
-      is_new: true
-      significance: "Shows the domestic setting where acceptance issues begin"
-
+  - name: Big Gay Al's Big Gay Animal Sanctuary
+    description: A refuge for homosexual animals run by Big Gay Al
+    is_new: true
+    significance: Represents a safe space for those who are different
+  - name: South Park Football Field
+    description: Where the South Park Cows play their games
+    is_new: true
+    significance: Introduces the school's athletic facilities and team culture
+  - name: Stan's Backyard
+    description: Where Sparky's homosexual behavior is first observed
+    is_new: true
+    significance: Shows the domestic setting where acceptance issues begin
 themes:
-  - theme: "Acceptance and Tolerance"
-    description: "Learning to accept others who are different, including those with different sexual orientations"
-    how_explored: "Through Stan's journey from rejection to acceptance of Sparky's homosexuality"
-    moral_lesson: "Love and acceptance should not be conditional on others conforming to our expectations"
-  - theme: "Education and Understanding"
-    description: "How education can overcome prejudice and fear"
-    how_explored: "Through Big Gay Al's patient teaching and the educational boat ride"
-    moral_lesson: "Understanding and education are the keys to overcoming prejudice"
-  - theme: "Natural Diversity"
-    description: "The idea that diversity in sexuality is natural and normal"
-    how_explored: "Through the animal sanctuary showing homosexuality exists throughout nature"
-    moral_lesson: "Sexual diversity is a natural part of life, not something to be feared or rejected"
-
+- theme: Acceptance and Tolerance
+  description: Learning to accept others who are different, including those with different
+    sexual orientations
+  how_explored: Through Stan's journey from rejection to acceptance of Sparky's homosexuality
+  moral_lesson: Love and acceptance should not be conditional on others conforming
+    to our expectations
+- theme: Education and Understanding
+  description: How education can overcome prejudice and fear
+  how_explored: Through Big Gay Al's patient teaching and the educational boat ride
+  moral_lesson: Understanding and education are the keys to overcoming prejudice
+- theme: Natural Diversity
+  description: The idea that diversity in sexuality is natural and normal
+  how_explored: Through the animal sanctuary showing homosexuality exists throughout
+    nature
+  moral_lesson: Sexual diversity is a natural part of life, not something to be feared
+    or rejected
 continuity:
   callbacks:
-    - "Kenny's death pattern continues"
-    - "Chef's role as mentor and adult figure"
-    - "The boys' established group dynamics"
+  - Kenny's death pattern continues
+  - Chef's role as mentor and adult figure
+  - The boys' established group dynamics
   setup_for_future:
-    - "Introduces Big Gay Al as a recurring character"
-    - "Establishes Sparky as Stan's gay dog"
-    - "Shows the South Park football team and school athletics"
-    - "Sets up themes of tolerance and acceptance"
+  - Introduces Big Gay Al as a recurring character
+  - Establishes Sparky as Stan's gay dog
+  - Shows the South Park football team and school athletics
+  - Sets up themes of tolerance and acceptance
   character_developments:
-    - "Stan shows capacity for growth and learning about acceptance"
-    - "Cartman's bigoted attitudes become more apparent"
-    - "Big Gay Al established as a positive LGBTQ+ representation"
-    - "Chef shown as a coach and mentor figure"
+  - Stan shows capacity for growth and learning about acceptance
+  - Cartman's bigoted attitudes become more apparent
+  - Big Gay Al established as a positive LGBTQ+ representation
+  - Chef shown as a coach and mentor figure
   world_building:
-    - "South Park has a high school football team (the Cows)"
-    - "The town has various specialized facilities like animal sanctuaries"
-    - "Community includes diverse characters with different lifestyles"
-    - "School has athletic programs and rivalries with other towns"
-
+  - South Park has a high school football team (the Cows)
+  - The town has various specialized facilities like animal sanctuaries
+  - Community includes diverse characters with different lifestyles
+  - School has athletic programs and rivalries with other towns
 production:
   notable_quotes:
-    - "I'm super! Thanks for asking! - Big Gay Al"
-    - "Oh my God, they killed Kenny! - Kyle"
-    - "You bastards! - Stan"
-    - "There's nothing wrong with being gay! - Big Gay Al"
+  - I'm super! Thanks for asking! - Big Gay Al
+  - Oh my God, they killed Kenny! - Kyle
+  - You bastards! - Stan
+  - There's nothing wrong with being gay! - Big Gay Al
   memorable_scenes:
-    - "Sparky's homosexual behavior with other dogs"
-    - "Big Gay Al's introduction and sanctuary tour"
-    - "The educational boat ride sequence"
-    - "Big Gay Al's musical numbers"
-    - "Stan's acceptance of Sparky at the end"
+  - Sparky's homosexual behavior with other dogs
+  - Big Gay Al's introduction and sanctuary tour
+  - The educational boat ride sequence
+  - Big Gay Al's musical numbers
+  - Stan's acceptance of Sparky at the end
   animation_notes:
-    - "Colorful and elaborate design of Big Gay Al's sanctuary"
-    - "Musical sequence animation with dancing animals"
-    - "Football game action sequences"
-    - "Big Gay Al's flamboyant character design and movements"
+  - Colorful and elaborate design of Big Gay Al's sanctuary
+  - Musical sequence animation with dancing animals
+  - Football game action sequences
+  - Big Gay Al's flamboyant character design and movements
   writers:
-    - "Trey Parker"
-    - "Matt Stone"
+  - Trey Parker
+  - Matt Stone
   directors:
-    - "Trey Parker"
+  - Trey Parker
   guest_voices: []
-
 context:
-  historical_context: "Aired during the 1990s when LGBTQ+ rights were a major social issue, with debates about gay marriage, military service, and social acceptance"
-  controversy_notes: "Groundbreaking for addressing homosexuality in a positive way on television, especially in an animated show"
-  reception_notes: "Praised by LGBTQ+ advocates for its positive representation and educational approach to gay rights"
+  historical_context: Aired during the 1990s when LGBTQ+ rights were a major social
+    issue, with debates about gay marriage, military service, and social acceptance
+  controversy_notes: Groundbreaking for addressing homosexuality in a positive way
+    on television, especially in an animated show
+  reception_notes: Praised by LGBTQ+ advocates for its positive representation and
+    educational approach to gay rights
   social_commentary:
-    - "Promotes acceptance and tolerance of LGBTQ+ individuals"
-    - "Challenges stereotypes and prejudices about homosexuality"
-    - "Shows that education can overcome ignorance and fear"
-    - "Demonstrates that love and acceptance should be unconditional"
+  - Promotes acceptance and tolerance of LGBTQ+ individuals
+  - Challenges stereotypes and prejudices about homosexuality
+  - Shows that education can overcome ignorance and fear
+  - Demonstrates that love and acceptance should be unconditional

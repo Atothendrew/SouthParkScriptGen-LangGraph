@@ -1,0 +1,316 @@
+---
+basic_info:
+  season: 2
+  episode_number: 3
+  title: Ike's Wee Wee
+  original_air_date: '1998-05-20'
+  episode_type: standalone
+plot:
+  logline: Kyle tries to save his little brother Ike from circumcision while Mr. Garrison
+    deals with being fired and replaced by Ms. Choksondik.
+  plot_summary: 'When Kyle learns that his baby brother Ike is scheduled for circumcision,
+    he becomes convinced that his parents are planning to cut off Ike''s penis entirely.
+    Horrified by this misunderstanding, Kyle decides he must save Ike from what he
+    perceives as mutilation. He enlists the help of Stan, Kenny, and reluctantly Cartman
+    to help hide Ike from his parents.
+
+
+    Meanwhile, Mr. Garrison is fired from his teaching position for inappropriate
+    behavior and is replaced by the stern Ms. Choksondik. Garrison struggles with
+    unemployment and eventually takes a job at a museum, where he begins to question
+    his identity and sexuality. His puppet Mr. Hat also goes through changes as Garrison''s
+    psychological state shifts.
+
+
+    The episode explores themes of cultural and religious traditions, misunderstanding,
+    and growing up. Kyle''s protective instincts toward Ike drive the main plot, while
+    Garrison''s subplot introduces questions about identity and change. The resolution
+    comes when Kyle finally understands what circumcision actually is, though he still
+    questions the necessity of the procedure.
+
+    '
+  plot_threads:
+  - title: Ike's Circumcision
+    description: Kyle misunderstands circumcision and tries to save Ike from what
+      he thinks is mutilation
+    characters_involved:
+    - Kyle Broflovski
+    - Ike Broflovski
+    - Gerald Broflovski
+    - Sheila Broflovski
+    - Stan Marsh
+    - Kenny McCormick
+    - Eric Cartman
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Mr. Garrison's Job Loss
+    description: Mr. Garrison is fired and must find new employment while questioning
+      his identity
+    characters_involved:
+    - Mr. Garrison
+    - Ms. Choksondik
+    - Mr. Hat
+    - School administration
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: The Boys' Rescue Mission
+    description: The boys work together to hide Ike from his parents
+    characters_involved:
+    - Kyle Broflovski
+    - Stan Marsh
+    - Kenny McCormick
+    - Eric Cartman
+    - Ike Broflovski
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Misunderstands what circumcision means
+    - Becomes determined to save Ike
+    - Organizes the rescue mission
+    - Eventually learns the truth about circumcision
+    - Still questions the practice
+    character_development: Shows Kyle's protective nature and willingness to challenge
+      authority when he believes something is wrong
+    relationships_affected:
+    - Ike Broflovski
+    - Gerald Broflovski
+    - Sheila Broflovski
+    - Stan Marsh
+    - Kenny McCormick
+    - Eric Cartman
+  - name: Ike Broflovski
+    role: main
+    key_moments:
+    - Scheduled for circumcision
+    - Becomes the focus of Kyle's rescue mission
+    - Remains innocent throughout the ordeal
+    - Eventually undergoes the procedure
+    character_development: Continues to be the innocent child who trusts Kyle completely
+    relationships_affected:
+    - Kyle Broflovski
+    - Gerald Broflovski
+    - Sheila Broflovski
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Supports Kyle's mission to save Ike
+    - Helps hide Ike from his parents
+    - Provides voice of reason when needed
+    - Learns about circumcision along with Kyle
+    character_development: Demonstrates Stan's loyalty to his friends and willingness
+      to help
+    relationships_affected:
+    - Kyle Broflovski
+    - Ike Broflovski
+    - Kenny McCormick
+    - Eric Cartman
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Participates in the rescue mission
+    - Dies during the episode
+    - Provides support to the group effort
+    character_development: Continues his pattern of loyal friendship and inevitable
+      death
+    relationships_affected:
+    - Kyle Broflovski
+    - Stan Marsh
+    - Eric Cartman
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Reluctantly helps with the rescue mission
+    - Makes inappropriate comments about circumcision
+    - Shows his typical self-centered attitude
+    - Eventually participates in the group effort
+    character_development: Displays his usual reluctance to help others but ultimately
+      goes along with the group
+    relationships_affected:
+    - Kyle Broflovski
+    - Stan Marsh
+    - Kenny McCormick
+    - Ike Broflovski
+  supporting:
+  - name: Mr. Garrison
+    role: supporting
+    key_moments:
+    - Gets fired from his teaching job
+    - Struggles with unemployment
+    - Takes a job at a museum
+    - Questions his identity and sexuality
+    - Deals with changes in his relationship with Mr. Hat
+    character_development: Begins major character development regarding his identity
+      and sexuality
+    relationships_affected:
+    - Ms. Choksondik
+    - Mr. Hat
+    - School administration
+  - name: Gerald Broflovski
+    role: supporting
+    key_moments:
+    - Schedules Ike's circumcision
+    - Explains the procedure to Kyle
+    - Searches for Ike when he goes missing
+    - Maintains his parental authority
+    character_development: Shows his role as a responsible father following religious
+      traditions
+    relationships_affected:
+    - Kyle Broflovski
+    - Ike Broflovski
+    - Sheila Broflovski
+  - name: Sheila Broflovski
+    role: supporting
+    key_moments:
+    - Supports the decision for Ike's circumcision
+    - Worries when Ike goes missing
+    - Tries to explain the situation to Kyle
+    - Maintains maternal concern
+    character_development: Demonstrates her role as a caring mother balancing tradition
+      and child welfare
+    relationships_affected:
+    - Kyle Broflovski
+    - Ike Broflovski
+    - Gerald Broflovski
+  new:
+  - name: Ms. Choksondik
+    role: supporting
+    key_moments:
+    - Replaces Mr. Garrison as the boys' teacher
+    - Introduces strict teaching methods
+    - Deals with the boys' behavior
+    - Establishes her authority in the classroom
+    character_development: Introduced as a stern, no-nonsense teacher who contrasts
+      with Mr. Garrison
+    relationships_affected:
+    - Mr. Garrison
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+content_elements:
+  cultural_references:
+  - type: current_event
+    target: Circumcision Debate
+    description: References ongoing cultural debates about circumcision practices
+    context: Reflects real-world discussions about the necessity and ethics of circumcision
+  - type: movie
+    target: Rescue Mission Films
+    description: The boys' mission to save Ike follows action movie rescue tropes
+    context: Parodies dramatic rescue scenarios from action and adventure films
+  - type: current_event
+    target: Teacher Employment Issues
+    description: Mr. Garrison's firing reflects real concerns about teacher job security
+    context: Comments on educational system employment practices and teacher evaluation
+  running_gags:
+  - name: Kenny Dies
+    description: Kenny McCormick dies during the episode
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Death occurs during the rescue mission complications
+  - name: Oh My God, They Killed Kenny
+    description: The boys' reaction to Kenny's death
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Continues the established pattern despite the serious episode
+      tone
+  - name: Kyle's Protective Nature
+    description: Kyle's intense desire to protect Ike from perceived harm
+    frequency: 3
+    first_appearance: S01E01
+    evolution_notes: Reaches new heights with the circumcision misunderstanding
+  locations:
+  - name: Broflovski House
+    description: Kyle and Ike's family home where the circumcision discussion takes
+      place
+    is_new: false
+    significance: Central location for family dynamics and the initial conflict
+  - name: South Park Elementary School
+    description: Where Ms. Choksondik replaces Mr. Garrison
+    is_new: false
+    significance: Shows the impact of teacher changes on the boys' education
+  - name: Natural History Museum
+    description: Where Mr. Garrison finds new employment
+    is_new: true
+    significance: Represents Mr. Garrison's attempt to rebuild his career and identity
+  - name: Various Hiding Spots
+    description: Places where the boys try to hide Ike from his parents
+    is_new: true
+    significance: Shows the boys' resourcefulness and determination
+themes:
+- theme: Misunderstanding and Communication
+  description: How lack of proper explanation can lead to unnecessary fear and conflict
+  how_explored: Kyle's misunderstanding of circumcision drives the entire plot
+  moral_lesson: Clear communication between parents and children is essential
+- theme: Cultural and Religious Traditions
+  description: The role of traditional practices in modern families
+  how_explored: The Broflovski family's decision to circumcise Ike based on religious
+    tradition
+  moral_lesson: Traditions should be explained and understood, not just followed blindly
+- theme: Protective Love
+  description: How love can drive people to extreme actions
+  how_explored: Kyle's willingness to defy his parents to protect Ike
+  moral_lesson: Love and protection must be balanced with understanding and trust
+- theme: Change and Identity
+  description: How major life changes affect personal identity
+  how_explored: Mr. Garrison's job loss and subsequent identity questioning
+  moral_lesson: Change can be an opportunity for self-discovery and growth
+continuity:
+  callbacks:
+  - References Kyle and Ike's close relationship from previous episodes
+  - Continues Mr. Garrison's character development from Season 1
+  - Builds on the boys' friendship and group dynamics
+  setup_for_future:
+  - Introduces Ms. Choksondik as a recurring character
+  - Begins Mr. Garrison's identity crisis arc
+  - Establishes patterns for Kyle's protective behavior
+  character_developments:
+  - Deepens Kyle's character as a protective older brother
+  - Begins major changes for Mr. Garrison's character arc
+  - Introduces Ms. Choksondik's teaching style and personality
+  world_building:
+  - Expands the school environment with new faculty
+  - Shows more of the Broflovski family dynamics
+  - Introduces the museum as a new location
+production:
+  notable_quotes:
+  - They're going to cut off my little brother's wee-wee! - Kyle
+  - That's not what circumcision is, Kyle. - Gerald
+  - I don't care what it is, I'm not letting them hurt Ike! - Kyle
+  - Oh my God, they killed Kenny! - Stan
+  - You bastards! - Kyle
+  - Now children, I'm your new teacher, Ms. Choksondik. - Ms. Choksondik
+  memorable_scenes:
+  - Kyle's horrified reaction to learning about Ike's circumcision
+  - The boys planning their rescue mission
+  - Mr. Garrison getting fired from his job
+  - Ms. Choksondik's introduction to the class
+  - Kyle finally understanding what circumcision actually is
+  - The resolution of both the Ike and Garrison storylines
+  animation_notes:
+  - Emotional expressions during Kyle's distress
+  - Museum exhibits and displays
+  - Classroom scenes with the new teacher
+  - Various hiding locations throughout South Park
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired during ongoing cultural debates about circumcision practices
+    and their necessity in modern society
+  controversy_notes: The episode's frank discussion of circumcision was controversial
+    for a children's animated show, though it handled the topic with relative sensitivity
+  reception_notes: Generally well-received for its handling of a sensitive topic and
+    its exploration of family dynamics and misunderstanding
+  social_commentary:
+  - Examines the importance of age-appropriate communication between parents and children
+  - Questions traditional practices and the need for explanation rather than blind
+    adherence
+  - Explores themes of cultural and religious identity in modern families
+  - Comments on employment instability and career changes in modern society

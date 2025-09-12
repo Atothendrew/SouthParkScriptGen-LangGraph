@@ -10,11 +10,11 @@ from spgen.workflow.llm_client import llm_call
 
 class NewsResearchAgent:
     """Agent for researching current events and creating contextual content."""
-    
+
     def __init__(self):
         self.ddgs = DDGS()
         self._latest_news_results: List[Dict] = []
-        
+
     def search_news(self, query: str, num_results: int = 5, append_news_suffix: bool = True) -> List[Dict]:
         """Search for recent news using DuckDuckGo."""
         try:
@@ -27,7 +27,7 @@ class NewsResearchAgent:
 
             print(f"📰 Searching for news with query: '{search_query}'")
             results = []
-            
+
             # Search for recent news
             for result in self.ddgs.news(
                 query=search_query,
@@ -44,28 +44,28 @@ class NewsResearchAgent:
                     'source': result.get('source', '')
                 }
                 results.append(res)
-            
+
             if results:
                 print(f"✅ Found {len(results)} news results.")
             else:
                 print(f"❌ No results found.")
             return results
-            
+
         except Exception as e:
             print(f"❌ News search failed: {e}")
             return []
-    
+
     def analyze_news_for_south_park(self, news_results: List[Dict], original_prompt: str) -> str:
         """Analyze news results and create South Park-relevant context."""
         if not news_results:
             return "No recent news found to inform this episode."
-            
+
         news_summaries = []
         for item in news_results:
             news_summaries.append(f"- {item['title']}: {item['snippet']}")
-            
+
         news_text = "\n".join(news_summaries)
-        
+
         analysis_prompt = f"""
 You are a South Park writer analyzing current events to inform episode creation.
 
@@ -84,14 +84,11 @@ Analyze these news stories and identify:
 
 Provide your analysis in markdown format with clear sections.
 """
-        
+
         try:
             print("🧠 Analyzing news for South Park context...")
-            analysis = llm_call(
-                analysis_prompt,
-                temperature=0.7
-            )
-            print("✅ News analysis complete.")
+            analysis, model_name = llm_call(analysis_prompt, temperature=0.7)
+            print("✅ News analysis complete. Model: ", model_name)
             return analysis
         except Exception as e:
             return f"News analysis failed: {e}"
@@ -108,7 +105,7 @@ Concept: "{prompt}"
 '''
         try:
             print("🔑 Extracting keywords from prompt...")
-            keywords_str = llm_call(keyword_prompt, temperature=0.2)
+            keywords_str, model_name = llm_call(keyword_prompt, temperature=0.2)
             keywords = [k.strip() for k in keywords_str.split(',')]
             print(f"✅ Extracted keywords: {keywords}")
             return keywords
@@ -120,7 +117,7 @@ Concept: "{prompt}"
         """Create news context markdown files for Matt and Trey."""
         news_dir = os.path.join(log_dir, "news_context")
         os.makedirs(news_dir, exist_ok=True)
-        
+
         unique_news = []
         if self._latest_news_results:
             print("♻️ Using news from dynamic prompt generation for context.")
@@ -133,7 +130,7 @@ Concept: "{prompt}"
                 search_terms = [prompt]
 
             print(f"🔍 Creating news context with search terms: {search_terms}")
-            
+
             all_news = []
             for term in search_terms:
                 # Try searching without "news" suffix first
@@ -142,13 +139,13 @@ Concept: "{prompt}"
                     # If no results, try with "news" suffix
                     print(f"🔄 Retrying search for '{term}' with 'news' suffix.")
                     results = self.search_news(term, num_results=3, append_news_suffix=True)
-                
+
                 print(f"🔎 Raw search results for '{term}': {len(results)} articles.")
                 for r in results:
                     print(f"    - Title: {r.get('title', 'N/A')}, Source: {r.get('source', 'N/A')}")
-                
+
                 all_news.extend(results)
-            
+
             print(f"📚 Total articles collected before deduplication: {len(all_news)} articles.")
             for a in all_news:
                 print(f"    - Title: {a.get('title', 'N/A')}, Source: {a.get('source', 'N/A')}")
@@ -159,20 +156,20 @@ Concept: "{prompt}"
                 if item['title'] not in seen_titles:
                     unique_news.append(item)
                     seen_titles.add(item['title'])
-        
+
         print(f"📰 Using {len(unique_news)} unique news articles for context after deduplication.")
         for u in unique_news:
             print(f"    - Title: {u.get('title', 'N/A')}, Source: {u.get('source', 'N/A')}")
-        
+
         # Exit if no news found
         if not unique_news:
             print("❌ No news results found for dynamic prompt generation.")
             print("💡 Try running without --dynamic-prompt or check your internet connection.")
             exit(1)
-        
+
         # Create analysis
         analysis = self.analyze_news_for_south_park(unique_news, prompt)
-        
+
         # Save news context file
         news_file = os.path.join(news_dir, "current_events_analysis.md")
         print(f"📝 Saving current events analysis to: {news_file}")
@@ -180,17 +177,17 @@ Concept: "{prompt}"
             f.write(f"# Current Events Analysis\n\n")
             f.write(f"**Episode Concept:** {prompt}\n\n")
             f.write(f"**Generated:** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n\n")
-            
+
             f.write("## Recent News Headlines\n\n")
             for item in unique_news:
                 f.write(f"### {item['title']}\n")
                 f.write(f"*{item['date']} - {item.get('source', 'Unknown Source')}*\n\n")
                 f.write(f"{item['snippet']}\n\n")
                 f.write(f"[Source]({item['url']})\n\n")
-            
+
             f.write("## South Park Writer's Analysis\n\n")
             f.write(analysis)
-        
+
         # Create Matt Stone's perspective file
         matt_analysis = self.create_matt_stone_analysis(unique_news, prompt)
         matt_file = os.path.join(news_dir, "matt_stone_perspective.md")
@@ -198,7 +195,7 @@ Concept: "{prompt}"
         with open(matt_file, "w", encoding="utf-8") as f:
             f.write(f"# Matt Stone's Perspective on Current Events\n\n")
             f.write(matt_analysis)
-        
+
         # Create Trey Parker's perspective file
         trey_analysis = self.create_trey_parker_analysis(unique_news, prompt)
         trey_file = os.path.join(news_dir, "trey_parker_perspective.md")
@@ -206,17 +203,17 @@ Concept: "{prompt}"
         with open(trey_file, "w", encoding="utf-8") as f:
             f.write(f"# Trey Parker's Perspective on Current Events\n\n")
             f.write(trey_analysis)
-        
+
         return {
             "news_context": news_file,
             "matt_perspective": matt_file,
             "trey_perspective": trey_file
         }
-    
+
     def create_matt_stone_analysis(self, news_results: List[Dict], prompt: str) -> str:
         """Create Matt Stone's pragmatic analysis of current events."""
         news_text = "\n".join([f"- {item['title']}: {item['snippet']}" for item in news_results])
-        
+
         matt_prompt = f"""
 You are Matt Stone, co-creator of South Park. You're known for your pragmatic, libertarian perspective and ability to see through BS on both sides of any issue.
 
@@ -234,19 +231,19 @@ Analyze these current events from your perspective:
 
 Write in your direct, no-nonsense style. Be skeptical of both liberal and conservative takes.
 """
-        
+
         try:
             print("🧠 Generating Matt Stone's perspective...")
-            analysis = llm_call(matt_prompt, temperature=0.6)
+            analysis, model_name = llm_call(matt_prompt, temperature=0.6)
             print("✅ Matt Stone's perspective generated.")
             return analysis
         except Exception as e:
             return f"Analysis failed: {e}"
-    
+
     def create_trey_parker_analysis(self, news_results: List[Dict], prompt: str) -> str:
         """Create Trey Parker's satirical analysis of current events."""
         news_text = "\n".join([f"- {item['title']}: {item['snippet']}" for item in news_results])
-        
+
         trey_prompt = f"""
 You are Trey Parker, co-creator of South Park. You have a gift for finding the absurd in any situation and turning it into brilliant satire.
 
@@ -264,10 +261,10 @@ Analyze these current events from your satirical perspective:
 
 Write with your sharp, irreverent style. Look for the satirical gold in these stories.
 """
-        
+
         try:
             print("🧠 Generating Trey Parker's perspective...")
-            analysis = llm_call(trey_prompt, temperature=0.8)
+            analysis, model_name = llm_call(trey_prompt, temperature=0.8)
             print("✅ Trey Parker's perspective generated.")
             return analysis
         except Exception as e:
@@ -278,7 +275,7 @@ Write with your sharp, irreverent style. Look for the satirical gold in these st
         try:
             print("📰 Searching for trending news to generate dynamic prompt...")
             trending_results = []
-            
+
             # Get general trending news
             for result in self.ddgs.news(
                 query="breaking news",
@@ -295,23 +292,23 @@ Write with your sharp, irreverent style. Look for the satirical gold in these st
                     'source': result.get('source', '')
                 }
                 trending_results.append(res)
-            
+
             if not trending_results:
                 print("❌ No trending news found. Cannot generate dynamic prompt.")
                 print("💡 Try running without --dynamic-prompt or check your internet connection.")
                 exit(1)
-            
+
             print(f"✅ Found {len(trending_results)} trending news articles.")
             self._latest_news_results = trending_results
-            
+
             # Create a summary of trending topics
             news_summaries = []
             for item in trending_results[:5]:  # Top 5 stories
                 news_summaries.append(f"- {item.get('title', '')}: {item.get('snippet', '')[:100]}...")
-            
+
             news_text = "\n".join(news_summaries)
             print(f"🗞️ News summary for prompt generation:\n{news_text}")
-            
+
             prompt_generation = f"""
 You are a South Park writer tasked with creating an episode concept based on today's trending news.
 
@@ -330,19 +327,18 @@ Respond with ONLY the episode prompt as a single sentence, like:
 
 Do not include any explanation, just the prompt.
 """
-            
+
             print("🤖 Generating dynamic episode prompt from news...")
-            generated_prompt = llm_call(prompt_generation, temperature=0.7)
+            generated_prompt, model_name = llm_call(prompt_generation, temperature=0.7)
             # Clean up the response to just the prompt
             clean_prompt = generated_prompt.strip().strip('"').strip("'")
             print(f"✅ Generated dynamic prompt: '{clean_prompt}'")
             return clean_prompt
-            
+
         except Exception as e:
             print(f"❌ Prompt generation failed: {e}")
             print("💡 Try running without --dynamic-prompt or check your internet connection.")
             exit(1)
-
 
 
 if __name__ == "__main__":

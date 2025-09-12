@@ -1,115 +1,161 @@
+---
 basic_info:
-  title: "Cartman's Mom Is a Dirty Slut"
+  title: Cartman's Mom Is a Dirty Slut
   season: 1
-  episode: 13
-  air_date: "1998-02-25"
-  episode_type: "REGULAR"
-  runtime_minutes: 22
-
+  episode_type: standalone
+  episode_number: 13
+  original_air_date: '1998-02-25'
 plot:
-  main_storyline: "Cartman desperately wants to know who his father is for a school assignment, leading to the discovery that his mother Liane has had sexual relations with nearly every man in South Park, making paternity unclear."
-  subplot: "The boys help Cartman investigate his parentage while dealing with the shocking revelations about Mrs. Cartman's promiscuous past, and Chef provides guidance about the birds and the bees."
-  resolution: "The episode ends on a cliffhanger with a paternity test being conducted, setting up the Season 2 premiere. Multiple potential fathers are revealed, but the true identity remains a mystery."
-  episode_arc: "Season finale that explores family secrets and sets up major storylines for Season 2, while providing sex education themes."
-
+  logline: Cartman desperately wants to know who his father is for a school assignment,
+    leading to the discover...
+  plot_summary: Cartman desperately wants to know who his father is for a school assignment,
+    leading to the discovery that his mother Liane has had sexual relations with nearly
+    every man in South Park, making paternity unclear. The boys help Cartman investigate
+    his parentage while dealing with the shocking revelations about Mrs. Cartman's
+    promiscuous past, and Chef provides guidance about the birds and the bees. The
+    episode ends on a cliffhanger with a paternity test being conducted, setting up
+    the Season 2 premiere. Multiple potential fathers are revealed, but the true identity
+    remains a mystery.
+  plot_threads:
+  - title: Main Plot
+    description: Cartman desperately wants to know who his father is for a school
+      assignment, leading to the discovery that his mother Liane has had sexual relations
+      with nearly every man in South Park, making paternity unclear.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Subplot
+    description: The boys help Cartman investigate his parentage while dealing with
+      the shocking revelations about Mrs. Cartman's promiscuous past, and Chef provides
+      guidance about the birds and the bees.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
 characters:
-  main_characters:
-    - name: "Eric Cartman"
-      role: "PROTAGONIST"
-      description: "Desperately seeks to learn his father's identity and becomes increasingly disturbed by revelations about his mother"
-      character_development: "Shows vulnerability and genuine emotional need beneath his usual bravado"
-    - name: "Stan Marsh"
-      role: "MAIN"
-      description: "Helps Cartman with his investigation while learning uncomfortable truths about adult relationships"
-      character_development: "Gains more mature understanding of complex family situations"
-    - name: "Kyle Broflovski"
-      role: "MAIN"
-      description: "Supports Cartman's quest while being shocked by the revelations"
-      character_development: "Shows empathy for Cartman's difficult situation"
-    - name: "Kenny McCormick"
-      role: "MAIN"
-      description: "Participates in the investigation and paternity mystery"
-      character_development: "Standard Kenny involvement in group activities"
-
-  supporting_characters:
-    - name: "Liane Cartman"
-      role: "SUPPORTING"
-      description: "Cartman's mother whose promiscuous past becomes the central mystery"
-    - name: "Chef"
-      role: "SUPPORTING"
-      description: "Provides sex education and guidance to the boys about adult relationships"
-    - name: "Dr. Mephesto"
-      role: "SUPPORTING"
-      description: "Mad scientist who conducts the paternity test"
-    - name: "Various South Park men"
-      role: "SUPPORTING"
-      description: "Potential fathers including Mr. Garrison, Chef, Jimbo, Ned, and others"
-
+  main:
+  - name: Eric Cartman
+    role: main
+    key_moments: []
+    character_development: Shows vulnerability and genuine emotional need beneath
+      his usual bravado
+    relationships_affected: []
+  - name: Stan Marsh
+    role: main
+    key_moments: []
+    character_development: Gains more mature understanding of complex family situations
+    relationships_affected: []
+  - name: Kyle Broflovski
+    role: main
+    key_moments: []
+    character_development: Shows empathy for Cartman's difficult situation
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    key_moments: []
+    character_development: Standard Kenny involvement in group activities
+    relationships_affected: []
+  supporting:
+  - name: Liane Cartman
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Chef
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Dr. Mephesto
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Various South Park men
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  new: []
 content_elements:
-  violence_level: "LOW"
-  language: "MODERATE"
-  adult_themes:
-    - "Promiscuity and sexual behavior"
-    - "Paternity and family secrets"
-    - "Sex education and coming of age"
-    - "Single parenthood and family structure"
   cultural_references:
-    - reference: "Paternity test TV shows"
-      context: "Daytime television drama and paternity reveals"
-    - reference: "Sex education and 'the talk'"
-      context: "Traditional parent-child discussions about reproduction"
-    - reference: "Small town gossip and secrets"
-      context: "Community dynamics and hidden relationships"
-    - reference: "Cliffhanger endings"
-      context: "Television season finale techniques"
-
-themes:
-  primary_themes:
-    - "Family identity and belonging"
-    - "Sexual education and maturity"
-    - "Community secrets and gossip"
-    - "The complexity of adult relationships"
-  social_commentary:
-    - "Satire of daytime TV paternity drama"
-    - "Commentary on small town moral hypocrisy"
-    - "Exploration of non-traditional family structures"
-    - "Critique of sexual double standards"
-
-continuity:
-  character_introductions:
-    - "Dr. Mephesto (recurring mad scientist)"
-    - "Establishment of Mrs. Cartman's character traits"
+  - type: unknown
+    target: ''
+    description: ''
+    context: Daytime television drama and paternity reveals
+  - type: unknown
+    target: ''
+    description: ''
+    context: Traditional parent-child discussions about reproduction
+  - type: unknown
+    target: ''
+    description: ''
+    context: Community dynamics and hidden relationships
+  - type: unknown
+    target: ''
+    description: ''
+    context: Television season finale techniques
   running_gags:
-    - gag: "Kenny's death"
-      description: "Kenny dies in a freak accident during the paternity investigation"
-    - gag: "Mrs. Cartman's promiscuity"
-      description: "Establishes ongoing jokes about Cartman's mother"
-  plot_connections:
-    - "Sets up Season 2 premiere cliffhanger resolution"
-    - "Establishes Dr. Mephesto as recurring character"
-    - "Creates ongoing mystery about Cartman's parentage"
-
-locations:
-  primary_locations:
-    - name: "South Park Elementary"
-      description: "Where Cartman's family tree assignment begins the investigation"
-    - name: "Cartman house"
-      description: "Where family secrets and revelations unfold"
-    - name: "Dr. Mephesto's laboratory"
-      description: "Where the paternity test is conducted"
-    - name: "Various South Park locations"
-      description: "Where the boys investigate potential fathers"
-
-production_notes:
-  writer: "Trey Parker"
-  director: "Trey Parker"
-  notable_aspects:
-    - "Season 1 finale with major cliffhanger"
-    - "Introduction of ongoing paternity mystery"
-    - "Heavy focus on adult themes and sex education"
-    - "Setup for Season 2 storylines"
-
-cultural_impact:
-  significance: "Created one of South Park's most famous cliffhangers and established ongoing character dynamics"
-  controversy: "Parents' groups criticized the sexual content and adult themes"
-  legacy: "Became a template for season finale cliffhangers and ongoing mysteries in the series"
+  - name: Kenny's death
+    description: Kenny dies in a freak accident during the paternity investigation
+    frequency: 1
+    first_appearance: null
+    evolution_notes: null
+  - name: Mrs. Cartman's promiscuity
+    description: Establishes ongoing jokes about Cartman's mother
+    frequency: 1
+    first_appearance: null
+    evolution_notes: null
+  locations: []
+themes:
+- theme: Family identity and belonging
+  description: 'Primary theme: Family identity and belonging'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Sexual education and maturity
+  description: 'Primary theme: Sexual education and maturity'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Community secrets and gossip
+  description: 'Primary theme: Community secrets and gossip'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: The complexity of adult relationships
+  description: 'Primary theme: The complexity of adult relationships'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks:
+  - Sets up Season 2 premiere cliffhanger resolution
+  - Establishes Dr. Mephesto as recurring character
+  - Creates ongoing mystery about Cartman's parentage
+  setup_for_future: []
+  character_developments:
+  - Dr. Mephesto (recurring mad scientist)
+  - Establishment of Mrs. Cartman's character traits
+  world_building: []
+production:
+  notable_quotes:
+  - '[Quote from Cartman''s Mom Is a Dirty Slut]'
+  memorable_scenes:
+  - '[Scene from Cartman''s Mom Is a Dirty Slut]'
+  animation_notes: []
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired in 1998 during South Park's early seasons
+  controversy_notes: Part of South Park's controversial early content
+  reception_notes: Episode from South Park's foundational years
+  social_commentary:
+  - Social commentary from Cartman's Mom Is a Dirty Slut

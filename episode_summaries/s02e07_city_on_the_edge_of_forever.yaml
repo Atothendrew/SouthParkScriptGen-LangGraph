@@ -1,0 +1,303 @@
+---
+basic_info:
+  season: 2
+  episode_number: 7
+  title: City on the Edge of Forever
+  original_air_date: '1998-06-17'
+  episode_type: standalone
+plot:
+  logline: The boys get trapped on a school bus hanging over a cliff and tell stories
+    to pass time, while Ms. Crabtree searches for them with increasingly bizarre encounters.
+  plot_summary: 'During a school field trip, the boys'' bus crashes and ends up precariously
+    balanced on the edge of a cliff. Trapped inside with no immediate rescue in sight,
+    the children begin telling stories to keep their spirits up and pass the time.
+    Each story becomes increasingly outlandish and reflects the personality of its
+    teller, ranging from adventure tales to completely absurd scenarios.
+
+
+    Meanwhile, Ms. Crabtree, the bus driver who was thrown from the vehicle during
+    the crash, embarks on a surreal journey to find help. Her quest leads her through
+    a series of bizarre encounters and situations that become progressively more disconnected
+    from reality. The episode plays with narrative structure and storytelling conventions.
+
+
+    The episode serves as both a parody of anthology storytelling and a commentary
+    on how people cope with crisis through imagination and narrative. The stories
+    within stories create multiple layers of reality, with each tale revealing something
+    about the character telling it. The resolution brings together the various narrative
+    threads in typical South Park fashion, questioning the nature of reality and storytelling
+    itself.
+
+    '
+  plot_threads:
+  - title: Bus Crash Survival
+    description: The boys are trapped on a bus hanging over a cliff and must wait
+      for rescue
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - Other students
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Storytelling to Pass Time
+    description: The trapped children tell increasingly bizarre stories to cope with
+      their situation
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - Other students
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Ms. Crabtree's Surreal Journey
+    description: The bus driver has increasingly bizarre encounters while seeking
+      help
+    characters_involved:
+    - Ms. Crabtree
+    - Various strange characters
+    - Rescue personnel
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Survives the bus crash
+    - Tells stories to keep morale up
+    - Shows leadership during the crisis
+    - Participates in group storytelling
+    - Helps maintain group cohesion
+    character_development: Demonstrates Stan's leadership qualities and storytelling
+      abilities
+    relationships_affected:
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - Other students
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Contributes to the storytelling session
+    - Shows creativity in his narratives
+    - Helps keep the group calm
+    - Provides rational perspective on their situation
+    character_development: Shows Kyle's creativity and his role as a stabilizing influence
+    relationships_affected:
+    - Stan Marsh
+    - Eric Cartman
+    - Kenny McCormick
+    - Other students
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Tells the most outrageous and self-centered stories
+    - Shows his typical narcissistic tendencies even in crisis
+    - Provides comic relief during the tense situation
+    - Reveals his fantasy life through storytelling
+    character_development: Reinforces Cartman's self-centeredness and vivid imagination
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Kenny McCormick
+    - Other students
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Participates in the storytelling
+    - Dies in multiple stories told by others
+    - Shows his usual resilience
+    - Eventually dies in the 'real' storyline
+    character_development: Continues the pattern of Kenny's deaths across multiple
+      narrative layers
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+  - name: Ms. Crabtree
+    role: main
+    key_moments:
+    - Gets thrown from the bus during the crash
+    - Embarks on a surreal journey to find help
+    - Encounters increasingly bizarre situations
+    - Experiences reality-bending adventures
+    - Eventually finds rescue for the children
+    character_development: Shows Ms. Crabtree's dedication to her students through
+      surreal circumstances
+    relationships_affected:
+    - The students
+    - Various strange characters
+    - Rescue personnel
+  supporting:
+  - name: Other Students
+    role: supporting
+    key_moments:
+    - Survive the bus crash
+    - Listen to and participate in storytelling
+    - Show various reactions to the crisis
+    - Contribute to group dynamics
+    character_development: Represent the broader student body and their coping mechanisms
+    relationships_affected:
+    - The main boys
+    - Ms. Crabtree
+  - name: Story Characters
+    role: supporting
+    key_moments:
+    - Appear in the various stories told by the children
+    - Represent different genres and narrative styles
+    - Show the children's imagination and influences
+    character_development: Serve as extensions of the storytellers' personalities
+      and fantasies
+    relationships_affected:
+    - The storytelling children
+  - name: Rescue Personnel
+    role: supporting
+    key_moments:
+    - Eventually arrive to rescue the children
+    - Interact with Ms. Crabtree during her journey
+    - Represent the return to reality
+    character_development: Provide the resolution to the crisis situation
+    relationships_affected:
+    - The trapped students
+    - Ms. Crabtree
+  new:
+  - name: Bizarre Encounter Characters
+    role: minor
+    key_moments:
+    - Appear during Ms. Crabtree's surreal journey
+    - Represent increasingly disconnected reality
+    - Contribute to the episode's experimental nature
+    character_development: Serve as symbols of narrative experimentation and surrealism
+    relationships_affected:
+    - Ms. Crabtree
+content_elements:
+  cultural_references:
+  - type: tv_show
+    target: The Twilight Zone
+    description: The episode's structure and surreal elements reference the classic
+      anthology series
+    context: The title itself references a Twilight Zone episode, and the format mirrors
+      anthology storytelling
+  - type: movie
+    target: Disaster Films
+    description: The bus crash scenario references disaster movie tropes
+    context: The setup follows classic disaster film conventions of people trapped
+      in dangerous situations
+  - type: current_event
+    target: School Bus Safety
+    description: References real concerns about school transportation safety
+    context: The crash scenario reflects parental fears about school bus accidents
+  running_gags:
+  - name: Kenny Dies
+    description: Kenny dies in multiple stories and eventually in the 'real' storyline
+    frequency: 4
+    first_appearance: S01E01
+    evolution_notes: Death occurs across multiple narrative layers, emphasizing the
+      meta-fictional nature
+  - name: Oh My God, They Killed Kenny
+    description: The boys' reaction to Kenny's various deaths
+    frequency: 4
+    first_appearance: S01E01
+    evolution_notes: Repeated across different stories, highlighting the recursive
+      nature of the gag
+  - name: Cartman's Self-Centered Stories
+    description: Cartman's stories always center around himself as the hero
+    frequency: 3
+    first_appearance: S02E07
+    evolution_notes: Establishes pattern of Cartman's narcissistic storytelling
+  locations:
+  - name: Crashed School Bus
+    description: The bus hanging precariously over a cliff where the children are
+      trapped
+    is_new: true
+    significance: Central location that creates the crisis and storytelling framework
+  - name: Cliff Edge
+    description: The dangerous precipice where the bus is balanced
+    is_new: true
+    significance: Represents the immediate physical danger facing the characters
+  - name: Story Locations
+    description: Various imaginary locations within the children's stories
+    is_new: true
+    significance: Show the range of the children's imagination and storytelling abilities
+  - name: Ms. Crabtree's Journey Path
+    description: The surreal locations Ms. Crabtree encounters while seeking help
+    is_new: true
+    significance: Represent the episode's experimental approach to narrative reality
+themes:
+- theme: Storytelling as Coping Mechanism
+  description: How people use narrative to deal with crisis and fear
+  how_explored: The children tell stories to maintain morale and pass time during
+    their dangerous situation
+  moral_lesson: Stories and imagination can help people cope with difficult circumstances
+- theme: Reality vs. Fiction
+  description: The blurred lines between what's real and what's imagined
+  how_explored: Multiple narrative layers make it unclear what's actually happening
+  moral_lesson: The distinction between reality and fiction can be more complex than
+    it appears
+- theme: Community and Cooperation
+  description: How people come together during crisis
+  how_explored: The children work together to maintain morale and survive their ordeal
+  moral_lesson: Cooperation and mutual support are essential during difficult times
+- theme: The Power of Imagination
+  description: How creativity and imagination can transcend difficult circumstances
+  how_explored: The elaborate stories show how imagination can transport people beyond
+    their immediate problems
+  moral_lesson: Imagination and creativity are valuable tools for resilience
+continuity:
+  callbacks:
+  - References Ms. Crabtree from previous episodes
+  - Builds on the boys' established group dynamics
+  - Continues Kenny's death pattern across multiple narrative layers
+  setup_for_future:
+  - Establishes the show's willingness to experiment with narrative structure
+  - Shows the boys' storytelling abilities and imagination
+  - Demonstrates the show's meta-fictional capabilities
+  character_developments:
+  - Reveals the boys' storytelling personalities and preferences
+  - Shows Ms. Crabtree's dedication to her students
+  - Demonstrates the group's ability to work together in crisis
+  world_building:
+  - Expands the show's narrative possibilities through experimental structure
+  - Shows the school's field trip programs and transportation
+  - Establishes patterns for anthology-style episodes
+production:
+  notable_quotes:
+  - We're all gonna die! - Various students
+  - Let's tell stories to pass the time. - Stan
+  - In my story, I'm the hero! - Cartman
+  - Oh my God, they killed Kenny! - Kyle (multiple times)
+  - You bastards! - Stan (multiple times)
+  - What the hell is going on? - Ms. Crabtree
+  memorable_scenes:
+  - The bus crash and precarious positioning
+  - The children beginning their storytelling session
+  - Cartman's elaborate self-aggrandizing stories
+  - Ms. Crabtree's increasingly surreal encounters
+  - Kenny's multiple deaths across different stories
+  - The eventual rescue and return to reality
+  animation_notes:
+  - Different animation styles for different stories
+  - Surreal visual effects for Ms. Crabtree's journey
+  - Dramatic cliff and bus positioning
+  - Various genre-specific visual elements for each story
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired during a period of increased interest in experimental
+    television and anthology formats
+  controversy_notes: The episode's experimental structure and multiple reality layers
+    confused some viewers
+  reception_notes: Praised for its creative approach to storytelling and willingness
+    to experiment with format
+  social_commentary:
+  - Explores how people use storytelling to cope with trauma and crisis
+  - Comments on the nature of reality and perception
+  - Examines the role of imagination in human resilience
+  - Satirizes anthology television formats and narrative conventions

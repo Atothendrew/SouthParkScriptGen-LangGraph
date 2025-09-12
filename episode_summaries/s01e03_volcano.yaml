@@ -2,258 +2,280 @@
 basic_info:
   season: 1
   episode_number: 3
-  title: "Volcano"
-  original_air_date: "1997-08-27"
-  episode_type: "standalone"
-
+  title: Volcano
+  original_air_date: '1997-08-27'
+  episode_type: standalone
 plot:
-  logline: "The boys go hunting with Stan's Uncle Jimbo and Ned, while a volcano threatens to destroy South Park."
-  plot_summary: |
-    Stan's Uncle Jimbo takes the boys on a hunting trip to teach them about guns and hunting. Jimbo and his war buddy Ned demonstrate their approach to hunting, which involves yelling "It's coming right for us!" before shooting any animal to justify self-defense. The boys are initially reluctant participants, especially Stan who is uncomfortable with killing animals.
+  logline: The boys go hunting with Stan's Uncle Jimbo and Ned, while a volcano threatens
+    to destroy South Park.
+  plot_summary: 'Stan''s Uncle Jimbo takes the boys on a hunting trip to teach them
+    about guns and hunting. Jimbo and his war buddy Ned demonstrate their approach
+    to hunting, which involves yelling "It''s coming right for us!" before shooting
+    any animal to justify self-defense. The boys are initially reluctant participants,
+    especially Stan who is uncomfortable with killing animals.
 
-    Meanwhile, a volcano near South Park becomes active and threatens to erupt, putting the entire town in danger. The townspeople panic and argue about what to do, with some wanting to evacuate and others wanting to stay and fight the natural disaster. The mayor proves ineffective in handling the crisis.
 
-    The two storylines converge when the hunting party encounters the volcanic threat. In typical South Park fashion, the episode combines outdoor adventure with natural disaster, while exploring themes of gun culture, environmental threats, and small-town crisis management. The episode also introduces several recurring characters and establishes the show's approach to controversial topics.
+    Meanwhile, a volcano near South Park becomes active and threatens to erupt, putting
+    the entire town in danger. The townspeople panic and argue about what to do, with
+    some wanting to evacuate and others wanting to stay and fight the natural disaster.
+    The mayor proves ineffective in handling the crisis.
+
+
+    The two storylines converge when the hunting party encounters the volcanic threat.
+    In typical South Park fashion, the episode combines outdoor adventure with natural
+    disaster, while exploring themes of gun culture, environmental threats, and small-town
+    crisis management. The episode also introduces several recurring characters and
+    establishes the show''s approach to controversial topics.
+
+    '
   plot_threads:
-    - title: "Hunting Trip with Uncle Jimbo"
-      description: "Stan's uncle takes the boys hunting and teaches them about guns and hunting culture"
-      characters_involved:
-        - "Stan Marsh"
-        - "Kyle Broflovski"
-        - "Eric Cartman"
-        - "Kenny McCormick"
-        - "Uncle Jimbo"
-        - "Ned Gerblansky"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-    - title: "Volcanic Eruption Threat"
-      description: "A volcano near South Park becomes active and threatens the town"
-      characters_involved:
-        - "South Park residents"
-        - "Mayor McDaniels"
-        - "Randy Marsh"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-    - title: "Stan's Moral Conflict"
-      description: "Stan struggles with the ethics of hunting and killing animals"
-      characters_involved:
-        - "Stan Marsh"
-        - "Uncle Jimbo"
-      resolution_status: "resolved"
-      connects_to_episodes: []
-
+  - title: Hunting Trip with Uncle Jimbo
+    description: Stan's uncle takes the boys hunting and teaches them about guns and
+      hunting culture
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - Uncle Jimbo
+    - Ned Gerblansky
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Volcanic Eruption Threat
+    description: A volcano near South Park becomes active and threatens the town
+    characters_involved:
+    - South Park residents
+    - Mayor McDaniels
+    - Randy Marsh
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Stan's Moral Conflict
+    description: Stan struggles with the ethics of hunting and killing animals
+    characters_involved:
+    - Stan Marsh
+    - Uncle Jimbo
+    resolution_status: resolved
+    connects_to_episodes: []
 characters:
   main:
-    - name: "Stan Marsh"
-      role: "main"
-      key_moments:
-        - "Goes on hunting trip with Uncle Jimbo"
-        - "Struggles with killing animals"
-        - "Learns to use firearms"
-        - "Faces the volcanic threat"
-      character_development: "Shows Stan's moral compass and discomfort with violence, even in traditional contexts"
-      relationships_affected:
-        - "Uncle Jimbo"
-        - "Kyle Broflovski"
-        - "Eric Cartman"
-    - name: "Kyle Broflovski"
-      role: "main"
-      key_moments:
-        - "Participates in the hunting trip"
-        - "Supports Stan during his moral struggle"
-        - "Experiences the volcanic emergency"
-      character_development: "Continues to be supportive of his friends while maintaining his own moral standards"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Eric Cartman"
-    - name: "Eric Cartman"
-      role: "main"
-      key_moments:
-        - "Enjoys the hunting trip"
-        - "Shows enthusiasm for guns and violence"
-        - "Reacts to the volcanic threat"
-      character_development: "Displays his tendency toward aggression and lack of empathy for animals"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Kyle Broflovski"
-    - name: "Kenny McCormick"
-      role: "main"
-      key_moments:
-        - "Dies during the episode"
-        - "Participates in hunting activities"
-      character_development: "Continues the death pattern established in previous episodes"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Kyle Broflovski"
-        - "Eric Cartman"
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Goes on hunting trip with Uncle Jimbo
+    - Struggles with killing animals
+    - Learns to use firearms
+    - Faces the volcanic threat
+    character_development: Shows Stan's moral compass and discomfort with violence,
+      even in traditional contexts
+    relationships_affected:
+    - Uncle Jimbo
+    - Kyle Broflovski
+    - Eric Cartman
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Participates in the hunting trip
+    - Supports Stan during his moral struggle
+    - Experiences the volcanic emergency
+    character_development: Continues to be supportive of his friends while maintaining
+      his own moral standards
+    relationships_affected:
+    - Stan Marsh
+    - Eric Cartman
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Enjoys the hunting trip
+    - Shows enthusiasm for guns and violence
+    - Reacts to the volcanic threat
+    character_development: Displays his tendency toward aggression and lack of empathy
+      for animals
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Dies during the episode
+    - Participates in hunting activities
+    character_development: Continues the death pattern established in previous episodes
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
   supporting:
-    - name: "Uncle Jimbo"
-      role: "supporting"
-      key_moments:
-        - "Takes the boys hunting"
-        - "Teaches them about guns and hunting"
-        - "Uses 'It's coming right for us!' justification"
-        - "Deals with the volcanic threat"
-      character_development: "Introduces Jimbo as Stan's gun-loving, somewhat reckless uncle"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Ned Gerblansky"
-    - name: "Ned Gerblansky"
-      role: "supporting"
-      key_moments:
-        - "Accompanies Jimbo on the hunting trip"
-        - "Speaks through his voice box"
-        - "Participates in hunting activities"
-      character_development: "Introduces Ned as Jimbo's loyal war buddy with a voice box"
-      relationships_affected:
-        - "Uncle Jimbo"
-    - name: "Mayor McDaniels"
-      role: "supporting"
-      key_moments:
-        - "Tries to manage the volcanic crisis"
-        - "Shows incompetence in leadership"
-        - "Makes poor decisions under pressure"
-      character_development: "Establishes the mayor as ineffective and prone to panic"
-      relationships_affected:
-        - "South Park residents"
-    - name: "Randy Marsh"
-      role: "supporting"
-      key_moments:
-        - "Reacts to the volcanic threat"
-        - "Shows concern for his family"
-        - "Participates in town meetings"
-      character_development: "Early appearance of Stan's father as a concerned but somewhat neurotic parent"
-      relationships_affected:
-        - "Stan Marsh"
-        - "Sharon Marsh"
+  - name: Uncle Jimbo
+    role: supporting
+    key_moments:
+    - Takes the boys hunting
+    - Teaches them about guns and hunting
+    - Uses 'It's coming right for us!' justification
+    - Deals with the volcanic threat
+    character_development: Introduces Jimbo as Stan's gun-loving, somewhat reckless
+      uncle
+    relationships_affected:
+    - Stan Marsh
+    - Ned Gerblansky
+  - name: Ned Gerblansky
+    role: supporting
+    key_moments:
+    - Accompanies Jimbo on the hunting trip
+    - Speaks through his voice box
+    - Participates in hunting activities
+    character_development: Introduces Ned as Jimbo's loyal war buddy with a voice
+      box
+    relationships_affected:
+    - Uncle Jimbo
+  - name: Mayor McDaniels
+    role: supporting
+    key_moments:
+    - Tries to manage the volcanic crisis
+    - Shows incompetence in leadership
+    - Makes poor decisions under pressure
+    character_development: Establishes the mayor as ineffective and prone to panic
+    relationships_affected:
+    - South Park residents
+  - name: Randy Marsh
+    role: supporting
+    key_moments:
+    - Reacts to the volcanic threat
+    - Shows concern for his family
+    - Participates in town meetings
+    character_development: Early appearance of Stan's father as a concerned but somewhat
+      neurotic parent
+    relationships_affected:
+    - Stan Marsh
+    - Sharon Marsh
   new:
-    - name: "Scuzzlebutt"
-      role: "minor"
-      key_moments:
-        - "Appears as a legendary mountain creature"
-        - "Helps during the volcanic crisis"
-        - "Reveals himself to be benevolent"
-      character_development: "Introduces a recurring mythical character unique to South Park"
-      relationships_affected:
-        - "The boys"
-
+  - name: Scuzzlebutt
+    role: minor
+    key_moments:
+    - Appears as a legendary mountain creature
+    - Helps during the volcanic crisis
+    - Reveals himself to be benevolent
+    character_development: Introduces a recurring mythical character unique to South
+      Park
+    relationships_affected:
+    - The boys
 content_elements:
   cultural_references:
-    - type: "movie"
-      target: "Disaster Films"
-      description: "Parodies natural disaster movies and their tropes"
-      context: "The volcanic eruption storyline follows disaster movie conventions"
-    - type: "current_event"
-      target: "Gun Culture and Hunting"
-      description: "Satirizes American gun culture and hunting traditions"
-      context: "Uncle Jimbo's hunting philosophy and 'self-defense' justifications"
-    - type: "movie"
-      target: "Rambo/War Films"
-      description: "References through Jimbo and Ned's military background"
-      context: "Their war stories and military approach to problems"
-    - type: "tv_show"
-      target: "Nature Documentaries"
-      description: "Parodies wildlife and hunting shows"
-      context: "The hunting sequences and animal encounters"
+  - type: movie
+    target: Disaster Films
+    description: Parodies natural disaster movies and their tropes
+    context: The volcanic eruption storyline follows disaster movie conventions
+  - type: current_event
+    target: Gun Culture and Hunting
+    description: Satirizes American gun culture and hunting traditions
+    context: Uncle Jimbo's hunting philosophy and 'self-defense' justifications
+  - type: movie
+    target: Rambo/War Films
+    description: References through Jimbo and Ned's military background
+    context: Their war stories and military approach to problems
+  - type: tv_show
+    target: Nature Documentaries
+    description: Parodies wildlife and hunting shows
+    context: The hunting sequences and animal encounters
   running_gags:
-    - name: "Kenny Dies"
-      description: "Kenny McCormick dies during the volcanic events"
-      frequency: 1
-      first_appearance: "S01E01"
-      evolution_notes: "Third consecutive episode with Kenny's death"
-    - name: "It's Coming Right for Us!"
-      description: "Jimbo's catchphrase to justify shooting animals in 'self-defense'"
-      frequency: 3
-      first_appearance: "S01E03"
-      evolution_notes: "Establishes a recurring justification gag for Jimbo's hunting"
-    - name: "Mayor's Incompetence"
-      description: "Mayor McDaniels proves ineffective during the crisis"
-      frequency: 1
-      first_appearance: "S01E03"
-      evolution_notes: "First major display of the mayor's poor leadership skills"
+  - name: Kenny Dies
+    description: Kenny McCormick dies during the volcanic events
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Third consecutive episode with Kenny's death
+  - name: It's Coming Right for Us!
+    description: Jimbo's catchphrase to justify shooting animals in 'self-defense'
+    frequency: 3
+    first_appearance: S01E03
+    evolution_notes: Establishes a recurring justification gag for Jimbo's hunting
+  - name: Mayor's Incompetence
+    description: Mayor McDaniels proves ineffective during the crisis
+    frequency: 1
+    first_appearance: S01E03
+    evolution_notes: First major display of the mayor's poor leadership skills
   locations:
-    - name: "South Park Mountains"
-      description: "The wilderness area where the hunting trip takes place"
-      is_new: true
-      significance: "Establishes the natural environment surrounding South Park"
-    - name: "The Volcano"
-      description: "The active volcano that threatens South Park"
-      is_new: true
-      significance: "Shows that South Park exists in a geologically active area"
-    - name: "Town Hall"
-      description: "Where emergency meetings about the volcano are held"
-      is_new: true
-      significance: "Introduces the center of South Park's local government"
-    - name: "Stan's House"
-      description: "Where Stan lives with his family"
-      is_new: true
-      significance: "First detailed look at the Marsh family home"
-
+  - name: South Park Mountains
+    description: The wilderness area where the hunting trip takes place
+    is_new: true
+    significance: Establishes the natural environment surrounding South Park
+  - name: The Volcano
+    description: The active volcano that threatens South Park
+    is_new: true
+    significance: Shows that South Park exists in a geologically active area
+  - name: Town Hall
+    description: Where emergency meetings about the volcano are held
+    is_new: true
+    significance: Introduces the center of South Park's local government
+  - name: Stan's House
+    description: Where Stan lives with his family
+    is_new: true
+    significance: First detailed look at the Marsh family home
 themes:
-  - theme: "Violence and Morality"
-    description: "The ethics of violence, even in traditional contexts like hunting"
-    how_explored: "Through Stan's discomfort with killing animals despite family tradition"
-    moral_lesson: "It's okay to question traditions that involve violence, even when they're socially accepted"
-  - theme: "Natural Disasters and Human Response"
-    description: "How communities react to natural threats beyond their control"
-    how_explored: "Through the town's panic and poor decision-making during the volcanic threat"
-    moral_lesson: "Crisis reveals both the best and worst in people and leadership"
-  - theme: "Tradition vs. Personal Values"
-    description: "The conflict between family traditions and personal moral beliefs"
-    how_explored: "Through Stan's struggle with his uncle's hunting culture"
-    moral_lesson: "You don't have to accept family traditions that conflict with your values"
-
+- theme: Violence and Morality
+  description: The ethics of violence, even in traditional contexts like hunting
+  how_explored: Through Stan's discomfort with killing animals despite family tradition
+  moral_lesson: It's okay to question traditions that involve violence, even when
+    they're socially accepted
+- theme: Natural Disasters and Human Response
+  description: How communities react to natural threats beyond their control
+  how_explored: Through the town's panic and poor decision-making during the volcanic
+    threat
+  moral_lesson: Crisis reveals both the best and worst in people and leadership
+- theme: Tradition vs. Personal Values
+  description: The conflict between family traditions and personal moral beliefs
+  how_explored: Through Stan's struggle with his uncle's hunting culture
+  moral_lesson: You don't have to accept family traditions that conflict with your
+    values
 continuity:
   callbacks:
-    - "Kenny's death pattern continues from previous episodes"
-    - "The boys' established group dynamic and personalities"
+  - Kenny's death pattern continues from previous episodes
+  - The boys' established group dynamic and personalities
   setup_for_future:
-    - "Introduces Uncle Jimbo as a recurring character"
-    - "Establishes Ned Gerblansky and his voice box"
-    - "Shows Mayor McDaniels' incompetence in crisis situations"
-    - "Introduces Randy Marsh as Stan's father"
-    - "Establishes the South Park mountain environment"
+  - Introduces Uncle Jimbo as a recurring character
+  - Establishes Ned Gerblansky and his voice box
+  - Shows Mayor McDaniels' incompetence in crisis situations
+  - Introduces Randy Marsh as Stan's father
+  - Establishes the South Park mountain environment
   character_developments:
-    - "Stan shows moral complexity and discomfort with violence"
-    - "Cartman displays enthusiasm for weapons and aggression"
-    - "Uncle Jimbo established as a gun-loving, somewhat irresponsible adult figure"
-    - "Mayor McDaniels revealed as ineffective leadership"
+  - Stan shows moral complexity and discomfort with violence
+  - Cartman displays enthusiasm for weapons and aggression
+  - Uncle Jimbo established as a gun-loving, somewhat irresponsible adult figure
+  - Mayor McDaniels revealed as ineffective leadership
   world_building:
-    - "South Park shown to be near mountains and wilderness"
-    - "Town has a mayor and local government structure"
-    - "Area is geologically active with volcanic threats"
-    - "Community has hunting and gun culture traditions"
-
+  - South Park shown to be near mountains and wilderness
+  - Town has a mayor and local government structure
+  - Area is geologically active with volcanic threats
+  - Community has hunting and gun culture traditions
 production:
   notable_quotes:
-    - "It's coming right for us! - Uncle Jimbo (before shooting animals)"
-    - "Oh my God, they killed Kenny! - Kyle"
-    - "You bastards! - Stan"
-    - "Scuzzlebutt! - Various characters"
+  - It's coming right for us! - Uncle Jimbo (before shooting animals)
+  - Oh my God, they killed Kenny! - Kyle
+  - You bastards! - Stan
+  - Scuzzlebutt! - Various characters
   memorable_scenes:
-    - "Uncle Jimbo teaching the boys to hunt"
-    - "The 'It's coming right for us!' hunting sequences"
-    - "The volcanic eruption and town panic"
-    - "Scuzzlebutt's appearance and heroic actions"
-    - "Kenny's death during the volcanic events"
+  - Uncle Jimbo teaching the boys to hunt
+  - The 'It's coming right for us!' hunting sequences
+  - The volcanic eruption and town panic
+  - Scuzzlebutt's appearance and heroic actions
+  - Kenny's death during the volcanic events
   animation_notes:
-    - "Outdoor mountain and wilderness environments"
-    - "Volcanic eruption effects and lava animation"
-    - "Scuzzlebutt's unique character design"
-    - "Gun and hunting equipment details"
+  - Outdoor mountain and wilderness environments
+  - Volcanic eruption effects and lava animation
+  - Scuzzlebutt's unique character design
+  - Gun and hunting equipment details
   writers:
-    - "Trey Parker"
-    - "Matt Stone"
+  - Trey Parker
+  - Matt Stone
   directors:
-    - "Trey Parker"
+  - Trey Parker
   guest_voices: []
-
 context:
-  historical_context: "Aired during ongoing debates about gun control and hunting rights in America, reflecting cultural divisions about firearms and outdoor traditions"
-  controversy_notes: "The episode's portrayal of gun culture and hunting was controversial, with some viewing it as promoting firearms while others saw it as satirical"
-  reception_notes: "Praised for balancing humor with genuine moral questions about violence and tradition"
+  historical_context: Aired during ongoing debates about gun control and hunting rights
+    in America, reflecting cultural divisions about firearms and outdoor traditions
+  controversy_notes: The episode's portrayal of gun culture and hunting was controversial,
+    with some viewing it as promoting firearms while others saw it as satirical
+  reception_notes: Praised for balancing humor with genuine moral questions about
+    violence and tradition
   social_commentary:
-    - "Satirizes American gun culture and hunting justifications"
-    - "Comments on ineffective leadership during crisis situations"
-    - "Explores the conflict between tradition and personal morality"
-    - "Parodies disaster movie tropes and community panic responses"
+  - Satirizes American gun culture and hunting justifications
+  - Comments on ineffective leadership during crisis situations
+  - Explores the conflict between tradition and personal morality
+  - Parodies disaster movie tropes and community panic responses

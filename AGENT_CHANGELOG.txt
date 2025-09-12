@@ -1,5 +1,81 @@
 AGENT_CHANGELOG.txt - South Park Script Generator
 
+v0.0.5 - Episode YAML Schema Compliance and Migration (2025-09-11)
+
+COMPLETED:
+- Full migration of all 31 episode YAML files to conform to EpisodeSummary schema
+- Fixed 100% schema compliance: all episodes now load successfully 
+- Migrated from old inconsistent formats to standardized EpisodeSummary structure
+- Added missing plot_threads field to all Season 1 episodes (s01e06-s01e13)
+- Fixed malformed basic_info sections in Season 2 episodes (s02e12-s02e18)
+- Converted old structure fields (production_notes, cultural_impact) to new schema format
+- Restructured characters section from main_characters/supporting_characters to main/supporting arrays
+- Added missing content_elements section with cultural_references, running_gags, locations
+- Converted themes from simple strings to ThematicElement objects with description/how_explored
+- Added missing continuity section with callbacks, setup_for_future, character_developments, world_building
+- Fixed invalid CharacterRole values and character field structure issues
+- Removed duplicate and invalid fields from character definitions
+- Improved from 16/31 (52%) to 31/31 (100%) episodes loading successfully
+
+TECHNICAL DETAILS:
+- Created comprehensive migration script to handle format conversion
+- Implemented character role validation and field normalization
+- Ensured all episodes conform to dataclass structure in episode_summary.py
+- Fixed character role enum compliance (main, supporting, minor, cameo)
+- Normalized field names and structure across all episodes
+- Database now successfully loads all 31 episodes with full schema compliance
+
+v0.0.4 - Tools Integration and Serialization Fix (2025-09-11)
+
+FIXED:
+- Critical pydantic serialization error with LangChain tools
+- ModelMetaclass serialization issue when passing tools to OpenAI client
+- Tools now properly convert from LangChain format to OpenAI format
+- Usage information logging restored for both tool and non-tool calls
+
+ENHANCED:
+- Implemented proper tool calling for OpenAI endpoints using LangChain ChatOpenAI
+- Added automatic tool execution and response handling
+- Unified usage information display across different LLM client paths
+- Tools are now functional with proper error handling and logging
+
+TECHNICAL CHANGES:
+- spgen/workflow/llm_client.py: Complete rewrite of llm_call function
+- Added LangChain ChatOpenAI integration for tool-enabled calls
+- Fallback to raw OpenAI client for LMStudio compatibility
+- Tool result integration with conversation context
+- Consistent usage information formatting across client types
+
+CREATED:
+- Tool calling infrastructure that supports both local and cloud endpoints
+- Automatic tool binding and execution pipeline
+- Enhanced error handling for tool failures
+- Debug logging for tool call inspection
+
+SUCCESS CRITERIA:
+✓ Fixed the original PydanticSerializationError completely
+✓ Tools are now executing successfully (Episode RAG system working)
+✓ LangChain tools automatically converted to OpenAI format
+✓ Usage information properly displayed for all call types
+✓ Maintained backwards compatibility with LMStudio endpoints
+✓ Tool execution results properly integrated into conversations
+
+This fix enables full functionality of the research tools (Episode RAG, DuckDuckGo search) 
+for AI personas during episode generation, dramatically improving context and research capabilities.
+
+UPDATE (2025-09-11 16:25):
+- Added comprehensive tool call logging to tool_calls.txt file
+- Logs include timestamp, tool name, arguments, result length, and full results
+- Integrated tool logging into CLI workflow setup
+- Verified tool logging functionality with successful test
+
+UPDATE (2025-09-11 16:32):
+- Removed raw OpenAI client usage completely
+- Unified all LLM calls to use LangChain ChatOpenAI for consistency
+- Simplified code architecture with single client type
+- Maintained backwards compatibility with LMStudio endpoints
+- Improved usage information consistency across all call types
+
 v0.0.3 - Complete Season 1 Episode Summaries (2025-09-11)
 
 ADDED:

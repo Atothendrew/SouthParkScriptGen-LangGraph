@@ -1,115 +1,161 @@
+---
 basic_info:
-  title: "Mr. Hankey, the Christmas Poo"
+  title: Mr. Hankey, the Christmas Poo
   season: 1
-  episode: 9
-  air_date: "1997-12-17"
-  episode_type: "HOLIDAY"
-  runtime_minutes: 22
-
+  episode_type: holiday
+  episode_number: 9
+  original_air_date: '1997-12-17'
 plot:
-  main_storyline: "Kyle feels left out during Christmas as the only Jewish kid in South Park, while Stan befriends Mr. Hankey, a talking piece of feces who embodies the Christmas spirit, though no one else can see him."
-  subplot: "The town removes all religious elements from their Christmas play to avoid offending anyone, resulting in a bland, meaningless production that satisfies no one."
-  resolution: "Mr. Hankey appears to everyone during the Christmas pageant, teaching the town that Christmas can include everyone regardless of their beliefs, and Kyle learns he can enjoy Christmas without compromising his Jewish identity."
-  episode_arc: "Christmas special exploring religious tolerance, inclusion, and the true meaning of holiday celebration."
-
+  logline: Kyle feels left out during Christmas as the only Jewish kid in South Park,
+    while Stan befriends Mr. ...
+  plot_summary: Kyle feels left out during Christmas as the only Jewish kid in South
+    Park, while Stan befriends Mr. Hankey, a talking piece of feces who embodies the
+    Christmas spirit, though no one else can see him. The town removes all religious
+    elements from their Christmas play to avoid offending anyone, resulting in a bland,
+    meaningless production that satisfies no one. Mr. Hankey appears to everyone during
+    the Christmas pageant, teaching the town that Christmas can include everyone regardless
+    of their beliefs, and Kyle learns he can enjoy Christmas without compromising
+    his Jewish identity.
+  plot_threads:
+  - title: Main Plot
+    description: Kyle feels left out during Christmas as the only Jewish kid in South
+      Park, while Stan befriends Mr. Hankey, a talking piece of feces who embodies
+      the Christmas spirit, though no one else can see him.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Subplot
+    description: The town removes all religious elements from their Christmas play
+      to avoid offending anyone, resulting in a bland, meaningless production that
+      satisfies no one.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
 characters:
-  main_characters:
-    - name: "Kyle Broflovski"
-      role: "PROTAGONIST"
-      description: "Struggles with feeling excluded from Christmas celebrations as the only Jewish student"
-      character_development: "Learns that he can participate in Christmas joy while maintaining his Jewish identity"
-    - name: "Stan Marsh"
-      role: "MAIN"
-      description: "Befriends Mr. Hankey and tries to convince others of his existence"
-      character_development: "Shows loyalty to his unusual friend despite ridicule"
-    - name: "Eric Cartman"
-      role: "MAIN"
-      description: "Excited about Christmas and dismissive of Kyle's concerns about inclusion"
-      character_development: "Displays his typical insensitivity to others' feelings"
-    - name: "Kenny McCormick"
-      role: "MAIN"
-      description: "Participates in Christmas activities with the other boys"
-      character_development: "Standard Kenny participation in group dynamics"
-
-  supporting_characters:
-    - name: "Mr. Hankey"
-      role: "SUPPORTING"
-      description: "Magical talking Christmas poo who teaches about holiday inclusion and spirit"
-    - name: "Sheila Broflovski"
-      role: "SUPPORTING"
-      description: "Kyle's mother who supports removing religious elements from Christmas pageant"
-    - name: "Chef"
-      role: "SUPPORTING"
-      description: "Provides wisdom about Mr. Hankey and Christmas traditions"
-    - name: "Mr. Garrison"
-      role: "SUPPORTING"
-      description: "Directs the increasingly sanitized Christmas pageant"
-
+  main:
+  - name: Kyle Broflovski
+    role: main
+    key_moments: []
+    character_development: Learns that he can participate in Christmas joy while maintaining
+      his Jewish identity
+    relationships_affected: []
+  - name: Stan Marsh
+    role: main
+    key_moments: []
+    character_development: Shows loyalty to his unusual friend despite ridicule
+    relationships_affected: []
+  - name: Eric Cartman
+    role: main
+    key_moments: []
+    character_development: Displays his typical insensitivity to others' feelings
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    key_moments: []
+    character_development: Standard Kenny participation in group dynamics
+    relationships_affected: []
+  supporting:
+  - name: Mr. Hankey
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Sheila Broflovski
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Chef
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Mr. Garrison
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  new: []
 content_elements:
-  violence_level: "LOW"
-  language: "MILD"
-  adult_themes:
-    - "Religious tolerance and inclusion"
-    - "Cultural identity and belonging"
-    - "Political correctness vs. tradition"
-    - "Holiday commercialization"
   cultural_references:
-    - reference: "Christmas pageants and nativity plays"
-      context: "Traditional school holiday productions"
-    - reference: "Jewish-Christian holiday tensions"
-      context: "Religious minority experiences during Christmas season"
-    - reference: "Political correctness debates"
-      context: "1990s discussions about inclusive holiday celebrations"
-    - reference: "Frosty the Snowman"
-      context: "Magical Christmas character archetype"
-
-themes:
-  primary_themes:
-    - "Religious tolerance and inclusion"
-    - "The true spirit of Christmas"
-    - "Cultural identity and belonging"
-    - "Finding common ground despite differences"
-  social_commentary:
-    - "Critique of over-sanitized holiday celebrations"
-    - "Exploration of religious minority experiences"
-    - "Satire of political correctness extremes"
-    - "Commentary on holiday commercialization vs. meaning"
-
-continuity:
-  character_introductions:
-    - "Mr. Hankey (iconic recurring character)"
-    - "Establishment of Kyle's Jewish identity as major character trait"
+  - type: unknown
+    target: ''
+    description: ''
+    context: Traditional school holiday productions
+  - type: unknown
+    target: ''
+    description: ''
+    context: Religious minority experiences during Christmas season
+  - type: unknown
+    target: ''
+    description: ''
+    context: 1990s discussions about inclusive holiday celebrations
+  - type: unknown
+    target: ''
+    description: ''
+    context: Magical Christmas character archetype
   running_gags:
-    - gag: "Kenny's death"
-      description: "Kenny dies in a mosh pit during the Christmas pageant"
-    - gag: "Mr. Hankey's catchphrase"
-      description: "Introduces 'Howdy ho!' as Mr. Hankey's signature greeting"
-  plot_connections:
-    - "Establishes Christmas as recurring holiday theme"
-    - "Sets up Kyle's ongoing struggles with religious identity"
-    - "Introduces Mr. Hankey as beloved recurring character"
-
-locations:
-  primary_locations:
-    - name: "South Park Elementary"
-      description: "Where the Christmas pageant takes place and religious tensions arise"
-    - name: "Broflovski home"
-      description: "Where Kyle's Jewish identity and family traditions are highlighted"
-    - name: "South Park sewers"
-      description: "Mr. Hankey's home where he lives with his family"
-    - name: "Town square"
-      description: "Where community Christmas celebrations occur"
-
-production_notes:
-  writer: "Trey Parker"
-  director: "Trey Parker"
-  notable_aspects:
-    - "First Christmas episode"
-    - "Introduction of Mr. Hankey character"
-    - "Exploration of religious themes"
-    - "Musical elements with Christmas songs"
-
-cultural_impact:
-  significance: "Became one of South Park's most beloved and iconic episodes, establishing the show's approach to holiday specials"
-  controversy: "Sparked debates about religious inclusion in public celebrations"
-  legacy: "Mr. Hankey became a merchandising icon and recurring character, spawning multiple sequel episodes"
+  - name: Kenny's death
+    description: Kenny dies in a mosh pit during the Christmas pageant
+    frequency: 1
+    first_appearance: null
+    evolution_notes: null
+  - name: Mr. Hankey's catchphrase
+    description: Introduces 'Howdy ho!' as Mr. Hankey's signature greeting
+    frequency: 1
+    first_appearance: null
+    evolution_notes: null
+  locations: []
+themes:
+- theme: Religious tolerance and inclusion
+  description: 'Primary theme: Religious tolerance and inclusion'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: The true spirit of Christmas
+  description: 'Primary theme: The true spirit of Christmas'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Cultural identity and belonging
+  description: 'Primary theme: Cultural identity and belonging'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Finding common ground despite differences
+  description: 'Primary theme: Finding common ground despite differences'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks:
+  - Establishes Christmas as recurring holiday theme
+  - Sets up Kyle's ongoing struggles with religious identity
+  - Introduces Mr. Hankey as beloved recurring character
+  setup_for_future: []
+  character_developments:
+  - Mr. Hankey (iconic recurring character)
+  - Establishment of Kyle's Jewish identity as major character trait
+  world_building: []
+production:
+  notable_quotes:
+  - '[Quote from Mr. Hankey, the Christmas Poo]'
+  memorable_scenes:
+  - '[Scene from Mr. Hankey, the Christmas Poo]'
+  animation_notes: []
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired in 1997 during South Park's early seasons
+  controversy_notes: Part of South Park's controversial early content
+  reception_notes: Episode from South Park's foundational years
+  social_commentary:
+  - Social commentary from Mr. Hankey, the Christmas Poo

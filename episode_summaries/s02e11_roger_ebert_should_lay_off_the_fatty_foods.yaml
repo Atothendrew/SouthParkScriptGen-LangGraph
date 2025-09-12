@@ -1,0 +1,301 @@
+---
+basic_info:
+  season: 2
+  episode_number: 11
+  title: Roger Ebert Should Lay Off the Fatty Foods
+  original_air_date: '1998-09-02'
+  episode_type: standalone
+plot:
+  logline: The boys become film critics after their negative review goes viral, while
+    Cartman deals with being replaced by a new kid at school.
+  plot_summary: 'When the boys attend a terrible movie and write a scathing review
+    for the school newspaper, their critique becomes unexpectedly popular and launches
+    them into the world of film criticism. They begin reviewing movies with increasingly
+    harsh and pretentious commentary, eventually gaining national attention and appearing
+    on television shows.
+
+
+    Meanwhile, a new student arrives at South Park Elementary who seems to be everything
+    Cartman is not - polite, well-behaved, and liked by everyone. This new kid threatens
+    Cartman''s position in the group dynamic and his sense of self-importance, leading
+    to jealousy and schemes to undermine the newcomer.
+
+
+    The episode satirizes film criticism, media culture, and the way children can
+    become caught up in adult worlds they don''t fully understand. The boys'' journey
+    into criticism reveals how easy it is to become pretentious and lose sight of
+    genuine enjoyment, while Cartman''s subplot explores themes of insecurity and
+    the fear of being replaced.
+
+    '
+  plot_threads:
+  - title: The Boys as Film Critics
+    description: The boys become popular film critics after writing a negative movie
+      review
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - Media personalities
+    - Movie industry
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: New Kid Threatens Cartman
+    description: A new student arrives who seems superior to Cartman in every way
+    characters_involved:
+    - Eric Cartman
+    - New student
+    - Stan Marsh
+    - Kyle Broflovski
+    - Kenny McCormick
+    - School staff
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Media Fame and Pretension
+    description: The boys become caught up in the pretentious world of film criticism
+    characters_involved:
+    - The boys
+    - TV producers
+    - Film critics
+    - Media personalities
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Stan Marsh
+    role: main
+    key_moments:
+    - Co-writes the initial negative movie review
+    - Becomes caught up in the world of film criticism
+    - Appears on television as a critic
+    - Eventually questions the pretentious nature of criticism
+    - Helps resolve both storylines
+    character_development: Shows Stan's susceptibility to outside influence and his
+      eventual return to common sense
+    relationships_affected:
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    - Media personalities
+  - name: Kyle Broflovski
+    role: main
+    key_moments:
+    - Participates in writing film reviews
+    - Becomes involved in the criticism world
+    - Shows his analytical nature through reviews
+    - Eventually recognizes the problems with pretentious criticism
+    character_development: Demonstrates Kyle's intelligence but also his potential
+      for pretension
+    relationships_affected:
+    - Stan Marsh
+    - Eric Cartman
+    - Kenny McCormick
+    - Media personalities
+  - name: Eric Cartman
+    role: main
+    key_moments:
+    - Participates in the film criticism venture
+    - Becomes intensely jealous of the new student
+    - Schemes to undermine the new kid
+    - Shows his insecurity about being replaced
+    - Eventually confronts his fears
+    character_development: Reveals Cartman's deep insecurities beneath his bravado
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Kenny McCormick
+    - New student
+  - name: Kenny McCormick
+    role: main
+    key_moments:
+    - Participates in the film criticism activities
+    - Dies during media-related events
+    - Shows his usual loyalty to the group
+    character_development: Continues Kenny's pattern of participation and inevitable
+      death
+    relationships_affected:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+  supporting:
+  - name: New Student
+    role: supporting
+    key_moments:
+    - Arrives at South Park Elementary
+    - Immediately becomes popular with students and teachers
+    - Unknowingly threatens Cartman's position
+    - Shows genuine kindness and intelligence
+    - Becomes target of Cartman's schemes
+    character_development: Serves as a foil to Cartman, representing what he could
+      be
+    relationships_affected:
+    - Eric Cartman
+    - Stan Marsh
+    - Kyle Broflovski
+    - Kenny McCormick
+    - School staff
+  - name: Media Personalities
+    role: supporting
+    key_moments:
+    - Discover the boys' film reviews
+    - Invite them to appear on television
+    - Encourage their pretentious criticism
+    - Represent the shallow nature of media culture
+    character_development: Satirize media exploitation of children and sensationalism
+    relationships_affected:
+    - The boys
+    - TV audiences
+  - name: Film Industry Representatives
+    role: supporting
+    key_moments:
+    - React to the boys' harsh reviews
+    - Show the impact of criticism on the industry
+    - Demonstrate industry sensitivity to reviews
+    character_development: Represent the film industry's relationship with critics
+    relationships_affected:
+    - The boys
+    - Media personalities
+  - name: School Staff
+    role: supporting
+    key_moments:
+    - Publish the boys' initial review in the school newspaper
+    - Welcome the new student
+    - Deal with Cartman's behavior toward the new kid
+    - Show typical adult reactions to the situation
+    character_development: Represent authority figures dealing with children's activities
+    relationships_affected:
+    - The boys
+    - New student
+  new:
+  - name: TV Show Hosts
+    role: minor
+    key_moments:
+    - Host the boys on television shows
+    - Encourage their critical personas
+    - Represent media exploitation
+    character_development: Show how media uses children for entertainment
+    relationships_affected:
+    - The boys
+content_elements:
+  cultural_references:
+  - type: celebrity
+    target: Roger Ebert
+    description: The title references the famous film critic Roger Ebert
+    context: Satirizes film criticism culture and the influence of prominent critics
+  - type: current_event
+    target: Film Criticism Culture
+    description: Parodies the pretentious nature of professional film criticism
+    context: Reflects 1990s film criticism and the rise of amateur critics
+  - type: tv_show
+    target: Film Review Shows
+    description: References television programs featuring film critics
+    context: Satirizes shows like 'Siskel & Ebert' and similar programs
+  running_gags:
+  - name: Kenny Dies
+    description: Kenny McCormick dies during media-related activities
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Death occurs in context of media fame rather than typical accidents
+  - name: Oh My God, They Killed Kenny
+    description: The boys' reaction to Kenny's death
+    frequency: 1
+    first_appearance: S01E01
+    evolution_notes: Continues the pattern during media storyline
+  - name: Cartman's Jealousy and Insecurity
+    description: Cartman's intense reaction to being potentially replaced or upstaged
+    frequency: 6
+    first_appearance: S02E11
+    evolution_notes: Establishes pattern of Cartman's deep insecurities about his
+      position
+  locations:
+  - name: Movie Theater
+    description: Where the boys watch the terrible movie that inspires their first
+      review
+    is_new: false
+    significance: Starting point for their journey into film criticism
+  - name: School Newspaper Office
+    description: Where the boys' review is first published
+    is_new: true
+    significance: Launch point for their media fame
+  - name: Television Studios
+    description: Where the boys appear as guest critics on various shows
+    is_new: true
+    significance: Represent the media world that exploits their fame
+  - name: South Park Elementary Classroom
+    description: Where the new student is introduced and Cartman's jealousy develops
+    is_new: false
+    significance: Central location for the subplot about replacement and insecurity
+themes:
+- theme: The Corruption of Innocence by Fame
+  description: How media attention can corrupt children's natural responses
+  how_explored: The boys become pretentious critics instead of just enjoying movies
+  moral_lesson: Fame and attention can make people lose sight of genuine enjoyment
+- theme: Insecurity and Fear of Replacement
+  description: How people react when they feel threatened by others
+  how_explored: Cartman's extreme reaction to the new student's popularity
+  moral_lesson: Insecurity can drive people to destructive behavior
+- theme: Pretension vs. Authenticity
+  description: The difference between genuine criticism and pretentious posturing
+  how_explored: The boys' evolution from honest reactions to pretentious criticism
+  moral_lesson: Authentic responses are more valuable than pretentious analysis
+- theme: Media Exploitation of Children
+  description: How media uses children for entertainment without considering consequences
+  how_explored: TV shows exploit the boys' novelty as child critics
+  moral_lesson: Adults should protect children from exploitation rather than encouraging
+    it
+continuity:
+  callbacks:
+  - References the boys' previous experiences with media attention
+  - Builds on Cartman's established personality traits and insecurities
+  - Continues themes of children being influenced by adult worlds
+  setup_for_future:
+  - Establishes Cartman's pattern of jealousy and insecurity
+  - Shows the boys' susceptibility to media influence
+  - Demonstrates how outside attention can affect group dynamics
+  character_developments:
+  - Reveals Cartman's deep insecurities beneath his confident exterior
+  - Shows how the boys can be influenced by adult attention and praise
+  - Demonstrates the group's ability to return to their authentic selves
+  world_building:
+  - Expands South Park's media landscape and connections to outside world
+  - Shows the school's newspaper and media programs
+  - Establishes patterns for episodes about fame and media attention
+production:
+  notable_quotes:
+  - This movie sucks more than anything that has ever sucked before! - Stan
+  - We are serious film critics now. - Kyle
+  - I hate that new kid! - Cartman
+  - Oh my God, they killed Kenny! - Kyle
+  - You bastards! - Stan
+  - Roger Ebert should lay off the fatty foods. - Cartman
+  memorable_scenes:
+  - The boys watching the terrible movie
+  - Writing their first scathing review
+  - The new student's arrival and immediate popularity
+  - The boys appearing on television as critics
+  - Cartman's schemes against the new student
+  - The resolution of both storylines
+  animation_notes:
+  - Movie theater and film screening scenes
+  - Television studio environments and talk show settings
+  - School newspaper office and publication process
+  - Classroom scenes showing group dynamics
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired during the height of film criticism culture and the rise
+    of amateur critics through the internet
+  controversy_notes: The title's reference to Roger Ebert's weight was considered
+    insensitive by some viewers
+  reception_notes: Praised for its satire of film criticism culture and media exploitation
+    of children
+  social_commentary:
+  - Satirizes the pretentious nature of professional film criticism
+  - Comments on media exploitation of children for entertainment
+  - Explores how fame and attention can corrupt authentic responses
+  - Examines insecurity and competition in social relationships

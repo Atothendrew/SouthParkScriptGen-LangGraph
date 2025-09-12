@@ -1,0 +1,125 @@
+---
+basic_info:
+  title: Clubhouses
+  season: 2
+  episode_number: 12
+  original_air_date: '1998-09-23'
+  episode_type: standalone
+plot:
+  logline: Stan and Kyle build competing clubhouses to impress Wendy and Bebe, while
+    their parents become invol...
+  plot_summary: Stan and Kyle build competing clubhouses to impress Wendy and Bebe,
+    while their parents become involved in a wife-swapping scandal.
+  plot_threads:
+  - title: Main Plot
+    description: Stan and Kyle build competing clubhouses to impress Wendy and Bebe,
+      while their parents become involved in a wife-swapping scandal.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Stan Marsh
+    role: main
+    development: Learns about the complexities of relationships and adult behavior
+    character_development: Builds clubhouse to impress Wendy
+    key_moments: []
+    relationships_affected: []
+  - name: Kyle Broflovski
+    role: main
+    development: Experiences rivalry with Stan over impressing girls
+    character_development: Builds competing clubhouse
+    key_moments: []
+    relationships_affected: []
+  - name: Eric Cartman
+    role: main
+    development: Provides commentary on the boys' romantic pursuits
+    character_development: Gets involved in clubhouse competition
+    key_moments: []
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    development: Dies in typical fashion during the episode
+    character_development: Participates in clubhouse activities
+    key_moments: []
+    relationships_affected: []
+  supporting:
+  - name: Wendy Testaburger
+    role: supporting
+    character_development: Object of Stan's affection
+    key_moments: []
+    relationships_affected: []
+  - name: Bebe Stevens
+    role: supporting
+    character_development: Kyle's romantic interest
+    key_moments: []
+    relationships_affected: []
+  - name: Randy Marsh
+    role: supporting
+    character_development: Stan's father, gets involved in wife-swapping
+    key_moments: []
+    relationships_affected: []
+  - name: Gerald Broflovski
+    role: supporting
+    character_development: Kyle's father, participates in wife-swapping
+    key_moments: []
+    relationships_affected: []
+  - name: Sharon Marsh
+    role: supporting
+    character_development: Stan's mother, reluctant participant in arrangement
+    key_moments: []
+    relationships_affected: []
+  - name: Sheila Broflovski
+    role: supporting
+    character_development: Kyle's mother, becomes upset with the situation
+    key_moments: []
+    relationships_affected: []
+  new: []
+content_elements:
+  cultural_references: []
+  running_gags: []
+  locations: []
+themes:
+- theme: Childhood innocence
+  description: 'Primary theme: Childhood innocence'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Adult hypocrisy
+  description: 'Primary theme: Adult hypocrisy'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Friendship and rivalry
+  description: 'Primary theme: Friendship and rivalry'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Relationship dynamics
+  description: 'Primary theme: Relationship dynamics'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks: []
+  setup_for_future: []
+  character_developments: []
+  world_building: []
+production:
+  notable_quotes: []
+  memorable_scenes: []
+  animation_notes:
+  - Detailed clubhouse designs
+  - Domestic settings for adult scenes
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired during South Park's second season establishment period
+  controversy_notes: Part of South Park's controversial content
+  reception_notes: Well-received for balancing child and adult storylines
+  social_commentary:
+  - Social commentary from Clubhouses

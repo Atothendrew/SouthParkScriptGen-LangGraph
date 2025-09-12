@@ -1,110 +1,160 @@
+---
 basic_info:
-  title: "Death"
   season: 1
-  episode: 6
-  air_date: "1997-09-17"
-  episode_type: "REGULAR"
-  runtime_minutes: 22
-
+  episode_number: 6
+  title: Death
+  original_air_date: '1997-09-17'
+  episode_type: standalone
 plot:
-  main_storyline: "Stan's grandfather repeatedly asks Stan to kill him because he's tired of living, while the boys become obsessed with the violent TV show 'Terrance and Phillip' despite parental opposition."
-  subplot: "The parents of South Park, led by Sheila Broflovski, campaign against Terrance and Phillip for corrupting their children with crude humor and violence."
-  resolution: "Death arrives to take Grandpa Marsh but is distracted by Terrance and Phillip, finding the show hilarious. The parents' protest backfires when they realize they're being hypocritical."
-  episode_arc: "Introduction of Death as a character and exploration of generational conflicts over entertainment."
-
+  logline: Stan's grandfather repeatedly asks Stan to kill him because he's tired
+    of living, while the boys bec...
+  plot_summary: Stan's grandfather repeatedly asks Stan to kill him because he's tired
+    of living, while the boys become obsessed with the violent TV show 'Terrance and
+    Phillip' despite parental opposition. The parents of South Park, led by Sheila
+    Broflovski, campaign against Terrance and Phillip for corrupting their children
+    with crude humor and violence. Death arrives to take Grandpa Marsh but is distracted
+    by Terrance and Phillip, finding the show hilarious. The parents' protest backfires
+    when they realize they're being hypocritical.
+  plot_threads:
+  - title: Main Plot
+    description: Stan's grandfather repeatedly asks Stan to kill him because he's
+      tired of living, while the boys become obsessed with the violent TV show 'Terrance
+      and Phillip' despite parental opposition.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+  - title: Subplot
+    description: The parents of South Park, led by Sheila Broflovski, campaign against
+      Terrance and Phillip for corrupting their children with crude humor and violence.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
 characters:
-  main_characters:
-    - name: "Stan Marsh"
-      role: "PROTAGONIST"
-      description: "Struggles with his grandfather's repeated requests for assisted suicide while defending his right to watch Terrance and Phillip"
-      character_development: "Shows moral conflict about helping his grandfather die"
-    - name: "Kyle Broflovski"
-      role: "MAIN"
-      description: "Supports Stan and enjoys Terrance and Phillip despite his mother's opposition"
-      character_development: "Continues to be the voice of reason among the boys"
-    - name: "Eric Cartman"
-      role: "MAIN"
-      description: "Obsessed with Terrance and Phillip and dismissive of adult concerns"
-      character_development: "Shows his typical disregard for authority"
-    - name: "Kenny McCormick"
-      role: "MAIN"
-      description: "Enjoys the show with the other boys"
-      character_development: "Standard Kenny participation"
-
-  supporting_characters:
-    - name: "Grandpa Marsh"
-      role: "SUPPORTING"
-      description: "Stan's grandfather who desperately wants to die and repeatedly asks Stan to kill him"
-    - name: "Death"
-      role: "SUPPORTING"
-      description: "The Grim Reaper who comes for Grandpa but gets distracted by Terrance and Phillip"
-    - name: "Sheila Broflovski"
-      role: "SUPPORTING"
-      description: "Leads the parental crusade against Terrance and Phillip"
-    - name: "Terrance and Phillip"
-      role: "SUPPORTING"
-      description: "Canadian comedy duo whose crude show becomes the center of controversy"
-
+  main:
+  - name: Stan Marsh
+    role: main
+    key_moments: []
+    character_development: Shows moral conflict about helping his grandfather die
+    relationships_affected: []
+  - name: Kyle Broflovski
+    role: main
+    key_moments: []
+    character_development: Continues to be the voice of reason among the boys
+    relationships_affected: []
+  - name: Eric Cartman
+    role: main
+    key_moments: []
+    character_development: Shows his typical disregard for authority
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    key_moments: []
+    character_development: Standard Kenny participation
+    relationships_affected: []
+  supporting:
+  - name: Grandpa Marsh
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Death
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Sheila Broflovski
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  - name: Terrance and Phillip
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+  new: []
 content_elements:
-  violence_level: "MODERATE"
-  language: "MILD"
-  adult_themes:
-    - "Assisted suicide/euthanasia"
-    - "Generational conflict"
-    - "Media censorship"
-    - "Parental hypocrisy"
   cultural_references:
-    - reference: "Beavis and Butt-Head controversy"
-      context: "Parental concerns about violent TV shows corrupting children"
-    - reference: "Canadian stereotypes"
-      context: "Terrance and Phillip represent exaggerated Canadian comedy"
-    - reference: "Grim Reaper mythology"
-      context: "Death as a personified character"
-
-themes:
-  primary_themes:
-    - "Generational differences in entertainment"
-    - "The right to die with dignity"
-    - "Parental hypocrisy and censorship"
-    - "Media influence on children"
-  social_commentary:
-    - "Critique of moral panic over children's entertainment"
-    - "Exploration of end-of-life issues"
-    - "Satire of parental overreaction to media"
-
-continuity:
-  character_introductions:
-    - "Death (Grim Reaper)"
-    - "Grandpa Marsh (first major appearance)"
-    - "Terrance and Phillip (first appearance)"
+  - type: unknown
+    target: ''
+    description: ''
+    context: Parental concerns about violent TV shows corrupting children
+  - type: unknown
+    target: ''
+    description: ''
+    context: Terrance and Phillip represent exaggerated Canadian comedy
+  - type: unknown
+    target: ''
+    description: ''
+    context: Death as a personified character
   running_gags:
-    - gag: "Kenny's death"
-      description: "Kenny dies when Death touches him accidentally"
-    - gag: "Terrance and Phillip farting"
-      description: "Establishes the crude humor that defines the Canadian duo"
-  plot_connections:
-    - "Introduces Terrance and Phillip as recurring characters"
-    - "Establishes Death as a character who can return"
-    - "Sets up ongoing parental concerns about the boys' entertainment"
-
-locations:
-  primary_locations:
-    - name: "Marsh residence"
-      description: "Where Grandpa Marsh lives and repeatedly asks Stan to kill him"
-    - name: "South Park Elementary"
-      description: "Where the boys discuss Terrance and Phillip"
-    - name: "Community Center"
-      description: "Where parents hold their anti-Terrance and Phillip meeting"
-
-production_notes:
-  writer: "Trey Parker and Matt Stone"
-  director: "Trey Parker"
-  notable_aspects:
-    - "First appearance of Terrance and Phillip"
-    - "Introduction of Death as a recurring character"
-    - "Early exploration of censorship themes"
-
-cultural_impact:
-  significance: "Introduced Terrance and Phillip, who became central to South Park mythology and the show's commentary on Canadian culture"
-  controversy: "Addressed real concerns about violent media and children"
-  legacy: "Established template for episodes dealing with parental moral panic"
+  - name: Kenny's death
+    description: Kenny dies when Death touches him accidentally
+    frequency: 1
+    first_appearance: null
+    evolution_notes: null
+  - name: Terrance and Phillip farting
+    description: Establishes the crude humor that defines the Canadian duo
+    frequency: 1
+    first_appearance: null
+    evolution_notes: null
+  locations: []
+themes:
+- theme: Generational differences in entertainment
+  description: 'Primary theme: Generational differences in entertainment'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: The right to die with dignity
+  description: 'Primary theme: The right to die with dignity'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Parental hypocrisy and censorship
+  description: 'Primary theme: Parental hypocrisy and censorship'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Media influence on children
+  description: 'Primary theme: Media influence on children'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks:
+  - Introduces Terrance and Phillip as recurring characters
+  - Establishes Death as a character who can return
+  - Sets up ongoing parental concerns about the boys' entertainment
+  setup_for_future: []
+  character_developments:
+  - Death (Grim Reaper)
+  - Grandpa Marsh (first major appearance)
+  - Terrance and Phillip (first appearance)
+  world_building: []
+production:
+  notable_quotes:
+  - Can you help me die? - Grandpa Marsh
+  - Death isn't supposed to be funny! - Sheila Broflovski
+  - Terrance and Phillip are immature and stupid - Kyle's mom about the show
+  memorable_scenes:
+  - Grandpa Marsh asking Stan to help him die
+  - The boys watching Terrance and Phillip
+  - Death getting distracted by the TV show
+  - The parents' hypocritical protest
+  animation_notes: []
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired in 1997 during South Park's early seasons
+  controversy_notes: Part of South Park's controversial early content
+  reception_notes: Episode from South Park's foundational years
+  social_commentary:
+  - Social commentary from Death

@@ -1,0 +1,122 @@
+---
+basic_info:
+  title: Prehistoric Ice Man
+  season: 2
+  episode_number: 18
+  original_air_date: '1999-01-20'
+  episode_type: standalone
+plot:
+  logline: The boys discover what they believe is a prehistoric man frozen in ice,
+    but it turns out to be a man...
+  plot_summary: The boys discover what they believe is a prehistoric man frozen in
+    ice, but it turns out to be a man from 1996 who was frozen for only three years,
+    leading to media frenzy and scientific study.
+  plot_threads:
+  - title: Main Plot
+    description: The boys discover what they believe is a prehistoric man frozen in
+      ice, but it turns out to be a man from 1996 who was frozen for only three years,
+      leading to media frenzy and scientific study.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Stan Marsh
+    role: main
+    character_development: Co-discoverer of the frozen man
+    key_moments: []
+    relationships_affected: []
+  - name: Kyle Broflovski
+    role: main
+    character_development: Co-discoverer, argues with Stan over credit
+    key_moments: []
+    relationships_affected: []
+  - name: Eric Cartman
+    role: main
+    character_development: Wants to profit from the discovery
+    key_moments: []
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    character_development: Participates in the discovery
+    key_moments: []
+    relationships_affected: []
+  supporting:
+  - name: The Frozen Man (Steve)
+    role: supporting
+    character_development: Man from 1996 mistaken for prehistoric human
+    key_moments: []
+    relationships_affected: []
+  - name: Scientists and Researchers
+    role: supporting
+    character_development: Study the supposedly prehistoric man
+    key_moments: []
+    relationships_affected: []
+  - name: Media Representatives
+    role: supporting
+    character_development: Cover the story of the prehistoric discovery
+    key_moments: []
+    relationships_affected: []
+  - name: South Park Residents
+    role: supporting
+    character_development: React to the scientific discovery in their town
+    key_moments: []
+    relationships_affected: []
+  new:
+  - name: Steve (The Frozen Man)
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+content_elements:
+  cultural_references: []
+  running_gags: []
+  locations: []
+themes:
+- theme: Assumptions and misconceptions
+  description: 'Primary theme: Assumptions and misconceptions'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Rapid societal change
+  description: 'Primary theme: Rapid societal change'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Friendship vs recognition
+  description: 'Primary theme: Friendship vs recognition'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Media sensationalism
+  description: 'Primary theme: Media sensationalism'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks:
+  - Stan and Kyle's friendship dynamic
+  setup_for_future: []
+  character_developments: []
+  world_building: []
+production:
+  notable_quotes: []
+  memorable_scenes: []
+  animation_notes:
+  - Ice cave and frozen man visual effects
+  - Scientific laboratory and research settings
+  - Media coverage and news report animations
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired in early 1999, commenting on rapid technological and cultural
+    changes of the late 1990s
+  controversy_notes: Part of South Park's controversial content
+  reception_notes: Appreciated for clever twist on prehistoric discovery trope and
+    friendship dynamics
+  social_commentary:
+  - Social commentary from Prehistoric Ice Man

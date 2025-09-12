@@ -1,0 +1,129 @@
+---
+basic_info:
+  title: Gnomes
+  season: 2
+  episode_number: 17
+  original_air_date: '1998-12-16'
+  episode_type: standalone
+plot:
+  logline: The boys work on a school report about corporate takeovers while dealing
+    with underpants gnomes who ...
+  plot_summary: The boys work on a school report about corporate takeovers while dealing
+    with underpants gnomes who steal underwear as part of their mysterious business
+    plan.
+  plot_threads:
+  - title: Main Plot
+    description: The boys work on a school report about corporate takeovers while
+      dealing with underpants gnomes who steal underwear as part of their mysterious
+      business plan.
+    characters_involved:
+    - Stan Marsh
+    - Kyle Broflovski
+    - Eric Cartman
+    - Kenny McCormick
+    resolution_status: resolved
+    connects_to_episodes: []
+characters:
+  main:
+  - name: Tweek Tweak
+    role: main
+    character_development: Victim of underpants gnomes, coffee shop owner's son
+    key_moments: []
+    relationships_affected: []
+  - name: Stan Marsh
+    role: main
+    character_development: Works on school report, investigates gnome situation
+    key_moments: []
+    relationships_affected: []
+  - name: Kyle Broflovski
+    role: main
+    character_development: Participates in report and gnome investigation
+    key_moments: []
+    relationships_affected: []
+  - name: Eric Cartman
+    role: main
+    character_development: Group member for school project
+    key_moments: []
+    relationships_affected: []
+  - name: Kenny McCormick
+    role: main
+    character_development: Participates in group activities
+    key_moments: []
+    relationships_affected: []
+  supporting:
+  - name: The Underpants Gnomes
+    role: supporting
+    character_development: Mysterious creatures with flawed business plan
+    key_moments: []
+    relationships_affected: []
+  - name: Mr. Tweak
+    role: supporting
+    character_development: Tweek's father, local coffee shop owner
+    key_moments: []
+    relationships_affected: []
+  - name: Harbucks Representatives
+    role: supporting
+    character_development: Corporate coffee chain trying to take over
+    key_moments: []
+    relationships_affected: []
+  - name: Mr. Garrison
+    role: supporting
+    character_development: Teacher who assigns the current events report
+    key_moments: []
+    relationships_affected: []
+  new:
+  - name: Underpants Gnomes
+    role: supporting
+    key_moments: []
+    character_development: ''
+    relationships_affected: []
+content_elements:
+  cultural_references: []
+  running_gags: []
+  locations: []
+themes:
+- theme: Corporate vs small business
+  description: 'Primary theme: Corporate vs small business'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Flawed business logic
+  description: 'Primary theme: Flawed business logic'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Childhood fears and validation
+  description: 'Primary theme: Childhood fears and validation'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+- theme: Economic competition
+  description: 'Primary theme: Economic competition'
+  how_explored: Central to episode narrative
+  moral_lesson: null
+continuity:
+  callbacks:
+  - Tweek's established paranoid personality
+  setup_for_future:
+  - Establishes Tweek as more prominent character
+  - Creates iconic underpants gnomes meme
+  character_developments: []
+  world_building: []
+production:
+  notable_quotes: []
+  memorable_scenes: []
+  animation_notes:
+  - Underpants gnomes character design and animation
+  - Coffee shop and corporate office settings
+  - Business presentation visual elements
+  writers:
+  - Trey Parker
+  - Matt Stone
+  directors:
+  - Trey Parker
+  guest_voices: []
+context:
+  historical_context: Aired during peak of Starbucks expansion and small business
+    concerns in late 1990s
+  controversy_notes: Part of South Park's controversial content
+  reception_notes: Became famous for the three-phase business plan joke, widely referenced
+    in business contexts
+  social_commentary:
+  - Social commentary from Gnomes

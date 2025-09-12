@@ -2,12 +2,17 @@
 
 from spgen.workflow.state import EpisodeState, EpisodeContinuity
 from spgen.workflow.builder import build_graph
-from spgen.workflow.llm_client import llm_call, search_tool
+from spgen.workflow.llm_client import (
+    llm_call,
+    llm_call_with_model,
+    get_available_tools,
+)
 
 __all__ = [
     "EpisodeState",
     "EpisodeContinuity",
-    "build_graph", 
+    "build_graph",
     "llm_call",
-    "search_tool"
+    "llm_call_with_model",
+    "get_available_tools",
 ]
