@@ -23,4 +23,24 @@
 - **FIXED ANALYSIS/THINKING LOGGING REGRESSION**: Updated `spgen/workflow/llm_provider.py` to robustly parse and log analysis channels and thinking/reasoning token counts from both `usage_metadata` and `response_metadata.{token_usage|usage}` across non-tools and tools paths. Removed noisy debug prints and ensured final content strips LM Studio channel markers while logging analysis to `llm_analysis.txt`.
 - **FIXED OVERRIDE LOGIC**: Corrected `llm_client.py` logic so that `override_use_lmstudio_sdk=False` properly forces OpenAI usage instead of falling through to other conditions.
 
+### 2025-01-15
+
+#### LMStudio Client Refactoring and Usage Information Enhancement
+- **REFACTORED LMSTUDIO CLIENT**: Completely restructured `spgen/workflow/providers/lmstudio_client.py` from standalone functions to a clean `LMStudioWrapper` class with proper state management and method organization.
+- **ENHANCED USAGE INFORMATION**: Fixed usage statistics extraction from LMStudio result objects. Now properly extracts comprehensive metrics including:
+  - Basic token usage: `input=219, output=75, total=294`
+  - Performance metrics: `first_token=0.531s, speed=41.4 tok/s`
+  - Stop reason: `stopped=eosFound`
+  - Draft token metrics for speculative decoding (when available)
+- **IMPROVED CODE ORGANIZATION**: All functionality now contained within `LMStudioWrapper` class with methods:
+  - `_extract_final_content_from_lmstudio()` - Content extraction and analysis
+  - `_unescape_content()` - Escape sequence handling
+  - `_extract_usage_info()` - Comprehensive usage data extraction
+  - `_format_usage_info()` - Rich usage display formatting
+  - `respond()` and `act()` - Main public methods
+- **MAINTAINED BACKWARD COMPATIBILITY**: Exported `respond()` and `act()` functions that delegate to the wrapper class, ensuring existing code continues to work without changes.
+- **FIXED UNICODE ESCAPE SEQUENCES**: Resolved logging issues with special characters (`\n`, `\u202f`) by implementing targeted escape sequence handling that avoids encoding problems.
+- **ENHANCED CHAT MESSAGE LOGGING**: Added `log_chat_message()` function in `logging_utils.py` for consistent chat message logging with clean text extraction from `TextData` objects.
+- **IMPROVED CONTENT EXTRACTION**: Added `_extract_content_from_result()` method to properly handle both structured and unstructured LMStudio responses. The `parsed` attribute contains structured data when using `response_format` with JSON schema, otherwise contains raw text identical to `content`. This prepares the client for future structured output usage while maintaining backward compatibility.
+
 
