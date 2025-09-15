@@ -79,7 +79,7 @@ except ImportError:
 
 try:
     from spgen.tools.duckduckgo_search import search_web, search_news, search_trending_topics
-    ddg_tools_available = True
+    ddg_tools_available = False
 except ImportError:
     ddg_tools_available = False
     print("⚠️  DuckDuckGo search tools not available - continuing without web search")

@@ -42,5 +42,12 @@
 - **FIXED UNICODE ESCAPE SEQUENCES**: Resolved logging issues with special characters (`\n`, `\u202f`) by implementing targeted escape sequence handling that avoids encoding problems.
 - **ENHANCED CHAT MESSAGE LOGGING**: Added `log_chat_message()` function in `logging_utils.py` for consistent chat message logging with clean text extraction from `TextData` objects.
 - **IMPROVED CONTENT EXTRACTION**: Added `_extract_content_from_result()` method to properly handle both structured and unstructured LMStudio responses. The `parsed` attribute contains structured data when using `response_format` with JSON schema, otherwise contains raw text identical to `content`. This prepares the client for future structured output usage while maintaining backward compatibility.
+- **SEED-OSS-36B SUPPORT**: Added comprehensive support for seed-oss-36b model's thinking token format:
+  - Handles `<seed:think>` and `</seed:think>` tags for reasoning content
+  - Strips `<seed:cot_budget_reflect>` budget reflection tokens from analysis output
+  - Supports `thinking_budget` parameter (multiples of 512 tokens) for controlling reasoning depth
+  - Maintains backward compatibility with gpt-oss-20b channel marker format
+  - Automatically detects model type and applies appropriate parsing logic
+- **UPDATED TESTS**: Added thinking budget support to all test methods in `tests/test_lmstudio_client.py`. Tests now automatically use 512 token thinking budget for seed-oss models while maintaining backward compatibility with other models.
 
 

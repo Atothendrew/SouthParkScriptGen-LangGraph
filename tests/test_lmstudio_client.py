@@ -32,7 +32,10 @@ class LMStudioClientTests(unittest.TestCase):
     def test_respond_returns_content(self):
         from spgen.workflow.providers import lmstudio_client as lm
 
-        content, model = lm.respond("Say the word hello.", self.model_name, 0.2)
+        # Use small thinking budget for seed-oss models
+        thinking_budget = 512 if "seed-oss" in self.model_name.lower() else None
+        
+        content, model = lm.respond("Say the word hello.", self.model_name, 0.2, thinking_budget)
         self.assertIsInstance(content, str)
         self.assertGreater(len(content.strip()), 0, "respond() returned empty content")
         self.assertIn("hello", content.lower(), "respond() did not include 'hello'")
@@ -69,7 +72,10 @@ class LMStudioClientTests(unittest.TestCase):
             "((2 + 3) * (10 - 4)) / (2 ^ 2). Show your work as numbered steps and end with 'Final Answer: <number>'."
         )
 
-        content, _ = lm.act(prompt, self.model_name, 0.1, [add, subtract, multiply, divide, power])
+        # Use small thinking budget for seed-oss models
+        thinking_budget = 512 if "seed-oss" in self.model_name.lower() else None
+        
+        content, _ = lm.act(prompt, self.model_name, 0.1, [add, subtract, multiply, divide, power], thinking_budget)
         text = (content or "").strip()
         self.assertTrue(text)
         # Accept either "1." or "Step 1" style numbering
@@ -101,7 +107,10 @@ class LMStudioClientTests(unittest.TestCase):
             "then multiply these two values using the provided tool. Show steps and end with 'Final Answer: <number>'."
         )
 
-        content, _ = lm.act(prompt, self.model_name, 0.1, [strlen, word_count, multiply])
+        # Use small thinking budget for seed-oss models
+        thinking_budget = 512 if "seed-oss" in self.model_name.lower() else None
+        
+        content, _ = lm.act(prompt, self.model_name, 0.1, [strlen, word_count, multiply], thinking_budget)
         text = (content or "").strip()
         self.assertTrue(text)
         self.assertTrue(("1." in text) or ("Step 1" in text), "Missing first step numbering")
@@ -124,7 +133,10 @@ class LMStudioClientTests(unittest.TestCase):
         prompt = (
             "Use the add tool to compute 2 + 3. Respond with only the numeric result and nothing else."
         )
-        content, model = lm.act(prompt, self.model_name, 0.2, [add])
+        # Use small thinking budget for seed-oss models
+        thinking_budget = 512 if "seed-oss" in self.model_name.lower() else None
+        
+        content, model = lm.act(prompt, self.model_name, 0.2, [add], thinking_budget)
         self.assertIsInstance(content, str)
         self.assertGreater(len(content.strip()), 0, "act() returned empty content")
         # Be robust: accept '5' anywhere or extract first integer
@@ -152,7 +164,10 @@ class LMStudioClientTests(unittest.TestCase):
             "'Final Answer: <number>'. Use at least two steps and prefer the tools over mental math."
         )
 
-        content, model = lm.act(prompt, self.model_name, 0.1, [add, multiply])
+        # Use small thinking budget for seed-oss models
+        thinking_budget = 512 if "seed-oss" in self.model_name.lower() else None
+        
+        content, model = lm.act(prompt, self.model_name, 0.1, [add, multiply], thinking_budget)
         self.assertIsInstance(content, str)
         text = content.strip()
         print(f"ACT content: {content}")

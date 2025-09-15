@@ -18,14 +18,35 @@ class LMStudioWrapper:
         """
         Extract and clean final content from LMStudio response.
         
+        Supports both gpt-oss-20b format (channel markers) and seed-oss-36b format (seed:think tags).
+        
         Note: When using structured output (response_format), the 'parsed' attribute 
         contains structured data. For unstructured responses, 'parsed' is identical to 'content'.
         """
         analysis_content = ""
         final_content = content
         
-        # Extract analysis content if present
-        if '<|channel|>analysis<|message|>' in content:
+        # Handle seed-oss-36b thinking tokens format
+        if '<seed:think>' in content and '</seed:think>' in content:
+            thinking_match = re.search(r'<seed:think>(.*?)</seed:think>', content, re.DOTALL)
+            if thinking_match:
+                thinking_content = thinking_match.group(1).strip()
+                # Clean up budget reflection tokens
+                thinking_content = re.sub(r'<seed:cot_budget_reflect>.*?</seed:cot_budget_reflect>', '', thinking_content, flags=re.DOTALL)
+                thinking_content = thinking_content.strip()
+                
+                if thinking_content:
+                    print("🧠 LLM Analysis/Reasoning (from Seed-OSS-36B):")
+                    print("-" * 50)
+                    print(f"• {thinking_content.replace('. ', '.\n• ')}")
+                    print("-" * 50)
+                    analysis_content = thinking_content
+            
+            # Extract final content after thinking tokens
+            final_content = content.split('</seed:think>')[-1].strip()
+            
+        # Handle gpt-oss-20b channel format
+        elif '<|channel|>analysis<|message|>' in content:
             parts = content.split('<|channel|>analysis<|message|>', 1)
             if len(parts) > 1:
                 analysis_content = parts[1].split('<|end|>')[0].strip()
@@ -35,12 +56,15 @@ class LMStudioWrapper:
                     print(f"• {analysis_content.replace('. ', '.\n• ')}")
                     print("-" * 50)
         
-        # Extract final content if present
+        # Extract final content if present (gpt-oss-20b format)
         if '<|channel|>final<|message|>' in content:
             final_content = content.split('<|channel|>final<|message|>')[-1].strip()
         
         # Clean up special tokens
         final_content = re.sub(r'<\|[^|]*\|>[^<]*', '', final_content).strip()
+        
+        # Clean up seed-oss-36b tokens
+        final_content = re.sub(r'<seed:[^>]*>', '', final_content).strip()
         
         # Handle escape sequences
         final_content = self._unescape_content(final_content)
@@ -139,6 +163,9 @@ class LMStudioWrapper:
         """Extract usage information from LMStudio result object."""
         usage = {}
         
+        # Debug: check what type of result we have
+        result_type = type(result).__name__
+        
         # Try different ways to get usage info
         if hasattr(result, 'usage') and result.usage:
             usage = result.usage
@@ -149,7 +176,7 @@ class LMStudioWrapper:
             if isinstance(metadata, dict):
                 usage = metadata.get('token_usage', {}) or metadata.get('usage', {})
         elif hasattr(result, 'stats') and result.stats:
-            # LMStudio stores usage in stats object
+            # LMStudio stores usage in stats object (for PredictionResult)
             stats = result.stats
             usage = {
                 'prompt_tokens': getattr(stats, 'prompt_tokens_count', 0),
@@ -165,6 +192,21 @@ class LMStudioWrapper:
                 'total_draft_tokens': getattr(stats, 'total_draft_tokens_count', 0)
             }
         
+        # For ActResult, we don't have detailed usage stats, but we can estimate
+        if not usage and hasattr(result, 'total_time_seconds'):
+            print(f"🔍 Debug - {result_type} result: no detailed usage stats available")
+            # ActResult typically doesn't provide detailed token usage
+            # We could potentially estimate based on assistant_messages content
+            if hasattr(self, 'assistant_messages') and self.assistant_messages:
+                # Rough estimation based on message content length
+                total_content = ''.join(str(msg) for msg in self.assistant_messages)
+                estimated_tokens = len(total_content.split()) * 1.3  # rough token estimation
+                usage = {
+                    'prompt_tokens': 0,  # Unknown
+                    'completion_tokens': int(estimated_tokens),
+                    'total_tokens': int(estimated_tokens),
+                    'total_time_seconds': getattr(result, 'total_time_seconds', 0)
+                }
         
         return usage
     
@@ -180,6 +222,7 @@ class LMStudioWrapper:
             time_to_first_token = usage.get('time_to_first_token', 0)
             tokens_per_second = usage.get('tokens_per_second', 0)
             stop_reason = usage.get('stop_reason', 'unknown')
+            total_time = usage.get('total_time_seconds', 0)
             
             # Draft token metrics (for speculative decoding)
             accepted_draft = usage.get('accepted_draft_tokens', 0) or 0
@@ -195,8 +238,14 @@ class LMStudioWrapper:
                 usage_str += f", first_token={time_to_first_token:.3f}s"
             if tokens_per_second and tokens_per_second > 0:
                 usage_str += f", speed={tokens_per_second:.1f} tok/s"
+            elif total_time and total_time > 0 and output_tokens > 0:
+                # Estimate speed for ActResult
+                estimated_speed = output_tokens / total_time
+                usage_str += f", speed≈{estimated_speed:.1f} tok/s (estimated)"
             if stop_reason and stop_reason != 'unknown':
                 usage_str += f", stopped={stop_reason}"
+            if total_time and total_time > 0:
+                usage_str += f", total_time={total_time:.2f}s"
             
             # Add draft token info if available (speculative decoding)
             if total_draft and total_draft > 0:
@@ -206,7 +255,7 @@ class LMStudioWrapper:
         
         return f"📊 Model: {model_name}, Tool calls: {tool_calls}{usage_str}"
     
-    def respond(self, prompt: str, model_name: str, temperature: float) -> Tuple[str, str]:
+    def respond(self, prompt: str, model_name: str, temperature: float, thinking_budget: Optional[int] = None) -> Tuple[str, str]:
         """Make a simple response call to LMStudio."""
         model = lms.llm(model_name)
         
@@ -214,9 +263,17 @@ class LMStudioWrapper:
         self.tool_calls_count = 0
         self.assistant_messages = []
         
+        # Prepare config
+        config = {"temperature": temperature}
+        
+        # Add thinking budget for seed-oss-36b models
+        if thinking_budget is not None and "seed-oss" in model_name.lower():
+            config["thinking_budget"] = thinking_budget
+            print(f"🧮 Using thinking budget: {thinking_budget} tokens")
+        
         result = model.respond(
             prompt,
-            config={"temperature": temperature},
+            config=config,
             on_message=self._on_message,
             on_prompt_processing_progress=lambda progress: print(f"{progress * 100}% complete")
         )
@@ -227,7 +284,7 @@ class LMStudioWrapper:
         
         return content, model_name
     
-    def act(self, prompt: str, model_name: str, temperature: float, tools: Optional[List[Any]]) -> Tuple[str, str]:
+    def act(self, prompt: str, model_name: str, temperature: float, tools: Optional[List[Any]], thinking_budget: Optional[int] = None) -> Tuple[str, str]:
         """Make an action call with tools to LMStudio."""
         model = lms.llm(model_name)
         lm_tools = self._prepare_tools(tools)
@@ -236,9 +293,17 @@ class LMStudioWrapper:
         self.assistant_messages = []
         self.tool_calls_count = 0
 
+        # Prepare config
+        config = {"temperature": temperature}
+        
+        # Add thinking budget for seed-oss-36b models
+        if thinking_budget is not None and "seed-oss" in model_name.lower():
+            config["thinking_budget"] = thinking_budget
+            print(f"🧮 Using thinking budget: {thinking_budget} tokens")
+
         chat = lms.Chat()
         chat.add_user_message(prompt)
-        result = model.act(chat, lm_tools, on_message=self._on_message, config={"temperature": temperature})
+        result = model.act(chat, lm_tools, on_message=self._on_message, config=config)
 
         final_raw = self.assistant_messages[-1] if self.assistant_messages else ''
         content = self._extract_final_content_from_lmstudio(final_raw, prompt) if final_raw else ''
@@ -255,10 +320,10 @@ class LMStudioWrapper:
 
 
 
-def respond(prompt: str, model_name: str, temperature: float) -> Tuple[str, str]:
+def respond(prompt: str, model_name: str, temperature: float, thinking_budget: Optional[int] = None) -> Tuple[str, str]:
     """Backward compatibility function for simple responses."""
-    return LMStudioWrapper().respond(prompt, model_name, temperature)
+    return LMStudioWrapper().respond(prompt, model_name, temperature, thinking_budget)
 
-def act(prompt: str, model_name: str, temperature: float, tools: Optional[List[Any]]) -> Tuple[str, str]:
+def act(prompt: str, model_name: str, temperature: float, tools: Optional[List[Any]], thinking_budget: Optional[int] = None) -> Tuple[str, str]:
     """Backward compatibility function for tool-enabled responses."""
-    return LMStudioWrapper().act(prompt, model_name, temperature, tools)
+    return LMStudioWrapper().act(prompt, model_name, temperature, tools, thinking_budget)
