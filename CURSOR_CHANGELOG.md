@@ -20,6 +20,7 @@
 - **ADDED LLM ANALYSIS LOGGING**: Created `log_llm_analysis()` function in LM Studio client to capture and log the model's reasoning process. When models use reasoning channels (`<|channel|>analysis<|message|>`), the analysis is now logged to `llm_analysis.txt` with formatted prompt, reasoning, and final response for easy debugging.
 - **CREATED TOOL DECORATORS**: Added `tools/tool_decorators.py` with `@tool_logger` decorator for consistent logging and error handling across all tool functions. Simplifies tool code and ensures consistent output formatting.
 - **ADDED TOKEN USAGE LOGGING**: Enhanced LM Studio client with consistent token usage logging matching `llm_client.py` format. Shows input/output/total/thinking tokens when available, with estimates when exact counts unavailable.
+- **FIXED ANALYSIS/THINKING LOGGING REGRESSION**: Updated `spgen/workflow/llm_provider.py` to robustly parse and log analysis channels and thinking/reasoning token counts from both `usage_metadata` and `response_metadata.{token_usage|usage}` across non-tools and tools paths. Removed noisy debug prints and ensured final content strips LM Studio channel markers while logging analysis to `llm_analysis.txt`.
 - **FIXED OVERRIDE LOGIC**: Corrected `llm_client.py` logic so that `override_use_lmstudio_sdk=False` properly forces OpenAI usage instead of falling through to other conditions.
 
 

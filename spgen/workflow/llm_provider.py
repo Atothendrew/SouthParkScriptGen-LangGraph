@@ -59,80 +59,14 @@ except ImportError:
 LLMProvider = Literal["openai", "anthropic", "google", "lmstudio_sdk", "openai_compatible"]
 LMSTUDIO_ENDPOINT = os.getenv("LMSTUDIO_ENDPOINT", "http://localhost:1234/v1")
 
-# --- Logging Utilities ---
-
-_current_log_dir: Optional[str] = None
-
-def set_tool_log_dir(log_dir: str) -> None:
-    """Set the global log directory for tool call logging."""
-    global _current_log_dir
-    _current_log_dir = log_dir
-    os.makedirs(log_dir, exist_ok=True)
-
-def get_tool_log_dir() -> str:
-    """Get the current log directory for tool call logging."""
-    return _current_log_dir or os.getcwd()
-
-def log_tool_call(
-    tool_name: str, tool_args: Dict[str, Any], tool_result: str, log_dir: Optional[str] = None
-) -> None:
-    """Log tool calls and responses to tool_calls.txt file."""
-    log_dir = log_dir or get_tool_log_dir()
-    tool_log_file = os.path.join(log_dir, "tool_calls.txt")
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    log_entry = f"""
-===============================================
-TOOL CALL: {timestamp}
-===============================================
-Tool: {tool_name}
-Args: {json.dumps(tool_args, indent=2, ensure_ascii=False)}
-Result Length: {len(str(tool_result))} characters
-Result Preview: {str(tool_result)[:200]}{'...' if len(str(tool_result)) > 200 else ''}
-
-Full Result:
-{tool_result}
-"""
-    try:
-        with open(tool_log_file, "a", encoding="utf-8") as f:
-            f.write(log_entry)
-    except Exception as e:
-        print(f"⚠️ Could not write to tool log file {tool_log_file}: {e}")
-
-def log_llm_analysis(
-    prompt: str, analysis: str, final_response: str, log_dir: Optional[str] = None
-) -> None:
-    """Log LLM analysis/reasoning to llm_analysis.txt file."""
-    log_dir = log_dir or get_tool_log_dir()
-    analysis_log_file = os.path.join(log_dir, "llm_analysis.txt")
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    formatted_analysis = analysis.replace('. ', '.\n\n').replace('? ', '?\n\n').replace(': ', ':\n  ')
-    
-    log_entry = f"""
-===============================================
-LLM ANALYSIS: {timestamp}
-===============================================
-PROMPT:
-{'-' * 60}
-{prompt}
-{'-' * 60}
-REASONING/ANALYSIS:
-{'-' * 60}
-{formatted_analysis}
-{'-' * 60}
-FINAL RESPONSE:
-{'-' * 60}
-{final_response}
-{'-' * 60}
-Analysis Length: {len(analysis)} characters
-Response Length: {len(final_response)} characters
-"""
-    try:
-        with open(analysis_log_file, "a", encoding="utf-8") as f:
-            f.write(log_entry)
-        print(f"📝 LLM analysis logged to: {analysis_log_file}")
-    except Exception as e:
-        print(f"⚠️ Could not write to analysis log file {analysis_log_file}: {e}")
+from spgen.workflow.logging_utils import (
+    set_tool_log_dir,
+    get_tool_log_dir,
+    log_tool_call,
+    log_llm_analysis,
+)
+from spgen.workflow.providers import lmstudio_client as lmclient
+from spgen.workflow.providers import openai_client as oa
 
 # --- Optional Tools (RAG + DDG) ---
 
@@ -166,13 +100,7 @@ def get_default_llm_provider() -> Tuple[LLMProvider, str]:
     Automatically detect the best available LLM provider.
     Returns a tuple of (provider_name, model_name).
     """
-    if os.getenv("ANTHROPIC_API_KEY") and ANTHROPIC_AVAILABLE:
-        return "anthropic", os.getenv("ANTHROPIC_MODEL", "claude-3-opus-20240229")
-    if os.getenv("GOOGLE_API_KEY") and GOOGLE_AVAILABLE:
-        return "google", os.getenv("GOOGLE_MODEL", "gemini-1.5-pro-latest")
-    if os.getenv("OPENAI_API_KEY"):
-        return "openai", os.getenv("OPENAI_MODEL", "gpt-4o-mini")
-    
+    # Prefer LM Studio SDK if available and a model is loaded
     if LMSTUDIO_SDK_AVAILABLE:
         try:
             if lms.list_loaded_models():
@@ -180,7 +108,15 @@ def get_default_llm_provider() -> Tuple[LLMProvider, str]:
                 return "lmstudio_sdk", model_id
         except Exception:
             pass  # Server might not be running
-            
+    
+    # Otherwise, fall back to cloud providers
+    if os.getenv("ANTHROPIC_API_KEY") and ANTHROPIC_AVAILABLE:
+        return "anthropic", os.getenv("ANTHROPIC_MODEL", "claude-3-opus-20240229")
+    if os.getenv("GOOGLE_API_KEY") and GOOGLE_AVAILABLE:
+        return "google", os.getenv("GOOGLE_MODEL", "gemini-1.5-pro-latest")
+    if os.getenv("OPENAI_API_KEY"):
+        return "openai", os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+
     return "openai_compatible", os.getenv("OPENAI_MODEL", "local-model")
 
 def _build_llm_client(provider: LLMProvider, model_name: str, temperature: float) -> BaseChatModel:
@@ -216,19 +152,46 @@ def _safe_tool_calls_len(msg: Optional[BaseMessage]) -> int:
     return len(tc) if isinstance(tc, list) else 0
 
 def _extract_usage_strings(msg: Optional[BaseMessage]) -> str:
-    """Extract token usage info from a LangChain message."""
-    if not msg or not hasattr(msg, "usage_metadata") or not msg.usage_metadata:
+    """Extract token usage info (including reasoning) from a LangChain message."""
+    if not msg:
         return ""
-    
-    u = msg.usage_metadata
-    print(f"Usage metadata: {msg}")
-    usage_info = f", Usage: input={u.get('input_tokens', 0)}, output={u.get('output_tokens', 0)}, total={u.get('total_tokens', 0)}"
-    
-    # Add reasoning/thinking tokens if available
-    thinking_tokens = int(u.get("reasoning_tokens", 0) or u.get("thinking_tokens", 0) or 0)
-    if thinking_tokens > 0:
-        usage_info += f", thinking={thinking_tokens}"
-        
+
+    usage_info = ""
+
+    # Primary: usage_metadata (LangChain standard)
+    if hasattr(msg, "usage_metadata") and msg.usage_metadata:
+        u = msg.usage_metadata
+        usage_info = f", Usage: input={u.get('input_tokens', 0)}, output={u.get('output_tokens', 0)}, total={u.get('total_tokens', 0)}"
+        thinking = int(
+            (u.get('reasoning_tokens') or u.get('thinking_tokens') or 0)
+        )
+        # Consider separate input/output reasoning token keys
+        reasoning_in = int(u.get('reasoning_input_tokens', 0) or 0)
+        reasoning_out = int(u.get('reasoning_output_tokens', 0) or 0)
+        thinking = max(thinking, reasoning_in + reasoning_out)
+        if thinking > 0:
+            usage_info += f", thinking={thinking}"
+
+    # Fallback: response_metadata.token_usage or response_metadata.usage
+    elif hasattr(msg, "response_metadata") and isinstance(msg.response_metadata, dict):
+        rm = msg.response_metadata
+        token_maps = []
+        if isinstance(rm.get('token_usage'), dict):
+            token_maps.append(rm['token_usage'])
+        if isinstance(rm.get('usage'), dict):
+            token_maps.append(rm['usage'])
+        for tu in token_maps:
+            if not usage_info:
+                usage_info = f", Usage: input={tu.get('prompt_tokens', 0)}, output={tu.get('completion_tokens', 0)}, total={tu.get('total_tokens', 0)}"
+            thinking = int(
+                (tu.get('reasoning_tokens') or tu.get('thinking_tokens') or tu.get('total_reasoning_tokens') or 0)
+            )
+            reasoning_in = int(tu.get('reasoning_input_tokens', 0) or 0)
+            reasoning_out = int(tu.get('reasoning_output_tokens', 0) or 0)
+            thinking = max(thinking, reasoning_in + reasoning_out)
+            if thinking > 0 and 'thinking=' not in usage_info:
+                usage_info += f", thinking={thinking}"
+
     return usage_info
 
 def _extract_model_name(msg: Optional[BaseMessage], default_model: str) -> str:
@@ -238,46 +201,8 @@ def _extract_model_name(msg: Optional[BaseMessage], default_model: str) -> str:
         return meta.get("model_name") or meta.get("model") or default_model
     return default_model
 
-# --- LM Studio SDK Specific Logic ---
-
-def _convert_langchain_tool_to_lmstudio(tool: Any) -> Callable:
-    """Convert a LangChain tool to a function for the LM Studio SDK."""
-    def sdk_tool(**kwargs):
-        try:
-            result = tool.invoke(kwargs)
-            log_tool_call(tool.name, kwargs, str(result), get_tool_log_dir())
-            return str(result)
-        except Exception as e:
-            error_msg = f"Error: {e}"
-            log_tool_call(tool.name, kwargs, error_msg, get_tool_log_dir())
-            return error_msg
-    sdk_tool.__name__ = tool.name
-    return sdk_tool
-
 def _extract_final_content_from_lmstudio(content: str, prompt: str) -> str:
-    """Extract final response from LM Studio's reasoning channel format."""
-    analysis_content = ""
-    final_content = content
-    
-    if '<|channel|>analysis<|message|>' in content:
-        parts = content.split('<|channel|>analysis<|message|>', 1)
-        if len(parts) > 1:
-            analysis_content = parts[1].split('<|end|>')[0].strip()
-            if analysis_content:
-                print("🧠 LLM Analysis/Reasoning (from LM Studio):")
-                print("-" * 50)
-                print(f"• {analysis_content.replace('. ', '.\n• ')}")
-                print("-" * 50)
-
-    if '<|channel|>final<|message|>' in content:
-        final_content = content.split('<|channel|>final<|message|>')[-1].strip()
-    
-    final_content = re.sub(r'<\|[^|]*\|>[^<]*', '', final_content).strip()
-    
-    if analysis_content:
-        log_llm_analysis(prompt, analysis_content, final_content, get_tool_log_dir())
-    
-    return final_content
+    return lmclient._extract_final_content_from_lmstudio(content, prompt)
 
 def _llm_call_with_lmstudio_sdk(
     prompt: str, temperature: float, tools: Optional[List[Any]], model_name: str, response_format: Optional[Dict[str, Any]] = None
@@ -286,47 +211,10 @@ def _llm_call_with_lmstudio_sdk(
     if not LMSTUDIO_SDK_AVAILABLE:
         raise RuntimeError("LM Studio SDK not available.")
 
-    try:
-        model = lms.llm(model_name)
-    except Exception:
-        models = lms.list_loaded_models()
-        if not models:
-            raise RuntimeError("No models loaded in LM Studio. Please load a model first.")
-        model = lms.llm(models[0].identifier)
-        model_name = models[0].identifier
-
-    config = {"temperature": temperature}
-    
-    # Add response format if specified
-    if response_format:
-        config["response_format"] = response_format
-    
+    # Route to lmstudio client helpers
     if not tools:
-        result = model.respond(prompt, config=config)
-        content = _extract_final_content_from_lmstudio(str(result.content), prompt)
-        usage = getattr(result, 'usage', {})
-        usage_str = f", Usage: input={usage.get('prompt_tokens', 0)}, output={usage.get('completion_tokens', 0)}, total={usage.get('total_tokens', 0)}"
-        print(f"📊 Model: {model_name}, Tool calls: 0{usage_str}")
-        return content, model_name
-
-    lmstudio_tools = []
-    if tools:
-        for tool in tools:
-            if hasattr(tool, 'invoke') and callable(tool.invoke): # LangChain tool
-                lmstudio_tools.append(_convert_langchain_tool_to_lmstudio(tool))
-            elif callable(tool): # Regular function
-                lmstudio_tools.append(tool)
-    
-    if not lmstudio_tools:
-        return _llm_call_with_lmstudio_sdk(prompt, temperature, None, model_name)
-
-    result = model.act(chat=prompt, tools=lmstudio_tools, config=config)
-    content = f"Tool execution completed in {result.rounds} rounds."
-    usage = getattr(result, 'usage', {})
-    usage_str = f", Usage: input={usage.get('prompt_tokens', 0)}, output={usage.get('completion_tokens', 0)}, total={usage.get('total_tokens', 0)}"
-    tool_calls_count = max(0, result.rounds - 1)
-    print(f"📊 Model: {model_name}, Tool calls: {tool_calls_count}{usage_str}")
-    return content, model_name
+        return lmclient.respond(prompt, model_name, temperature)
+    return lmclient.act(prompt, model_name, temperature, tools)
 
 # --- Main LLM Call Function ---
 
@@ -334,7 +222,7 @@ def llm_call(
     template: str,
     temperature: float = 0.7,
     tools: Optional[List[Any]] = None,
-    provider: Optional[LLMProvider] = "openai_compatible",
+    provider: Optional[LLMProvider] = None,
     model: Optional[str] = None,
     response_format: Optional[Dict[str, Any]] = None,
     **kwargs
@@ -365,7 +253,7 @@ def llm_call(
     else:
         model_name = model or "default" # Let builder handle default for specified provider
 
-    # 2. Handle LM Studio SDK as a special case
+    # 2. Handle LM Studio SDK as a special case (prefer when auto-detected)
     if provider == "lmstudio_sdk":
         try:
             return _llm_call_with_lmstudio_sdk(prompt, temperature, tools, model_name, response_format)
@@ -374,84 +262,16 @@ def llm_call(
             provider = "openai_compatible"
             model_name = model or os.getenv("OPENAI_MODEL", "local-model")
 
-    # 3. Standard LangChain provider logic
+    # 3. Standard LangChain provider logic routed to openai_client helpers
     try:
         llm = _build_llm_client(provider, model_name, temperature)
     except (ImportError, ValueError) as e:
         print(f"❌ Failed to build LLM client for {provider}: {e}")
         return f"Error: Could not initialize LLM provider '{provider}'.", "error-model"
 
-    messages: List[BaseMessage] = [HumanMessage(content=prompt)]
-    
     if not tools:
-        response = llm.invoke(messages)
-        content = (response.content or "").strip()
-        usage_info = _extract_usage_strings(response)
-        actual_model_name = _extract_model_name(response, model_name)
-        print(f"📊 Model: {actual_model_name}, Tool calls: 0{usage_info}")
-        return content, actual_model_name
-
-    # 4. Tool-calling loop
-    llm_with_tools = llm.bind_tools(tools)
-    
-    while True:
-        response = llm_with_tools.invoke(messages)
-        
-        tool_calls = getattr(response, "tool_calls", [])
-        if not tool_calls:
-            # No more tool calls, we're done
-            content = (response.content or "").strip()
-            # Log analysis if there were any tool calls in previous steps
-            if len(messages) > 1: # More than just the initial human message
-                # Extract all reasoning content from the message history for the analysis log
-                all_reasoning = "\n\n".join([
-                    m.content for m in messages 
-                    if hasattr(m, 'tool_calls') and m.content and isinstance(m.content, str)
-                ])
-                # If there was no reasoning content, fall back to logging the tool calls
-                if not all_reasoning:
-                    all_tool_calls = []
-                    for m in messages:
-                        if hasattr(m, 'tool_calls'):
-                            all_tool_calls.extend(m.tool_calls)
-                    analysis = json.dumps(all_tool_calls, indent=2)
-                else:
-                    analysis = all_reasoning
-                log_llm_analysis(prompt, analysis, content, get_tool_log_dir())
-            break
-
-        print(f"🔧 Model made {len(tool_calls)} tool call(s)")
-        messages.append(response)
-        
-        for tc in tool_calls:
-            tool_name = tc.get("name")
-            tool_args = tc.get("args", {})
-            tool_to_call = next((t for t in tools if getattr(t, "name", "") == tool_name), None)
-            
-            if not tool_to_call:
-                result = f"Error: Tool '{tool_name}' not found."
-            else:
-                try:
-                    if hasattr(tool_to_call, 'invoke'):
-                        result = tool_to_call.invoke(tool_args)
-                    else:
-                        result = tool_to_call(**tool_args)
-                    preview = str(result)[:100] + ('...' if len(str(result)) > 100 else '')
-                    print(f"✅ Executed {tool_name}: {preview}")
-                except Exception as e:
-                    result = f"Error executing tool {tool_name}: {e}"
-                    print(f"❌ {result}")
-            
-            log_tool_call(tool_name, tool_args, str(result), get_tool_log_dir())
-            messages.append(ToolMessage(content=str(result), tool_call_id=tc.get("id")))
-
-    # After the loop, content is set from the last response without tool calls.
-    usage_info = _extract_usage_strings(response)
-    actual_model_name = _extract_model_name(response, model_name)
-    total_tool_calls = sum(len(getattr(m, 'tool_calls', [])) for m in messages)
-    print(f"📊 Model: {actual_model_name}, Tool calls: {total_tool_calls}{usage_info}")
-
-    return content, actual_model_name
+        return oa.respond(prompt, llm, model_name)
+    return oa.act(prompt, llm, model_name, tools)
 
 __all__ = [
     "llm_call",

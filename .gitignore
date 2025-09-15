@@ -110,3 +110,6 @@ venv/
 .env
 logs/
 .idea/
+llm_analysis.txt
+
+tool_calls.txt
